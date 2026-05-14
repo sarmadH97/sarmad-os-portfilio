@@ -8,24 +8,27 @@ import { TerminalWindow } from "@/components/terminal/terminal-window";
 
 export function WindowManager() {
   const windows = useWindowStore((s) => s.windows);
+  const isMobile = useWindowStore((s) => s.isMobile);
+
+  const sorted = Object.values(windows)
+    .filter((w) => w.isOpen)
+    .sort((a, b) => (isMobile ? 0 : a.zIndex - b.zIndex));
 
   return (
-    <div className="relative h-full w-full">
+    <div className="relative h-full w-full space-y-3">
       <AnimatePresence>
-        {Object.values(windows)
-          .filter((w) => w.isOpen)
-          .map((window) => (
-            <WindowFrame
-              key={window.id}
-              id={window.id}
-              title={window.title}
-              defaultPosition={window.defaultPosition}
-              defaultSize={window.defaultSize}
-              zIndex={window.zIndex}
-            >
-              {window.id === "about" ? <AboutWindow /> : <TerminalWindow />}
-            </WindowFrame>
-          ))}
+        {sorted.map((window) => (
+          <WindowFrame
+            key={window.id}
+            id={window.id}
+            title={window.title}
+            defaultSize={window.defaultSize}
+            zIndex={window.zIndex}
+            position={window.position}
+          >
+            {window.id === "about" ? <AboutWindow /> : <TerminalWindow />}
+          </WindowFrame>
+        ))}
       </AnimatePresence>
     </div>
   );

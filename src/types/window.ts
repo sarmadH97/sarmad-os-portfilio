@@ -9,6 +9,7 @@ export interface DesktopWindow {
 }
 
 export interface WindowState extends DesktopWindow {
+  position: { x: number; y: number };
   isOpen: boolean;
   isMinimized: boolean;
   zIndex: number;
