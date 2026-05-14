@@ -11,37 +11,16 @@ const commands: Record<string, string> = {
   contact: "hello@sarmad.dev · linkedin.com/in/sarmad",
 };
 
-const bootLogs = [
-  "[ok] initializing runtime modules...",
-  "[ok] loading AI workflow context...",
-  "[ok] mounting deployment graph...",
-  "[ok] terminal ready",
-];
-
 export function TerminalWindow() {
-  const [history, setHistory] = useState<string[]>([]);
+  const [history, setHistory] = useState<string[]>(["SarmadOS Terminal ready."]);
   const [input, setInput] = useState("");
   const [blink, setBlink] = useState(true);
   const ref = useRef<HTMLPreElement>(null);
 
   useEffect(() => {
-    let i = 0;
-    const timer = setInterval(() => {
-      if (i >= bootLogs.length) return clearInterval(timer);
-      setHistory((h) => [...h, bootLogs[i]]);
-      i += 1;
-    }, 240);
-    return () => clearInterval(timer);
-  }, []);
-
-  useEffect(() => {
     const timer = setInterval(() => setBlink((b) => !b), 500);
     return () => clearInterval(timer);
   }, []);
-
-  useEffect(() => {
-    ref.current?.scrollTo({ top: ref.current.scrollHeight, behavior: "smooth" });
-  }, [history]);
 
   const lines = useMemo(() => history.join("\n"), [history]);
 
@@ -59,6 +38,7 @@ export function TerminalWindow() {
             setHistory((h) => [...h, `$ ${cmd}`, commands[cmd] ?? `Command not found: ${cmd}`]);
           }
           setInput("");
+          requestAnimationFrame(() => ref.current?.scrollTo({ top: ref.current.scrollHeight, behavior: "smooth" }));
         }}
       >
         <label className="flex items-center gap-2 rounded-lg border border-white/10 bg-black/30 px-3 py-2 font-mono text-sm text-slate-200">
