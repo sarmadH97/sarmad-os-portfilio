@@ -17,7 +17,7 @@ const initialWindows = DESKTOP_WINDOWS.reduce((acc, item, i) => {
   acc[item.id] = {
     ...item,
     position: item.defaultPosition,
-    isOpen: item.id === "about" || item.id === "terminal",
+    isOpen: item.id === "about" || item.id === "terminal" || item.id === "projects",
     isMinimized: false,
     zIndex: i + 10,
   };

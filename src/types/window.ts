@@ -1,9 +1,9 @@
-export type WindowId = "about" | "terminal";
+export type WindowId = "about" | "terminal" | "projects" | "experience" | "skills" | "recommendations";
 
 export interface DesktopWindow {
   id: WindowId;
   title: string;
-  icon: "user" | "terminal";
+  icon: "user" | "terminal" | "briefcase" | "timeline" | "spark" | "reviews";
   defaultPosition: { x: number; y: number };
   defaultSize: { w: number; h: number };
 }
