@@ -8,6 +8,7 @@ import { ExperienceWindow } from "@/components/projects/experience-window";
 import { SkillsWindow } from "@/components/projects/skills-window";
 import { RecommendationsWindow } from "@/components/projects/recommendations-window";
 import { AchievementsWindow } from "@/components/projects/achievements-window";
+import { FounderEngineeringWindow } from "@/components/projects/founder-engineering-window";
 import { BootSequence } from "./boot-sequence";
 import { TopBar } from "./topbar";
 import { WallpaperBackground } from "./wallpaper";
@@ -51,6 +52,7 @@ export function DesktopShell() {
             <button onClick={() => setTerminalOpen(true)} className="mt-5 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-sm text-white hover:bg-white/20">Open Terminal Layer</button>
           </section>
           <section id="achievements" className="rounded-3xl border border-white/10 bg-slate-900/45 p-6 backdrop-blur-xl"><h2 className="mb-4 text-2xl text-white">Engineering Achievements</h2><AchievementsWindow /></section>
+          <section id="founder-engineering" className="rounded-3xl border border-white/10 bg-slate-900/45 p-6 backdrop-blur-xl"><h2 className="mb-2 text-2xl text-white">Founder Engineering</h2><p className="mb-4 text-sm text-slate-300">Technical partnership for founders, startups, and SaaS teams building from idea to production.</p><FounderEngineeringWindow /></section>
           <section id="projects" className="rounded-3xl border border-white/10 bg-slate-900/45 p-6 backdrop-blur-xl"><h2 className="mb-4 text-2xl text-white">Projects</h2><ProjectsWindow /></section>
           <section id="experience" className="rounded-3xl border border-white/10 bg-slate-900/45 p-6 backdrop-blur-xl"><h2 className="mb-4 text-2xl text-white">Experience</h2><ExperienceWindow /></section>
           <section id="skills" className="rounded-3xl border border-white/10 bg-slate-900/45 p-6 backdrop-blur-xl"><h2 className="mb-4 text-2xl text-white">Skills</h2><SkillsWindow /></section>

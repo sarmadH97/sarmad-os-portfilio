@@ -22,6 +22,7 @@ export function TopBar({ onOpenTerminal }: TopBarProps) {
         <div className="font-medium text-slate-100">Sarmad Hussain · Engineering Portfolio</div>
         <nav className="hidden items-center gap-4 md:flex">
           <a href="#achievements" className="hover:text-white">Achievements</a>
+          <a href="#founder-engineering" className="hover:text-white">Founder Engineering</a>
           <a href="#projects" className="hover:text-white">Projects</a>
           <a href="#experience" className="hover:text-white">Experience</a>
           <a href="#skills" className="hover:text-white">Skills</a>
