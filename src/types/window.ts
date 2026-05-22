@@ -1,9 +1,14 @@
-export type WindowId = "about" | "terminal" | "projects" | "experience" | "skills" | "recommendations";
+export type WindowId =
+  | "projects"
+  | "terminal"
+  | "aiWorkflow"
+  | "architecture"
+  | "recommendations";
 
 export interface DesktopWindow {
   id: WindowId;
   title: string;
-  icon: "user" | "terminal" | "briefcase" | "timeline" | "spark" | "reviews";
+  icon: "briefcase" | "terminal" | "spark" | "network" | "reviews";
   defaultPosition: { x: number; y: number };
   defaultSize: { w: number; h: number };
 }

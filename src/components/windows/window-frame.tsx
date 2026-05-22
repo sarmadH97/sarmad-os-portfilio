@@ -39,7 +39,7 @@ export function WindowFrame({ id, title, children, defaultSize, zIndex, position
       onMouseDown={() => focusWindow(id)}
       style={{ width: isMobile ? "100%" : defaultSize.w, minHeight: defaultSize.h, zIndex, position: isMobile ? "relative" : "absolute" }}
       className={cn(
-        "rounded-2xl border bg-slate-900/70 backdrop-blur-2xl",
+        "pointer-events-auto rounded-2xl border bg-slate-900/75 backdrop-blur-2xl",
         activeWindow === id ? "border-cyan-300/40 shadow-[0_0_0_1px_rgba(34,211,238,.25),0_22px_60px_rgba(0,0,0,.45)]" : "border-white/10 shadow-[0_20px_40px_rgba(0,0,0,.35)]",
       )}
     >
