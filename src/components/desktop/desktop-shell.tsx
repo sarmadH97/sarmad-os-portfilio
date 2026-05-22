@@ -7,6 +7,7 @@ import { ProjectsWindow } from "@/components/projects/projects-window";
 import { ExperienceWindow } from "@/components/projects/experience-window";
 import { SkillsWindow } from "@/components/projects/skills-window";
 import { RecommendationsWindow } from "@/components/projects/recommendations-window";
+import { AchievementsWindow } from "@/components/projects/achievements-window";
 import { BootSequence } from "./boot-sequence";
 import { TopBar } from "./topbar";
 import { WallpaperBackground } from "./wallpaper";
@@ -46,9 +47,10 @@ export function DesktopShell() {
           <section className="rounded-3xl border border-white/10 bg-slate-900/55 p-8 backdrop-blur-2xl">
             <p className="text-sm uppercase tracking-[0.18em] text-cyan-200">Sarmad Hussain</p>
             <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Software Engineer building scalable SaaS platforms, AI workflows, and startup-ready systems.</h1>
-            <p className="mt-4 max-w-4xl text-slate-200">Frontend-heavy full stack engineer with deep product instincts and hands-on architecture experience across fintech and enterprise SaaS. I specialize in modern React/Next.js systems, resilient backend integrations, deployment-ready cloud delivery, and AI-assisted workflows that improve execution speed without compromising quality. I thrive in founding-engineer environments where ownership, clarity, and technical credibility matter, and I enjoy mentoring teams to ship polished, high-impact product experiences.</p>
+            <p className="mt-4 max-w-4xl text-slate-200">I build products the way strong founding teams operate: fast decisions, clean architecture, and measurable outcomes. My core identity is frontend-heavy full stack engineering—crafting modern React/Next.js experiences while staying close to APIs, data contracts, deployment pipelines, and system reliability. Across fintech, enterprise payroll, and startup products, I have led API modernization, shipped enterprise-scale feature sets, and integrated AI workflows into real delivery systems. I care deeply about secure coding, maintainable architecture, and mentorship-led team growth, because sustainable velocity only happens when product thinking and engineering discipline work together.</p>
             <button onClick={() => setTerminalOpen(true)} className="mt-5 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-sm text-white hover:bg-white/20">Open Terminal Layer</button>
           </section>
+          <section id="achievements" className="rounded-3xl border border-white/10 bg-slate-900/45 p-6 backdrop-blur-xl"><h2 className="mb-4 text-2xl text-white">Engineering Achievements</h2><AchievementsWindow /></section>
           <section id="projects" className="rounded-3xl border border-white/10 bg-slate-900/45 p-6 backdrop-blur-xl"><h2 className="mb-4 text-2xl text-white">Projects</h2><ProjectsWindow /></section>
           <section id="experience" className="rounded-3xl border border-white/10 bg-slate-900/45 p-6 backdrop-blur-xl"><h2 className="mb-4 text-2xl text-white">Experience</h2><ExperienceWindow /></section>
           <section id="skills" className="rounded-3xl border border-white/10 bg-slate-900/45 p-6 backdrop-blur-xl"><h2 className="mb-4 text-2xl text-white">Skills</h2><SkillsWindow /></section>
