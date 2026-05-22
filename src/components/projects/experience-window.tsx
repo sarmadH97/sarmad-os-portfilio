@@ -1,16 +1,44 @@
-const timeline = [
-  { company: "ExpenseLinx", role: "Senior Engineer", duration: "2023 — Present", achievements: "Built fintech workflows, AI-assisted policy tooling, and led platform modernization.", tech: "Next.js, Node.js, PostgreSQL, AWS", leadership: "Mentored engineers and led architecture reviews." },
-  { company: "Atlashxm", role: "Staff Product Engineer", duration: "2020 — 2023", achievements: "Unified internal systems into one workspace and increased delivery speed.", tech: "React, .NET, SQL Server, Azure", leadership: "Directed cross-functional delivery across product and engineering." },
-  { company: "Upbeater", role: "Frontend Engineer", duration: "2017 — 2020", achievements: "Delivered high-impact campaign and analytics dashboards.", tech: "React, TypeScript, CI/CD", leadership: "Drove frontend quality and design-system consistency." },
+const experience = [
+  {
+    company: "Techlogix",
+    website: "https://www.techlogix.com/",
+    role: "Software Engineer",
+    focus:
+      "Built frontend-heavy full stack product features across React/Next.js and TypeScript ecosystems with .NET backend collaboration.",
+    bullets: [
+      "Delivered scalable frontend architecture for enterprise-facing systems",
+      "Worked with product teams on fintech-style workflows and usability",
+      "Collaborated with DevOps on deployment reliability and release quality",
+    ],
+  },
+  {
+    company: "Technexia",
+    website: "https://technexia.com/",
+    role: "Senior Software Engineer",
+    focus:
+      "Led product engineering initiatives across SaaS platforms, mentoring developers and improving delivery through architecture clarity and AI-assisted workflows.",
+    bullets: [
+      "Drove React/Next.js modernization and TypeScript consistency",
+      "Partnered with backend teams on .NET APIs, SQL Server, and system contracts",
+      "Mentored engineers and strengthened cross-functional Agile collaboration",
+    ],
+  },
 ];
 
 export function ExperienceWindow() {
-  return <div className="space-y-4">{timeline.map((item) => <article key={item.company} className="relative rounded-2xl border border-white/10 bg-white/5 p-4 pl-8">
-    <span className="absolute left-3 top-6 h-2 w-2 rounded-full bg-cyan-300" />
-    <p className="text-xs text-slate-400">{item.duration}</p>
-    <h3 className="text-white font-semibold">{item.role} · {item.company}</h3>
-    <p className="text-sm text-slate-200 mt-2">{item.achievements}</p>
-    <p className="text-xs text-slate-300 mt-2">Tech: {item.tech}</p>
-    <p className="text-xs text-cyan-100 mt-1">Leadership: {item.leadership}</p>
-  </article>)}</div>;
+  return (
+    <div className="space-y-4">
+      {experience.map((item) => (
+        <article key={item.company} className="rounded-2xl border border-white/10 bg-white/5 p-4">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <p className="text-lg font-semibold text-white">{item.company}</p>
+            <a href={item.website} target="_blank" rel="noreferrer" className="text-xs text-cyan-200 hover:underline">{item.website}</a>
+          </div>
+          <p className="text-sm text-cyan-100">{item.role}</p>
+          <p className="mt-2 text-sm text-slate-200">{item.focus}</p>
+          <ul className="mt-3 space-y-1 text-xs text-slate-300">{item.bullets.map((bullet) => <li key={bullet}>• {bullet}</li>)}</ul>
+        </article>
+      ))}
+    </div>
+  );
 }
