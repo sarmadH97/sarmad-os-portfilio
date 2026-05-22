@@ -3,7 +3,11 @@
 import { Activity, Wifi } from "lucide-react";
 import { useEffect, useState } from "react";
 
-export function TopBar() {
+interface TopBarProps {
+  onOpenTerminal: () => void;
+}
+
+export function TopBar({ onOpenTerminal }: TopBarProps) {
   const [time, setTime] = useState("");
   useEffect(() => {
     const update = () => setTime(new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }));
@@ -21,7 +25,7 @@ export function TopBar() {
           <a href="#experience" className="hover:text-white">Experience</a>
           <a href="#skills" className="hover:text-white">Skills</a>
           <a href="#recommendations" className="hover:text-white">Recommendations</a>
-          <a href="#terminal" className="hover:text-white">Terminal</a>
+          <button onClick={onOpenTerminal} className="rounded-md border border-white/15 px-2 py-1 hover:bg-white/10">Terminal</button>
         </nav>
         <div className="flex items-center gap-3"><Activity className="hidden h-3.5 w-3.5 text-emerald-300 md:block" /><Wifi className="h-4 w-4" /><span>{time}</span></div>
       </div>
