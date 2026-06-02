@@ -2,38 +2,38 @@ import Link from "next/link";
 import { SiteShell } from "@/components/desktop/site-shell";
 
 const reasons = [
-  ["Product thinking", "I translate founder context into buildable product decisions, not just tickets."],
-  ["Ambiguity-friendly", "Early-stage work is messy. I help turn uncertainty into a focused execution path."],
-  ["Fast MVP delivery", "Ship the smallest credible product quickly while protecting the foundation."],
-  ["Scalable foundations", "Architecture decisions are made to avoid expensive rewrites later."],
-  ["AI-native approach", "Practical AI features, copilots, and workflow automation where they create leverage."],
-  ["Startup mindset", "Bias toward outcomes, speed, clarity, and real user feedback."],
+  ["Product thinking", "Shape the product path before writing code."],
+  ["Ambiguity-friendly", "Turn early-stage uncertainty into clear next steps."],
+  ["Fast MVP delivery", "Build the smallest credible product quickly."],
+  ["Scalable foundations", "Avoid technical decisions that force rewrites later."],
+  ["AI-native approach", "Use AI where it creates real product leverage."],
+  ["Startup mindset", "Optimize for outcomes, users, and momentum."],
 ];
 
 const services = [
-  ["MVP Development", "Move from idea to a usable product with crisp scope, fast iteration, and scalable foundations."],
-  ["AI Integration", "Add OpenAI-powered workflows, copilots, and AI-assisted product features with practical guardrails."],
-  ["Product Architecture", "Shape frontend, API, data, and deployment decisions around the business model."],
-  ["Technical Strategy", "Choose the right stack, sequencing, and product roadmap for stage and runway."],
+  ["MVP Development", "Scope, build, and ship a usable product with a foundation that can grow."],
+  ["AI Integration", "Add OpenAI workflows, copilots, and automation where they create meaningful leverage."],
+  ["Product Architecture", "Make frontend, API, data, and deployment decisions around the business model."],
+  ["Technical Strategy", "Choose the right stack, product sequence, and architecture for your stage."],
   ["Cloud & Deployment", "Launch with CI/CD, Azure, AWS, Vercel, and production deployment discipline."],
-  ["Frontend Leadership", "Create polished UX systems that feel credible to users, investors, and teams."],
+  ["Frontend Leadership", "Create polished product experiences that feel credible to users and investors."],
 ];
 
 const idealFounders = ["Non-technical founders", "SaaS startups", "AI startups", "Fintech products", "First-MVP teams", "Fundraising-ready founders"];
 
 const journey = [
-  ["Idea", "Clarify the business goal, user, risk, and first useful product shape."],
-  ["Product Strategy", "Turn vision into a focused roadmap and product decision framework."],
-  ["MVP Planning", "Define scope, data flows, integrations, and launch requirements."],
-  ["Development", "Build with modern UX, reliable APIs, and pragmatic architecture."],
-  ["Launch", "Prepare deployment, analytics, QA, and feedback loops for real users."],
-  ["Scale", "Stabilize systems, improve performance, and plan the next growth layer."],
+  ["Idea", "Clarify the user, risk, and first useful product shape."],
+  ["Product Strategy", "Turn vision into a focused roadmap."],
+  ["MVP Planning", "Define scope, data flows, and integrations."],
+  ["Development", "Build with modern UX and reliable architecture."],
+  ["Launch", "Prepare deployment, QA, and feedback loops."],
+  ["Scale", "Stabilize systems and plan the next growth layer."],
 ];
 
 const caseStudies = [
-  ["Upbeater", "Helped shape a startup-ready product experience with fast iteration, modern UX, and scalable frontend patterns."],
-  ["Atlas HXM", "Supported enterprise workflow clarity through modular product thinking and architecture-aware execution."],
-  ["ExpenseLinx", "Contributed to multi-tenant product delivery with deployment discipline, integrations, and scalable system thinking."],
+  ["Upbeater", "Startup-ready product experience with fast iteration, modern UX, and scalable frontend patterns."],
+  ["ExpenseLinx", "Multi-tenant expense platform delivery with deployment discipline and scalable system thinking."],
+  ["Terra AI Assistant", "AI Hackathon-winning LLM platform built through product thinking, rapid execution, and practical workflow automation."],
 ];
 
 export default function WorkWithFoundersPage() {
@@ -50,11 +50,17 @@ export default function WorkWithFoundersPage() {
           </div>
         </section>
 
+        <section className="rounded-[2rem] border border-slate-200 bg-white/80 p-6 shadow-lg shadow-slate-200/50 backdrop-blur-xl">
+          <p className="text-sm font-medium text-sky-600">Why founders choose me</p>
+          <h2 className="mt-2 max-w-3xl text-3xl font-semibold tracking-tight text-slate-950">Many founders don’t need a CTO on day one.</h2>
+          <p className="mt-4 max-w-3xl text-base text-slate-600">They need someone who can help shape the product, make technical decisions, build quickly, and create a foundation that can scale. That’s where I help.</p>
+        </section>
+
         <Section title="Why founders work with me" eyebrow="Technical partner, not task taker">
           <CardGrid items={reasons} />
         </Section>
 
-        <Section title="Founder services" eyebrow="Outcomes over tooling">
+        <Section title="Where I Add Value" eyebrow="Outcomes over tooling">
           <CardGrid items={services} />
         </Section>
 
@@ -67,10 +73,10 @@ export default function WorkWithFoundersPage() {
             </div>
           </div>
           <div className="rounded-[2rem] border border-slate-200 bg-white/80 p-6 shadow-lg shadow-slate-200/50 backdrop-blur-xl">
-            <p className="text-sm font-medium text-sky-600">Founder testimonial spotlight</p>
-            <h2 className="mt-2 text-2xl font-semibold text-slate-950">Upbeater CEO / Founder recommendation</h2>
-            <p className="mt-3 text-sm text-slate-600">Reserved for an upcoming founder recommendation. This will become a primary trust signal for startup collaboration, product ownership, and execution quality.</p>
-            <div className="mt-5 rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4 text-sm text-slate-500">Founder spotlight coming soon · profile photo · company logo · highlighted quote</div>
+            <p className="text-sm font-medium text-sky-600">Founder Perspectives</p>
+            <h2 className="mt-2 text-2xl font-semibold text-slate-950">Founder recommendation coming soon.</h2>
+            <p className="mt-3 text-sm text-slate-600">Once added, this will become one of the strongest trust signals on the page—highlighting founder-level collaboration, product ownership, and startup execution.</p>
+            <div className="mt-5 rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4 text-sm text-slate-500">Featured founder card placeholder · profile photo · company logo · highlighted quote</div>
           </div>
         </section>
 
