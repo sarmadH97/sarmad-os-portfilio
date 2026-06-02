@@ -24,6 +24,7 @@ export function TopBar({ onOpenTerminal }: TopBarProps) {
         <nav className="hidden items-center gap-4 md:flex">
           <Link href="/projects" className="hover:text-slate-950">Projects</Link>
           <Link href="/experience" className="hover:text-slate-950">Experience</Link>
+          <Link href="/work-with-founders" className="hover:text-slate-950">Work With Founders</Link>
           <Link href="/founder-engineering" className="hover:text-slate-950">Founder Engineering</Link>
           <Link href="/recommendations" className="hover:text-slate-950">Recommendations</Link>
           <button onClick={onOpenTerminal} className="rounded-full border border-slate-300 px-3 py-1 text-slate-900 hover:bg-slate-100">Terminal</button>

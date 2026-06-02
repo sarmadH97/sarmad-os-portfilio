@@ -16,7 +16,7 @@ export function DesktopShell() {
             Frontend-heavy full stack engineer helping founders move from idea to production with clean architecture, modern UX, and deployment-ready systems.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
-            <Link href="/founder-engineering" className="rounded-full bg-slate-950 px-5 py-3 text-sm font-medium text-white shadow-lg shadow-slate-300/80">Work with me</Link>
+            <Link href="/work-with-founders" className="rounded-full bg-slate-950 px-5 py-3 text-sm font-medium text-white shadow-lg shadow-slate-300/80">Work with me</Link>
             <Link href="/projects" className="rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-medium text-slate-900">View projects</Link>
           </div>
         </section>
@@ -36,6 +36,16 @@ export function DesktopShell() {
             <Link href="/experience" className="hidden text-sm font-medium text-slate-600 hover:text-slate-950 md:block">See experience →</Link>
           </div>
           <AchievementsWindow />
+        </section>
+
+        <section className="rounded-[2rem] border border-slate-200/80 bg-white/75 p-6 shadow-lg shadow-slate-200/50 backdrop-blur-xl">
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p className="text-sm font-medium text-sky-600">Founder-focused delivery</p>
+              <h2 className="text-2xl font-semibold text-slate-950">From idea to launch, with product and architecture working together.</h2>
+            </div>
+            <Link href="/work-with-founders" className="rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-medium text-slate-900">Explore founder support</Link>
+          </div>
         </section>
 
         <section className="rounded-[2rem] border border-slate-200/80 bg-white/75 p-6 shadow-lg shadow-slate-200/50 backdrop-blur-xl">
