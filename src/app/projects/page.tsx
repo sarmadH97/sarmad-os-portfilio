@@ -1,0 +1,17 @@
+import { SiteShell } from "@/components/desktop/site-shell";
+import { ProjectsWindow } from "@/components/projects/projects-window";
+
+export default function ProjectsPage() {
+  return (
+    <SiteShell>
+      <section className="mx-auto max-w-6xl px-4 pb-20 pt-28">
+        <PageHeader eyebrow="Selected work" title="Projects built for scale, clarity, and real product outcomes." description="A concise view of SaaS, enterprise, fintech, and AI systems I’ve helped shape." />
+        <ProjectsWindow />
+      </section>
+    </SiteShell>
+  );
+}
+
+function PageHeader({ eyebrow, title, description }: { eyebrow: string; title: string; description: string }) {
+  return <div className="mb-8 rounded-[2rem] border border-slate-200 bg-white/80 p-8 shadow-xl shadow-slate-200/60 backdrop-blur-xl"><p className="text-sm font-medium uppercase tracking-[0.18em] text-sky-600">{eyebrow}</p><h1 className="mt-3 max-w-3xl text-4xl font-semibold tracking-tight text-slate-950">{title}</h1><p className="mt-3 max-w-2xl text-slate-600">{description}</p></div>;
+}
