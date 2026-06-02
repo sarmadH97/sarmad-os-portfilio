@@ -1,80 +1,60 @@
-"use client";
-
-import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { TerminalWindow } from "@/components/terminal/terminal-window";
-import { ProjectsWindow } from "@/components/projects/projects-window";
-import { ExperienceWindow } from "@/components/projects/experience-window";
-import { SkillsWindow } from "@/components/projects/skills-window";
-import { RecommendationsWindow } from "@/components/projects/recommendations-window";
+import Link from "next/link";
 import { AchievementsWindow } from "@/components/projects/achievements-window";
-import { FounderEngineeringWindow } from "@/components/projects/founder-engineering-window";
-import { BootSequence } from "./boot-sequence";
-import { TopBar } from "./topbar";
-import { WallpaperBackground } from "./wallpaper";
-
-const BOOT_KEY = "sarmad_os_booted";
+import { SkillsWindow } from "@/components/projects/skills-window";
+import { SiteShell } from "./site-shell";
 
 export function DesktopShell() {
-  const [showBoot, setShowBoot] = useState(true);
-  const [terminalOpen, setTerminalOpen] = useState(false);
-
-  useEffect(() => {
-    if (window.sessionStorage.getItem(BOOT_KEY) === "1") setShowBoot(false);
-  }, []);
-
   return (
-    <main className="relative min-h-screen overflow-hidden">
-      <WallpaperBackground />
-      <AnimatePresence>
-        {showBoot ? (
-          <BootSequence
-            onComplete={() => {
-              window.sessionStorage.setItem(BOOT_KEY, "1");
-              setShowBoot(false);
-            }}
-          />
-        ) : null}
-      </AnimatePresence>
+    <SiteShell>
+      <div className="mx-auto max-w-6xl space-y-8 px-4 pb-20 pt-28">
+        <section className="rounded-[2rem] border border-slate-200/80 bg-white/80 p-8 shadow-xl shadow-slate-200/60 backdrop-blur-2xl md:p-12">
+          <p className="text-sm font-medium uppercase tracking-[0.18em] text-sky-600">Sarmad Hussain · Founder Engineer</p>
+          <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-tight text-slate-950 md:text-6xl">
+            Scalable SaaS, AI workflows, and product engineering for ambitious teams.
+          </h1>
+          <p className="mt-5 max-w-2xl text-lg text-slate-600">
+            Frontend-heavy full stack engineer helping founders move from idea to production with clean architecture, modern UX, and deployment-ready systems.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <Link href="/founder-engineering" className="rounded-full bg-slate-950 px-5 py-3 text-sm font-medium text-white shadow-lg shadow-slate-300/80">Work with me</Link>
+            <Link href="/projects" className="rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-medium text-slate-900">View projects</Link>
+          </div>
+        </section>
 
-      <motion.div
-        initial={{ opacity: 0, scale: 0.99 }}
-        animate={{ opacity: showBoot ? 0 : 1, scale: showBoot ? 0.99 : 1 }}
-        transition={{ duration: 0.6, ease: [0.22, 0.61, 0.36, 1] }}
-        className="relative"
-      >
-        <TopBar onOpenTerminal={() => setTerminalOpen(true)} />
-        <div className="relative z-20 mx-auto max-w-6xl space-y-8 px-4 pb-20 pt-24">
-          <section className="rounded-3xl border border-white/10 bg-slate-900/55 p-8 backdrop-blur-2xl">
-            <p className="text-sm uppercase tracking-[0.18em] text-cyan-200">Sarmad Hussain</p>
-            <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Software Engineer building scalable SaaS platforms, AI workflows, and startup-ready systems.</h1>
-            <p className="mt-4 max-w-4xl text-slate-200">I build products the way strong founding teams operate: fast decisions, clean architecture, and measurable outcomes. My core identity is frontend-heavy full stack engineering—crafting modern React/Next.js experiences while staying close to APIs, data contracts, deployment pipelines, and system reliability. Across fintech, enterprise payroll, and startup products, I have led API modernization, shipped enterprise-scale feature sets, and integrated AI workflows into real delivery systems. I care deeply about secure coding, maintainable architecture, and mentorship-led team growth, because sustainable velocity only happens when product thinking and engineering discipline work together.</p>
-            <button onClick={() => setTerminalOpen(true)} className="mt-5 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-sm text-white hover:bg-white/20">Open Terminal Layer</button>
-          </section>
-          <section id="achievements" className="rounded-3xl border border-white/10 bg-slate-900/45 p-6 backdrop-blur-xl"><h2 className="mb-4 text-2xl text-white">Engineering Achievements</h2><AchievementsWindow /></section>
-          <section id="founder-engineering" className="rounded-3xl border border-white/10 bg-slate-900/45 p-6 backdrop-blur-xl"><h2 className="mb-2 text-2xl text-white">Founder Engineering</h2><p className="mb-4 text-sm text-slate-300">Technical partnership for founders, startups, and SaaS teams building from idea to production.</p><FounderEngineeringWindow /></section>
-          <section id="projects" className="rounded-3xl border border-white/10 bg-slate-900/45 p-6 backdrop-blur-xl"><h2 className="mb-4 text-2xl text-white">Projects</h2><ProjectsWindow /></section>
-          <section id="experience" className="rounded-3xl border border-white/10 bg-slate-900/45 p-6 backdrop-blur-xl"><h2 className="mb-4 text-2xl text-white">Experience</h2><ExperienceWindow /></section>
-          <section id="skills" className="rounded-3xl border border-white/10 bg-slate-900/45 p-6 backdrop-blur-xl"><h2 className="mb-4 text-2xl text-white">Skills</h2><SkillsWindow /></section>
-          <section id="recommendations" className="rounded-3xl border border-white/10 bg-slate-900/45 p-6 backdrop-blur-xl"><h2 className="mb-4 text-2xl text-white">Recommendations</h2><RecommendationsWindow /></section>
-        </div>
-      </motion.div>
+        <section className="grid gap-4 md:grid-cols-3">
+          <Metric value="5x" label="Techlogix Achiever of the Month" />
+          <Metric value="#1" label="Techlogix AI Hackathon winner" />
+          <Metric value="100+" label=".NET services migrated to REST APIs" />
+        </section>
 
-      <AnimatePresence>
-        {terminalOpen ? (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[80] bg-black/35 backdrop-blur-[2px] p-3 md:p-8" onClick={() => setTerminalOpen(false)}>
-            <motion.div drag dragMomentum={false} onClick={(e) => e.stopPropagation()} initial={{ opacity: 0, y: 20, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 12, scale: 0.97 }} transition={{ duration: 0.25 }} className="mx-auto mt-16 w-full max-w-4xl rounded-2xl border border-white/15 bg-slate-900/65 shadow-2xl backdrop-blur-2xl">
-              <div className="flex items-center justify-between border-b border-white/10 px-4 py-2">
-                <p className="text-sm text-slate-200">SarmadOS Terminal</p>
-                <button onClick={() => setTerminalOpen(false)} className="rounded-md px-2 py-1 text-xs text-slate-300 hover:bg-white/10">Close</button>
-              </div>
-              <div className="resize-y overflow-auto p-4" style={{ minHeight: 380, maxHeight: "75vh" }}>
-                <TerminalWindow />
-              </div>
-            </motion.div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
-    </main>
+        <section className="rounded-[2rem] border border-slate-200/80 bg-white/75 p-6 shadow-lg shadow-slate-200/50 backdrop-blur-xl">
+          <div className="mb-5 flex items-end justify-between gap-4">
+            <div>
+              <p className="text-sm font-medium text-sky-600">Proof of execution</p>
+              <h2 className="text-2xl font-semibold text-slate-950">Selected engineering wins</h2>
+            </div>
+            <Link href="/experience" className="hidden text-sm font-medium text-slate-600 hover:text-slate-950 md:block">See experience →</Link>
+          </div>
+          <AchievementsWindow />
+        </section>
+
+        <section className="rounded-[2rem] border border-slate-200/80 bg-white/75 p-6 shadow-lg shadow-slate-200/50 backdrop-blur-xl">
+          <div className="mb-5">
+            <p className="text-sm font-medium text-sky-600">Capability map</p>
+            <h2 className="text-2xl font-semibold text-slate-950">Built for SaaS velocity</h2>
+          </div>
+          <SkillsWindow />
+        </section>
+      </div>
+    </SiteShell>
+  );
+}
+
+function Metric({ value, label }: { value: string; label: string }) {
+  return (
+    <article className="rounded-3xl border border-slate-200/80 bg-white/75 p-5 shadow-lg shadow-slate-200/50 backdrop-blur-xl">
+      <p className="text-3xl font-semibold text-slate-950">{value}</p>
+      <p className="mt-2 text-sm text-slate-600">{label}</p>
+    </article>
   );
 }

@@ -1,86 +1,21 @@
 const projects = [
-  {
-    name: "Upbeater",
-    website: "https://www.upbeater.com/",
-    goal:
-      "Shape a startup-ready product experience that feels fast, clear, and conversion-focused for modern growth teams.",
-    challenge:
-      "Building a frontend architecture that could ship quickly while still staying maintainable as product scope evolved.",
-    architecture:
-      "Structured modular React/Next.js UI domains, reusable component patterns, and clean API contracts to keep velocity high.",
-    deployment:
-      "Collaborated with CI/CD workflows and cloud release cycles to keep iterations safe, frequent, and measurable.",
-    scale:
-      "Balanced startup speed with long-term scalability through architecture-first UI decisions.",
-    ai:
-      "Contributed to AI-assisted product positioning and execution workflows for smarter iteration loops.",
-  },
-  {
-    name: "Atlas HXM",
-    website: "https://www.atlashxm.com/",
-    goal:
-      "Support enterprise HR and payroll product delivery with reliable UX across high-volume operational workflows.",
-    challenge:
-      "Handling complex enterprise logic while maintaining responsiveness and user clarity at scale.",
-    architecture:
-      "Worked within modular frontend and micro-frontend influenced patterns for large cross-team systems.",
-    deployment:
-      "Aligned releases with enterprise lifecycle constraints and quality gates in collaboration with platform teams.",
-    scale:
-      "Improved workflow reliability for large user groups spanning payroll and global expansion modules.",
-    ai:
-      "Applied AI-assisted engineering practices to speed implementation and documentation quality.",
-  },
-  {
-    name: "ExpenseLinx",
-    website: "https://expertlinx.com/",
-    goal:
-      "Deliver a robust multi-tenant expense management platform with strong product usability and governance.",
-    challenge:
-      "Orchestrating frontend/backend integration while preserving tenant isolation and consistent performance.",
-    architecture:
-      "Built cohesive interfaces over REST-based service boundaries with strong data flow discipline.",
-    deployment:
-      "Hands-on collaboration with Azure DevOps pipelines, release automation, and operational reliability practices.",
-    scale:
-      "Designed with multi-tenant growth, policy complexity, and maintainable extensibility in mind.",
-    ai:
-      "Integrated AI-assisted workflow thinking for faster triage and smarter user-story execution.",
-  },
-  {
-    name: "Terra AI Assistant",
-    website: "https://tinyurl.com/0waspSeries",
-    goal:
-      "Create an intelligent developer-task assistant that centralizes knowledge and accelerates execution.",
-    challenge:
-      "Combining LLM capabilities with practical team workflows without adding tool sprawl.",
-    architecture:
-      "Designed workflow-oriented assistant patterns around task context, summarization, and action guidance.",
-    deployment:
-      "Prototype-to-delivery flow aligned with hackathon speed and production-minded engineering rigor.",
-    scale:
-      "Structured as a platform concept that can expand across teams and product functions.",
-    ai:
-      "Winner of Techlogix AI Hackathon; core experience in generative AI workflow integration.",
-  },
+  { name: "Upbeater", website: "https://www.upbeater.com/", goal: "Startup-ready growth platform UX.", architecture: "Modular Next.js UI, reusable product flows, and clean API boundaries.", impact: "Balanced fast iteration with scalable frontend foundations." },
+  { name: "Atlas HXM", website: "https://www.atlashxm.com/", goal: "Enterprise HR/payroll workflows.", architecture: "Micro-frontend exposure across complex enterprise modules.", impact: "Improved clarity and reliability for large operational workflows." },
+  { name: "ExpenseLinx", website: "https://expertlinx.com/", goal: "Multi-tenant expense management.", architecture: "REST integrations, tenant-aware flows, and Azure release collaboration.", impact: "Built for governance, scale, and maintainable product delivery." },
+  { name: "Terra AI Assistant", website: "https://tinyurl.com/0waspSeries", goal: "AI assistant for task management.", architecture: "LLM-powered workflow guidance with centralized context.", impact: "Won Techlogix AI Hackathon for practical automation value." },
 ];
 
 export function ProjectsWindow() {
   return (
     <div className="grid gap-4 md:grid-cols-2">
       {projects.map((project) => (
-        <article key={project.name} className="rounded-2xl border border-white/10 bg-white/5 p-4 transition hover:-translate-y-0.5 hover:bg-white/10">
-          <p className="text-lg font-semibold text-white">{project.name}</p>
-          <a className="text-xs text-cyan-200 hover:underline" href={project.website} target="_blank" rel="noreferrer">
-            {project.website}
-          </a>
-          <div className="mt-3 space-y-2 text-sm text-slate-200">
-            <p><span className="text-cyan-100">Product Goal:</span> {project.goal}</p>
-            <p><span className="text-cyan-100">Engineering Challenge:</span> {project.challenge}</p>
-            <p><span className="text-cyan-100">Architecture:</span> {project.architecture}</p>
-            <p><span className="text-cyan-100">Deployment:</span> {project.deployment}</p>
-            <p><span className="text-cyan-100">Scalability:</span> {project.scale}</p>
-            <p><span className="text-cyan-100">AI Integration:</span> {project.ai}</p>
+        <article key={project.name} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+          <p className="text-lg font-semibold text-slate-950">{project.name}</p>
+          <a className="text-xs text-sky-700 hover:underline" href={project.website} target="_blank" rel="noreferrer">{project.website}</a>
+          <div className="mt-4 space-y-2 text-sm text-slate-600">
+            <p><span className="font-medium text-slate-950">Goal:</span> {project.goal}</p>
+            <p><span className="font-medium text-slate-950">Architecture:</span> {project.architecture}</p>
+            <p><span className="font-medium text-slate-950">Impact:</span> {project.impact}</p>
           </div>
         </article>
       ))}

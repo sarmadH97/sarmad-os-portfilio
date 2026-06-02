@@ -1,6 +1,7 @@
 "use client";
 
 import { Activity, Wifi } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 interface TopBarProps {
@@ -17,19 +18,17 @@ export function TopBar({ onOpenTerminal }: TopBarProps) {
   }, []);
 
   return (
-    <header className="fixed left-3 right-3 top-3 z-50 rounded-2xl border border-white/10 bg-slate-900/55 px-4 py-2 backdrop-blur-2xl">
-      <div className="flex items-center justify-between text-xs text-slate-300">
-        <div className="font-medium text-slate-100">Sarmad Hussain · Engineering Portfolio</div>
+    <header className="fixed left-3 right-3 top-3 z-50 rounded-2xl border border-slate-200/80 bg-white/75 px-4 py-2 shadow-sm backdrop-blur-2xl">
+      <div className="flex items-center justify-between text-xs text-slate-600">
+        <Link href="/" className="font-semibold text-slate-950">Sarmad Hussain</Link>
         <nav className="hidden items-center gap-4 md:flex">
-          <a href="#achievements" className="hover:text-white">Achievements</a>
-          <a href="#founder-engineering" className="hover:text-white">Founder Engineering</a>
-          <a href="#projects" className="hover:text-white">Projects</a>
-          <a href="#experience" className="hover:text-white">Experience</a>
-          <a href="#skills" className="hover:text-white">Skills</a>
-          <a href="#recommendations" className="hover:text-white">Recommendations</a>
-          <button onClick={onOpenTerminal} className="rounded-md border border-white/15 px-2 py-1 hover:bg-white/10">Terminal</button>
+          <Link href="/projects" className="hover:text-slate-950">Projects</Link>
+          <Link href="/experience" className="hover:text-slate-950">Experience</Link>
+          <Link href="/founder-engineering" className="hover:text-slate-950">Founder Engineering</Link>
+          <Link href="/recommendations" className="hover:text-slate-950">Recommendations</Link>
+          <button onClick={onOpenTerminal} className="rounded-full border border-slate-300 px-3 py-1 text-slate-900 hover:bg-slate-100">Terminal</button>
         </nav>
-        <div className="flex items-center gap-3"><Activity className="hidden h-3.5 w-3.5 text-emerald-300 md:block" /><Wifi className="h-4 w-4" /><span>{time}</span></div>
+        <div className="flex items-center gap-3"><Activity className="hidden h-3.5 w-3.5 text-emerald-500 md:block" /><Wifi className="h-4 w-4" /><span>{time}</span></div>
       </div>
     </header>
   );
