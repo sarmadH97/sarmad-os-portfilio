@@ -3,11 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --background: 220 33% 98%;
-  --foreground: 222 47% 11%;
-  --border: 214 32% 91%;
-  --input: 214 32% 91%;
-  --ring: 222 84% 55%;
+  --background: 60 23% 98%;
+  --foreground: 221 39% 11%;
+  --primary: 173 97% 12%;
+  --secondary: 45 69% 85%;
+  --card: 0 0% 100%;
+  --border: 173 97% 12%;
+  --input: 173 97% 12%;
+  --ring: 173 97% 12%;
 }
 
 html {
@@ -15,11 +18,11 @@ html {
 }
 
 body {
-  @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))] antialiased;
+  @apply bg-[#FAFAF7] text-[#111827] antialiased;
 }
 
 .noise-overlay {
-  background-image: radial-gradient(rgba(15, 23, 42, 0.08) 0.5px, transparent 0.5px);
+  background-image: radial-gradient(rgba(1, 62, 55, 0.08) 0.5px, transparent 0.5px);
   background-size: 2px 2px;
   mix-blend-mode: soft-light;
 }

@@ -8,12 +8,12 @@ export function ExperienceWindow() {
   return (
     <div className="space-y-4">
       {experience.map((item) => (
-        <article key={item.company} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md">
+        <article key={item.company} className="rounded-2xl border border-[#013E37]/10 bg-white p-5 shadow-sm transition hover:shadow-md">
           <div className="flex flex-wrap items-center justify-between gap-2">
-            <p className="text-lg font-semibold text-slate-950">{item.company}</p>
-            {item.website !== "#" ? <a href={item.website} target="_blank" rel="noreferrer" className="text-xs text-sky-700 hover:underline">{item.website}</a> : null}
+            <p className="text-lg font-semibold text-[#111827]">{item.company}</p>
+            {item.website !== "#" ? <a href={item.website} target="_blank" rel="noreferrer" className="text-xs text-[#013E37] hover:underline">{item.website}</a> : null}
           </div>
-          <p className="text-sm font-medium text-sky-700">{item.role}</p>
+          <p className="text-sm font-medium text-[#013E37]">{item.role}</p>
           <p className="mt-2 text-sm text-slate-600">{item.story}</p>
           <ul className="mt-3 space-y-1 text-xs text-slate-600">{item.impact.map((bullet) => <li key={bullet}>• {bullet}</li>)}</ul>
           <p className="mt-3 text-xs text-slate-500">{item.stack}</p>

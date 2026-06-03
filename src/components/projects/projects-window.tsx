@@ -9,13 +9,13 @@ export function ProjectsWindow() {
   return (
     <div className="grid gap-4 md:grid-cols-2">
       {projects.map((project) => (
-        <article key={project.name} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
-          <p className="text-lg font-semibold text-slate-950">{project.name}</p>
-          <a className="text-xs text-sky-700 hover:underline" href={project.website} target="_blank" rel="noreferrer">{project.website}</a>
+        <article key={project.name} className="rounded-2xl border border-[#013E37]/10 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+          <p className="text-lg font-semibold text-[#111827]">{project.name}</p>
+          <a className="text-xs text-[#013E37] hover:underline" href={project.website} target="_blank" rel="noreferrer">{project.website}</a>
           <div className="mt-4 space-y-2 text-sm text-slate-600">
-            <p><span className="font-medium text-slate-950">Goal:</span> {project.goal}</p>
-            <p><span className="font-medium text-slate-950">Architecture:</span> {project.architecture}</p>
-            <p><span className="font-medium text-slate-950">Impact:</span> {project.impact}</p>
+            <p><span className="font-medium text-[#111827]">Goal:</span> {project.goal}</p>
+            <p><span className="font-medium text-[#111827]">Architecture:</span> {project.architecture}</p>
+            <p><span className="font-medium text-[#111827]">Impact:</span> {project.impact}</p>
           </div>
         </article>
       ))}

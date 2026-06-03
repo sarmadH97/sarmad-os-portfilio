@@ -18,7 +18,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#f7f8fb] text-slate-950">
+    <main className="relative min-h-screen overflow-hidden bg-[#FAFAF7] text-[#111827]">
       <WallpaperBackground />
       <AnimatePresence>
         {showBoot ? (
@@ -47,7 +47,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[80] bg-slate-950/30 p-3 backdrop-blur-sm md:p-8"
+            className="fixed inset-0 z-[80] bg-[#013E37]/30 p-3 backdrop-blur-sm md:p-8"
             onClick={() => setTerminalOpen(false)}
           >
             <motion.div
@@ -58,7 +58,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 12, scale: 0.97 }}
               transition={{ duration: 0.25 }}
-              className="mx-auto mt-16 w-full max-w-4xl rounded-2xl border border-white/15 bg-slate-950/85 shadow-2xl backdrop-blur-2xl"
+              className="mx-auto mt-16 w-full max-w-4xl rounded-2xl border border-white/15 bg-[#013E37]/85 shadow-2xl backdrop-blur-2xl"
             >
               <div className="flex items-center justify-between border-b border-white/10 px-4 py-2">
                 <p className="text-sm text-slate-200">SarmadOS Terminal</p>

@@ -13,5 +13,5 @@ export default function ProjectsPage() {
 }
 
 function PageHeader({ eyebrow, title, description }: { eyebrow: string; title: string; description: string }) {
-  return <div className="mb-8 rounded-[2rem] border border-slate-200 bg-white/80 p-8 shadow-xl shadow-slate-200/60 backdrop-blur-xl"><p className="text-sm font-medium uppercase tracking-[0.18em] text-sky-600">{eyebrow}</p><h1 className="mt-3 max-w-3xl text-4xl font-semibold tracking-tight text-slate-950">{title}</h1><p className="mt-3 max-w-2xl text-slate-600">{description}</p></div>;
+  return <div className="mb-8 rounded-[2rem] border border-[#013E37]/10 bg-white/90 p-8 shadow-xl shadow-[#013E37]/10 backdrop-blur-xl"><p className="text-sm font-medium uppercase tracking-[0.18em] text-[#013E37]">{eyebrow}</p><h1 className="mt-3 max-w-3xl text-4xl font-semibold tracking-tight text-[#111827]">{title}</h1><p className="mt-3 max-w-2xl text-slate-600">{description}</p></div>;
 }
