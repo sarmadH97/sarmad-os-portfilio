@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 60 23% 98%;
+  --foreground: 221 39% 11%;
+  --primary: 173 97% 12%;
+  --secondary: 45 69% 85%;
+  --card: 0 0% 100%;
+  --border: 173 97% 12%;
+  --input: 173 97% 12%;
+  --ring: 173 97% 12%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-[#FAFAF7] text-[#111827] antialiased;
+}
+
+.noise-overlay {
+  background-image: radial-gradient(rgba(1, 62, 55, 0.08) 0.5px, transparent 0.5px);
+  background-size: 2px 2px;
+  mix-blend-mode: soft-light;
+}
