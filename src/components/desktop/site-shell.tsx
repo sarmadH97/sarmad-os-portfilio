@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { ReactNode, useEffect, useState } from "react";
 import { TerminalWindow } from "@/components/terminal/terminal-window";
+import { CalendlyButton } from "@/components/ui/calendly-button";
 import { BootSequence } from "./boot-sequence";
 import { TopBar } from "./topbar";
 import { WallpaperBackground } from "./wallpaper";
@@ -39,6 +40,18 @@ export function SiteShell({ children }: { children: ReactNode }) {
       >
         <TopBar onOpenTerminal={() => setTerminalOpen(true)} />
         {children}
+        <section className="relative z-10 mx-auto max-w-6xl px-4 pb-20">
+          <div className="rounded-[2rem] border border-[#013E37]/10 bg-white/90 p-8 shadow-xl shadow-[#013E37]/10 backdrop-blur-xl md:p-10">
+            <p className="text-sm font-medium text-[#013E37]">Ready to turn the idea into a real product?</p>
+            <div className="mt-3 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+              <h2 className="font-heading max-w-2xl text-3xl font-semibold text-[#111827]">Let’s map the MVP, product risks, and fastest path to launch.</h2>
+              <div className="flex flex-wrap gap-3">
+                <CalendlyButton label="Book a Discovery Call" />
+                <CalendlyButton label="Discuss Your MVP" variant="secondary" />
+              </div>
+            </div>
+          </div>
+        </section>
       </motion.div>
 
       <AnimatePresence>
