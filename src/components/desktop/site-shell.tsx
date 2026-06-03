@@ -40,7 +40,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       >
         <TopBar onOpenTerminal={() => setTerminalOpen(true)} />
         {children}
-        <section className="relative z-10 mx-auto max-w-6xl px-4 pb-20">
+        <section className="relative z-10 mx-auto max-w-7xl px-4 pb-20">
           <div className="rounded-[2rem] border border-[#013E37]/10 bg-white/90 p-8 shadow-xl shadow-[#013E37]/10 backdrop-blur-xl md:p-10">
             <p className="text-sm font-medium text-[#013E37]">Ready to turn the idea into a real product?</p>
             <div className="mt-3 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">

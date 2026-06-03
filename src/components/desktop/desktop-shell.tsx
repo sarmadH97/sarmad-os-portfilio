@@ -7,14 +7,14 @@ import { SiteShell } from "./site-shell";
 export function DesktopShell() {
   return (
     <SiteShell>
-      <div className="mx-auto max-w-6xl space-y-8 px-4 pb-20 pt-28">
+      <div className="mx-auto max-w-7xl space-y-8 px-4 pb-20 pt-28">
         <section className="rounded-[2rem] border border-[#013E37]/10 bg-white/90 p-8 shadow-xl shadow-[#013E37]/10 backdrop-blur-2xl md:p-12">
           <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#013E37]">Sarmad Hussain · Founder Engineer</p>
           <h1 className="font-display mt-4 max-w-4xl text-5xl font-black uppercase text-[#111827] md:text-7xl">
-            Scalable SaaS, AI workflows, and product engineering for ambitious teams.
+            Turning startup ideas into scalable SaaS products and AI-enabled workflows.
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-slate-600">
-            Frontend-heavy full stack engineer helping founders move from idea to production with clean architecture, modern UX, and deployment-ready systems.
+            I partner with founders and product teams to shape MVPs, build polished user experiences, and create technical foundations ready for real users.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <CalendlyButton label="Book a Discovery Call" />
@@ -23,17 +23,17 @@ export function DesktopShell() {
           </div>
         </section>
 
-        <section className="grid gap-4 md:grid-cols-3">
+        <section className="grid gap-5 md:grid-cols-3">
           <Metric value="5x" label="Techlogix Achiever of the Month" />
-          <Metric value="#1" label="Techlogix AI Hackathon winner" />
-          <Metric value="100+" label=".NET services migrated to REST APIs" />
+          <Metric value="#1" label="Techlogix AI Hackathon Winner" />
+          <Metric value="10+" label="Products Built From Start to Finish" />
         </section>
 
         <section className="rounded-[2rem] border border-[#013E37]/10 bg-white/85 p-6 shadow-lg shadow-[#013E37]/10 backdrop-blur-xl">
           <div className="mb-5 flex items-end justify-between gap-4">
             <div>
-              <p className="text-sm font-medium text-[#013E37]">Proof of execution</p>
-              <h2 className="font-heading text-2xl font-semibold text-[#111827]">Selected engineering wins</h2>
+              <p className="text-sm font-medium text-[#013E37]">Product-building proof</p>
+              <h2 className="font-heading text-2xl font-semibold text-[#111827]">Selected wins from shipping real systems</h2>
             </div>
             <Link href="/experience" className="hidden text-sm font-medium text-slate-600 hover:text-[#111827] md:block">See experience →</Link>
           </div>
@@ -53,7 +53,7 @@ export function DesktopShell() {
         <section className="rounded-[2rem] border border-[#013E37]/10 bg-white/85 p-6 shadow-lg shadow-[#013E37]/10 backdrop-blur-xl">
           <div className="mb-5">
             <p className="text-sm font-medium text-[#013E37]">Capability map</p>
-            <h2 className="font-heading text-2xl font-semibold text-[#111827]">Built for SaaS velocity</h2>
+            <h2 className="font-heading text-2xl font-semibold text-[#111827]">Capabilities for building and scaling products</h2>
           </div>
           <SkillsWindow />
         </section>
@@ -64,9 +64,9 @@ export function DesktopShell() {
 
 function Metric({ value, label }: { value: string; label: string }) {
   return (
-    <article className="rounded-3xl border border-[#013E37]/10 bg-white/85 p-5 shadow-lg shadow-[#013E37]/10 backdrop-blur-xl">
-      <p className="font-display text-4xl font-black text-[#111827]">{value}</p>
-      <p className="mt-2 text-sm text-slate-600">{label}</p>
+    <article className="min-h-40 rounded-3xl border border-[#013E37]/10 bg-white/90 p-6 shadow-lg shadow-[#013E37]/10 backdrop-blur-xl transition hover:-translate-y-0.5 hover:shadow-xl">
+      <p className="font-display text-5xl font-black text-[#111827]">{value}</p>
+      <p className="mt-4 max-w-[15rem] text-sm leading-6 text-slate-600">{label}</p>
     </article>
   );
 }

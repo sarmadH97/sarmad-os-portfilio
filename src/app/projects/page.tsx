@@ -4,7 +4,7 @@ import { ProjectsWindow } from "@/components/projects/projects-window";
 export default function ProjectsPage() {
   return (
     <SiteShell>
-      <section className="mx-auto max-w-6xl px-4 pb-20 pt-28">
+      <section className="mx-auto max-w-7xl px-4 pb-20 pt-28">
         <PageHeader eyebrow="Selected work" title="Projects built for scale, clarity, and real product outcomes." description="A concise view of SaaS, enterprise, fintech, and AI systems I’ve helped shape." />
         <ProjectsWindow />
       </section>

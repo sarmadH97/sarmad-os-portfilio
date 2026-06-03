@@ -40,7 +40,7 @@ const caseStudies = [
 export default function WorkWithFoundersPage() {
   return (
     <SiteShell>
-      <div className="mx-auto max-w-6xl space-y-10 px-4 pb-20 pt-28">
+      <div className="mx-auto max-w-7xl space-y-10 px-4 pb-20 pt-28">
         <section className="rounded-[2rem] border border-[#013E37]/10 bg-white/90 p-8 shadow-xl shadow-[#013E37]/10 backdrop-blur-xl md:p-12">
           <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#013E37]">Work With Founders</p>
           <h1 className="font-display mt-4 max-w-4xl text-5xl font-black uppercase text-[#111827] md:text-7xl">Helping founders turn ideas into products.</h1>

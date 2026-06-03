@@ -1,8 +1,8 @@
 const achievements = [
   { metric: "5x", title: "Achiever of the Month", detail: "Recognized at Techlogix for consistent high-impact delivery." },
   { metric: "#1", title: "AI Hackathon Winner", detail: "Built Terra AI Assistant for practical team workflow automation." },
-  { metric: "100+", title: "Services Modernized", detail: "Led .NET-to-REST API migration for scalable integrations." },
-  { metric: "50+", title: "Frontend Features", detail: "Delivered enterprise features across payroll and expansion systems." },
+  { metric: "150+", title: "Frontend Features", detail: "Delivered enterprise frontend features across payroll, expansion, SaaS, and AI-assisted product systems." },
+  { metric: "AI", title: "AI-Assisted Product Delivery", detail: "Built and shipped product features faster using AI-assisted development, automation, and modern engineering workflows." },
   { metric: "85%", title: "Code Coverage", detail: "Raised quality bar with Jest, Enzyme, and RTL patterns." },
   { metric: "Global", title: "Payroll Systems", detail: "Built for enterprise scale, reliability, and clear UX." },
 ];
