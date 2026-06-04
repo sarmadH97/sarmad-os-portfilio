@@ -39,19 +39,18 @@ export function DesktopShell() {
     <SiteShell>
       <div className="mx-auto max-w-7xl space-y-8 px-4 pb-20 pt-28">
         <section className="relative overflow-visible rounded-[2rem] border border-[#013E37]/10 bg-white/90 p-8 shadow-xl shadow-[#013E37]/10 backdrop-blur-2xl md:p-12">
-          <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_24rem]">
-            <div className="relative z-10">
+          <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1.9fr)_minmax(20rem,0.8fr)]">
+            <div className="relative z-10 lg:pr-8">
               <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#013E37]">Sarmad Hussain · Founder Engineer</p>
-              <h1 className="font-display mt-4 max-w-5xl text-4xl font-black uppercase text-[#111827] sm:text-5xl md:text-6xl">
-                Building scalable SaaS products and AI workflows for startup teams.
+              <h1 className="font-display mt-4 max-w-6xl text-5xl font-black uppercase text-[#111827] sm:text-6xl md:text-7xl">
+                Turning startup ideas into scalable SaaS products and AI-enabled workflows.
               </h1>
-              <p className="mt-5 max-w-2xl text-lg text-slate-600">
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
                 I partner with founders and product teams to shape MVPs, build polished user experiences, and create technical foundations ready for real users.
               </p>
-              <div className="mt-7 flex flex-wrap gap-3">
+              <div className="mt-8 flex flex-wrap gap-3">
                 <CalendlyButton label="Book a Discovery Call" />
-                <CalendlyButton label="Discuss Your MVP" variant="secondary" />
-                <Link href="/projects" className="rounded-full border border-[#013E37]/20 bg-white px-5 py-3 text-sm font-medium text-[#111827]">View projects</Link>
+                <Link href="/projects" className="rounded-full border border-[#013E37]/20 bg-white px-5 py-3 text-sm font-medium text-[#111827] transition hover:bg-[#F3E7BE]/45">View Projects</Link>
               </div>
             </div>
             <HeroProfile />
