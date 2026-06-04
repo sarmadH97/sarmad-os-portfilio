@@ -13,8 +13,8 @@ export function DesktopShell() {
           <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_24rem]">
             <div className="relative z-10">
               <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#013E37]">Sarmad Hussain · Founder Engineer</p>
-              <h1 className="font-display mt-4 max-w-4xl text-5xl font-black uppercase text-[#111827] md:text-7xl">
-                Turning startup ideas into scalable SaaS products and AI-enabled workflows.
+              <h1 className="font-display mt-4 max-w-5xl text-4xl font-black uppercase text-[#111827] sm:text-5xl md:text-6xl">
+                Building scalable SaaS products and AI workflows for startup teams.
               </h1>
               <p className="mt-5 max-w-2xl text-lg text-slate-600">
                 I partner with founders and product teams to shape MVPs, build polished user experiences, and create technical foundations ready for real users.

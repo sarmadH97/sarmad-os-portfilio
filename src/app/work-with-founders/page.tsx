@@ -75,10 +75,12 @@ export default function WorkWithFoundersPage() {
             </div>
           </div>
           <div className="rounded-[2rem] border border-[#013E37]/10 bg-white/90 p-6 shadow-lg shadow-[#013E37]/10 backdrop-blur-xl">
-            <p className="text-sm font-medium text-[#013E37]">Founder Perspectives</p>
-            <h2 className="font-heading mt-2 text-2xl font-semibold text-[#111827]">Founder recommendation coming soon.</h2>
-            <p className="mt-3 text-sm text-slate-600">Once added, this will become one of the strongest trust signals on the page—highlighting founder-level collaboration, product ownership, and startup execution.</p>
-            <div className="mt-5 rounded-2xl border border-dashed border-[#013E37]/20 bg-[#F3E7BE]/35 p-4 text-sm text-slate-500">Featured founder card placeholder · profile photo · company logo · highlighted quote</div>
+            <p className="text-sm font-medium text-[#013E37]">Founder Perspective</p>
+            <div className="mt-5 rounded-[1.5rem] border border-[#013E37]/10 bg-gradient-to-br from-[#F3E7BE]/55 via-white to-white p-6 shadow-inner shadow-[#013E37]/5">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#013E37]">Reserved trust signal</p>
+              <h2 className="font-heading mt-3 text-2xl font-semibold text-[#111827]">A founder recommendation will appear here soon.</h2>
+              <p className="mt-3 text-sm leading-6 text-slate-600">This section is reserved for a recommendation from the founder of Upbeater.</p>
+            </div>
             <div className="mt-5 flex flex-wrap gap-3">
               <CalendlyButton label="Book a Discovery Call" />
               <CalendlyButton label="Let's Talk Product" variant="subtle" />

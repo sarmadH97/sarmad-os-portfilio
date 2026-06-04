@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import { Check } from "lucide-react";
 import { ReactNode, useEffect, useState } from "react";
 import { TerminalWindow } from "@/components/terminal/terminal-window";
 import { CalendlyButton } from "@/components/ui/calendly-button";
@@ -9,6 +10,15 @@ import { TopBar } from "./topbar";
 import { WallpaperBackground } from "./wallpaper";
 
 const BOOT_KEY = "sarmad_os_booted";
+
+const openTo = [
+  "Senior Software Engineer Roles",
+  "Founding Engineer Roles",
+  "Technical Leadership Opportunities",
+  "Product Engineering Teams",
+  "AI-Focused Startups",
+  "Select Founder Partnerships",
+];
 
 export function SiteShell({ children }: { children: ReactNode }) {
   const [showBoot, setShowBoot] = useState(true);
@@ -40,6 +50,19 @@ export function SiteShell({ children }: { children: ReactNode }) {
       >
         <TopBar onOpenTerminal={() => setTerminalOpen(true)} />
         {children}
+        <section className="relative z-10 mx-auto max-w-7xl px-4 pb-8">
+          <div className="rounded-[2rem] border border-[#013E37]/10 bg-white/85 p-6 shadow-lg shadow-[#013E37]/10 backdrop-blur-xl">
+            <p className="text-sm font-medium text-[#013E37]">Open To</p>
+            <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+              {openTo.map((item) => (
+                <p key={item} className="flex items-center gap-2 rounded-2xl bg-[#FAFAF7] px-3 py-2 text-sm text-slate-700">
+                  <Check className="h-4 w-4 text-[#013E37]" aria-hidden="true" />
+                  {item}
+                </p>
+              ))}
+            </div>
+          </div>
+        </section>
         <section className="relative z-10 mx-auto max-w-7xl px-4 pb-20">
           <div className="rounded-[2rem] border border-[#013E37]/10 bg-white/90 p-8 shadow-xl shadow-[#013E37]/10 backdrop-blur-xl md:p-10">
             <p className="text-sm font-medium text-[#013E37]">Ready to turn the idea into a real product?</p>
@@ -77,7 +100,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
                 <p className="text-sm text-slate-200">SarmadOS Terminal</p>
                 <button onClick={() => setTerminalOpen(false)} className="rounded-md px-2 py-1 text-xs text-slate-300 hover:bg-white/10">Close</button>
               </div>
-              <div className="resize-y overflow-auto p-4" style={{ minHeight: 380, maxHeight: "75vh" }}>
+              <div className="resize-y overflow-auto p-4" style={{ minHeight: 320, maxHeight: "75vh" }}>
                 <TerminalWindow />
               </div>
             </motion.div>
