@@ -1,10 +1,9 @@
 "use client";
 
 import { Check } from "lucide-react";
-import NextImage from "next/image";
 import { useEffect, useState } from "react";
 
-const photoSrc = "/image/246627-cutout.png";
+const photoSrc = "/api/profile-photo";
 
 const stats = ["6+ Years Experience", "10+ Products Built", "AI Hackathon Winner"];
 const availability = ["Founding Engineer Roles", "Senior Software Engineer Roles", "Startup Partnerships"];
@@ -26,13 +25,10 @@ export function HeroProfile() {
         <div className="relative min-h-[28rem] overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-[#F3E7BE]/80 via-white to-[#013E37]/10">
           <div className="absolute inset-x-6 bottom-0 h-2/3 rounded-t-full bg-[#013E37]/10 blur-2xl" aria-hidden="true" />
           {photoReady ? (
-            <NextImage
+            <img
               src={photoSrc}
               alt="Sarmad Hussain"
-              width={520}
-              height={640}
-              priority
-              className="absolute bottom-0 left-1/2 z-10 h-[27rem] w-auto max-w-none -translate-x-1/2 object-contain drop-shadow-[0_32px_44px_rgba(1,62,55,0.24)]"
+              className="absolute bottom-0 left-1/2 z-10 h-[27rem] w-auto max-w-none -translate-x-1/2 object-contain mix-blend-multiply drop-shadow-[0_32px_44px_rgba(1,62,55,0.24)]"
             />
           ) : (
             <div className="absolute inset-x-10 bottom-0 z-10 flex h-[23rem] items-center justify-center rounded-t-[8rem] bg-gradient-to-b from-[#013E37]/20 to-[#013E37]/35 text-6xl font-black text-[#013E37]/40">
