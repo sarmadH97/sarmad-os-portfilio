@@ -13,7 +13,6 @@ interface TopBarProps {
 }
 
 const navItems = [
-  { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
   { href: "/experience", label: "Experience" },
   { href: "/work-with-founders", label: "For Founders" },
@@ -31,7 +30,7 @@ export function TopBar({ onOpenTerminal }: TopBarProps) {
     return () => clearInterval(timer);
   }, []);
 
-  const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
+  const isActive = (href: string) => pathname.startsWith(href);
 
   return (
     <header className="fixed left-3 right-3 top-3 z-50 rounded-2xl border border-[#013E37]/10 bg-white/85 px-3 py-2 shadow-sm backdrop-blur-2xl md:px-4">
@@ -54,8 +53,8 @@ export function TopBar({ onOpenTerminal }: TopBarProps) {
               key={item.href}
               href={item.href}
               className={cn(
-                "rounded-full px-3 py-1 transition hover:bg-[#F3E7BE]/45 hover:text-[#111827]",
-                isActive(item.href) && "bg-[#013E37] text-white hover:bg-[#013E37] hover:text-white",
+                "relative rounded-full px-3 py-1 transition hover:bg-[#F3E7BE]/35 hover:text-[#111827]",
+                isActive(item.href) && "bg-[#F3E7BE]/30 text-[#013E37] after:absolute after:inset-x-3 after:-bottom-0.5 after:h-px after:bg-[#013E37]/60",
               )}
             >
               {item.label}
@@ -79,8 +78,8 @@ export function TopBar({ onOpenTerminal }: TopBarProps) {
             key={item.href}
             href={item.href}
             className={cn(
-              "shrink-0 rounded-full border border-[#013E37]/10 px-3 py-1 transition hover:bg-[#F3E7BE]/45",
-              isActive(item.href) && "border-[#013E37] bg-[#013E37] text-white",
+              "relative shrink-0 rounded-full border border-[#013E37]/10 px-3 py-1 transition hover:bg-[#F3E7BE]/35 hover:text-[#111827]",
+              isActive(item.href) && "border-[#013E37]/20 bg-[#F3E7BE]/30 text-[#013E37] after:absolute after:inset-x-3 after:-bottom-0.5 after:h-px after:bg-[#013E37]/60",
             )}
           >
             {item.label}
