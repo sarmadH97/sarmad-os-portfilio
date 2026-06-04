@@ -2,6 +2,7 @@
 
 import { Check, FileText, Github, Linkedin } from "lucide-react";
 import { useEffect, useState } from "react";
+import { GITHUB_URL, LINKEDIN_URL, RESUME_URL } from "@/lib/links";
 
 const photoSrc = "/api/profile-photo";
 
@@ -9,9 +10,9 @@ const stats = ["6+ Years Experience", "10+ Products Built"];
 const availability = ["Founding Engineer Roles", "Senior Software Engineer Roles", "Startup Partnerships"];
 
 const socials = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/sarmad-hussainz/", icon: Linkedin },
-  { label: "GitHub", href: "https://github.com/sarmadH97", icon: Github },
-  { label: "Resume", href: "mailto:sarmadhusssain@gmail.com?subject=Resume request", icon: FileText },
+  { label: "LinkedIn", href: LINKEDIN_URL, icon: Linkedin },
+  { label: "GitHub", href: GITHUB_URL, icon: Github },
+  { label: "Resume", href: RESUME_URL, icon: FileText },
 ];
 
 export function HeroProfile() {
@@ -63,8 +64,8 @@ export function HeroProfile() {
               <a
                 key={label}
                 href={href}
-                target={href.startsWith("http") ? "_blank" : undefined}
-                rel={href.startsWith("http") ? "noreferrer" : undefined}
+                target="_blank"
+                rel="noreferrer"
                 className="inline-flex items-center justify-center gap-1.5 rounded-full border border-[#013E37]/10 bg-white px-2 py-2 transition hover:bg-[#F3E7BE]/45"
               >
                 <Icon className="h-3.5 w-3.5" aria-hidden="true" />

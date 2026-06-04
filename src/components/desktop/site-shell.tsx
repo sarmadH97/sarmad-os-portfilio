@@ -5,6 +5,7 @@ import { Check } from "lucide-react";
 import { ReactNode, useEffect, useState } from "react";
 import { TerminalWindow } from "@/components/terminal/terminal-window";
 import { CalendlyButton } from "@/components/ui/calendly-button";
+import { RESUME_URL } from "@/lib/links";
 import { BootSequence } from "./boot-sequence";
 import { TopBar } from "./topbar";
 import { WallpaperBackground } from "./wallpaper";
@@ -12,11 +13,11 @@ import { WallpaperBackground } from "./wallpaper";
 const BOOT_KEY = "sarmad_os_booted";
 
 const openTo = [
-  "Senior Software Engineer Roles",
   "Founding Engineer Roles",
-  "Technical Leadership Opportunities",
+  "Senior Software Engineer Roles",
   "Product Engineering Teams",
   "AI-Focused Startups",
+  "Technical Leadership Opportunities",
   "Select Founder Partnerships",
 ];
 
@@ -70,6 +71,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
               <h2 className="font-heading max-w-2xl text-3xl font-semibold text-[#111827]">Let’s map the MVP, product risks, and fastest path to launch.</h2>
               <div className="flex flex-wrap gap-3">
                 <CalendlyButton label="Book a Discovery Call" />
+                <a href={RESUME_URL} target="_blank" rel="noreferrer" className="rounded-full border border-[#013E37]/20 bg-white px-5 py-3 text-sm font-medium text-[#111827] transition hover:bg-[#F3E7BE]/45">Download Resume</a>
                 <CalendlyButton label="Discuss Your MVP" variant="secondary" />
               </div>
             </div>

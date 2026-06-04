@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { CalendlyButton } from "@/components/ui/calendly-button";
+import { RESUME_URL } from "@/lib/links";
 import { cn } from "@/lib/utils";
 
 interface TopBarProps {
@@ -60,8 +61,8 @@ export function TopBar({ onOpenTerminal }: TopBarProps) {
               {item.label}
             </Link>
           ))}
+          <a href={RESUME_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full border border-[#013E37]/20 px-3 py-1 text-[#111827] transition hover:bg-[#F3E7BE]/45"><FileText className="h-3.5 w-3.5" aria-hidden="true" />Resume ↗</a>
           <button onClick={onOpenTerminal} className="rounded-full border border-[#013E37]/20 px-3 py-1 text-[#111827] transition hover:bg-[#F3E7BE]/45">Terminal</button>
-          <a href="mailto:sarmadhusssain@gmail.com?subject=Resume request" className="inline-flex items-center gap-1 rounded-full border border-[#013E37]/20 px-3 py-1 text-[#111827] transition hover:bg-[#F3E7BE]/45"><FileText className="h-3.5 w-3.5" aria-hidden="true" />Resume</a>
           <CalendlyButton label="Book a Call" className="px-3 py-1 text-xs" />
         </nav>
 
@@ -85,8 +86,8 @@ export function TopBar({ onOpenTerminal }: TopBarProps) {
             {item.label}
           </Link>
         ))}
+        <a href={RESUME_URL} target="_blank" rel="noreferrer" className="inline-flex shrink-0 items-center gap-1 rounded-full border border-[#013E37]/20 px-3 py-1 text-[#111827] hover:bg-[#F3E7BE]/45"><FileText className="h-3.5 w-3.5" aria-hidden="true" />Resume ↗</a>
         <button onClick={onOpenTerminal} className="shrink-0 rounded-full border border-[#013E37]/20 px-3 py-1 text-[#111827] hover:bg-[#F3E7BE]/45">Terminal</button>
-        <a href="mailto:sarmadhusssain@gmail.com?subject=Resume request" className="inline-flex shrink-0 items-center gap-1 rounded-full border border-[#013E37]/20 px-3 py-1 text-[#111827] hover:bg-[#F3E7BE]/45"><FileText className="h-3.5 w-3.5" aria-hidden="true" />Resume</a>
         <CalendlyButton label="Book a Call" className="shrink-0 px-3 py-1 text-xs" />
       </nav>
     </header>
