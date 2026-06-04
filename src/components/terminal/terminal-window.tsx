@@ -14,11 +14,16 @@ const welcomeLines = [
 ];
 
 const funFacts = [
-  "5x Achiever of the Month at Techlogix.",
-  "Winner of the Techlogix AI Hackathon.",
-  "Built Terra, an AI assistant for task management and development workflows.",
-  "Has worked on fintech, payroll, SaaS, AI workflows, and deployment-heavy systems.",
-  "Enjoys building products, not just features.",
+  "Built a custom gaming PC.",
+  "Enjoys PC hardware, upgrades, and performance tuning.",
+  "Plays FIFA when it is time to switch off from product work.",
+  "Enjoys story-driven games with strong worldbuilding.",
+  "Watches movies and TV shows to recharge creatively.",
+  "Loves building products from scratch, not just isolated features.",
+  "Enjoys experimenting with AI tools and workflow automation.",
+  "Has experience teaching and mentoring developers.",
+  "Uses AI daily for product development and engineering workflows.",
+  "Won a company AI hackathon by building a practical assistant for team workflows.",
 ];
 
 const quizQuestions = [
@@ -41,18 +46,68 @@ const quizQuestions = [
 
 const commands: Record<string, string> = {
   help: "Commands: whoami, skills, projects, experience, founder, funfact, quiz, favorites, clear, help",
-  whoami:
-    "I’m Sarmad Hussain — a founder engineer and product-minded builder. I help teams move from rough idea to usable software by shaping product direction, making pragmatic architecture decisions, and shipping clean full-stack systems. My work sits at the intersection of frontend-heavy product engineering, AI workflows, fintech/enterprise systems, and deployment-ready SaaS foundations. I care about building products that users can trust, founders can demo, and teams can scale.",
+  whoami: [
+    "Sarmad Hussain",
+    "",
+    "Role:",
+    "• Senior Product Engineer",
+    "• Founder Engineer",
+    "",
+    "Experience:",
+    "• 6+ years building production software",
+    "• Enterprise and startup experience",
+    "• Fintech, payroll, SaaS, AI, and enterprise systems",
+    "",
+    "Achievements:",
+    "• 5x Techlogix Achiever of the Month",
+    "• Winner of Techlogix AI Hackathon",
+    "• 10+ products built from start to finish",
+    "",
+    "Specializations:",
+    "• React",
+    "• Next.js",
+    "• TypeScript",
+    "• Product Engineering",
+    "• AI Workflows",
+    "• Cloud & DevOps",
+    "",
+    "Current Focus:",
+    "• Upbeater",
+    "• AI-assisted engineering workflows",
+    "• Founder-focused SaaS products",
+  ].join("\n"),
   skills:
-    "Capabilities: product-minded frontend engineering, MVP architecture, API integration, AI workflow design, secure delivery, Azure/AWS deployment, and pragmatic technical leadership.",
+    "Capabilities:\n• Product-minded frontend engineering\n• MVP architecture\n• API integration\n• AI workflow design\n• Secure delivery\n• Azure/AWS deployment\n• Pragmatic technical leadership",
   projects:
-    "Founder-relevant projects: Upbeater, ExpenseLinx, and Terra AI Assistant. Also shipped enterprise-scale work across Atlas HXM-style payroll and expansion systems.",
+    "Projects:\n• Upbeater — AI-native startup platform\n• ExpenseLinx — expense management workflows\n• Terra AI Assistant — hackathon-winning workflow assistant\n• Atlas HXM / payroll systems — enterprise-scale workforce products",
   experience:
-    "Experience: Techlogix, Technexia, and Pixcile — spanning SaaS, fintech, payroll, AI workflows, REST API modernization, testing, and deployment-heavy delivery.",
+    "Experience:\n• Techlogix — AI, fintech, banking, payroll, and enterprise systems\n• Technexia — APIs, SQL Server, Azure delivery\n• Pixcile — early full-stack product foundations",
   founder:
-    "I help founders validate product direction, define MVP scope, choose sensible architecture, integrate AI where it creates leverage, and launch production-ready systems without overengineering the first version.",
-  favorites:
-    "Favorites:\n- Work: turning rough product ideas into usable systems\n- Stack: React, Next.js, TypeScript, Tailwind, .NET, Azure\n- Product type: SaaS, AI tools, founder-led products\n- Engineering style: clean architecture, fast iteration, practical decisions\n- Food: Qorma — a rich Pakistani curry made with meat, yogurt, spices, and slow-cooked gravy",
+    "Founder support:\n• Validate product direction\n• Define MVP scope\n• Choose sensible architecture\n• Integrate AI where it creates leverage\n• Launch production-ready systems without overengineering",
+  favorites: [
+    "Favorites",
+    "",
+    "Favorite Work:",
+    "• Turning startup ideas into real products.",
+    "",
+    "Favorite Stack:",
+    "• React",
+    "• Next.js",
+    "• TypeScript",
+    "• .NET",
+    "",
+    "Favorite Games:",
+    "• FIFA",
+    "",
+    "Favorite Activities:",
+    "• Building PCs",
+    "• Watching movies",
+    "• Exploring new technology",
+    "",
+    "Favorite Product Type:",
+    "• SaaS",
+    "• AI products",
+  ].join("\n"),
 };
 
 export function TerminalWindow() {
