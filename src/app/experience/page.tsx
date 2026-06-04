@@ -4,7 +4,7 @@ import { AchievementsWindow } from "@/components/projects/achievements-window";
 import { ExperienceWindow } from "@/components/projects/experience-window";
 import { SkillsWindow } from "@/components/projects/skills-window";
 
-const industries = ["Banking", "Fintech", "Payroll", "HR Tech", "SaaS", "AI Products", "Enterprise Software"];
+const industries = ["Banking", "Currency Exchange", "Payroll", "HR Tech", "Enterprise Software", "SaaS", "AI Products"];
 
 export default function ExperiencePage() {
   return (
