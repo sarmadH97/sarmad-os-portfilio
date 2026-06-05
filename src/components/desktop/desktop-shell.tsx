@@ -50,10 +50,10 @@ export function DesktopShell() {
   return (
     <SiteShell>
       <div className="mx-auto max-w-7xl space-y-8 px-4 pb-20 pt-20">
-        <section className="relative overflow-visible rounded-[2rem] border border-[#013E37]/10 bg-white/90 p-4 shadow-xl shadow-[#013E37]/10 backdrop-blur-2xl md:p-5">
+        <section className="relative overflow-visible rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-4 shadow-xl shadow-[#D4A373]/10 backdrop-blur-2xl md:p-5">
           <div className="grid items-center gap-5 lg:grid-cols-[minmax(0,2.15fr)_minmax(16rem,0.7fr)]">
             <div className="relative z-10 lg:pr-8">
-              <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#013E37]">Sarmad Hussain · Senior Software Engineer | Product Engineer</p>
+              <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8A5A2B]">Sarmad Hussain · Senior Software Engineer | Product Engineer</p>
               <h1 className="font-display mt-2 max-w-4xl text-4xl font-black uppercase leading-[1] text-[#111827] sm:text-[2.8rem] md:text-5xl lg:text-[3.25rem]">
                 Turning product ideas into scalable software and AI-enabled workflows.
               </h1>
@@ -62,7 +62,7 @@ export function DesktopShell() {
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
                 <CalendlyButton label="Book a Discovery Call" />
-                <Link href="/projects" className="rounded-full border border-[#013E37]/20 bg-white px-5 py-3 text-sm font-medium text-[#111827] transition hover:bg-[#F3E7BE]/45">View Projects</Link>
+                <Link href="/projects" className="rounded-full border border-[#D4A373]/20 bg-[#FEFAE0] px-5 py-3 text-sm font-medium text-[#111827] transition hover:bg-[#FAEDCD]/45">View Projects</Link>
               </div>
             </div>
             <HeroProfile />
@@ -75,12 +75,12 @@ export function DesktopShell() {
           <Metric value="10+" label="Products Built From Start to Finish" />
         </section>
 
-        <section className="rounded-[2rem] border border-[#013E37]/10 bg-white/85 p-6 shadow-lg shadow-[#013E37]/10 backdrop-blur-xl">
+        <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/75 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl">
           <p className="font-heading text-2xl font-semibold text-[#111827]">Enterprise Experience. Startup Execution.</p>
           <div className="mt-4 grid gap-2 md:grid-cols-5">
             {trustSignals.map((signal) => (
-              <p key={signal} className="flex items-center gap-2 rounded-2xl border border-[#013E37]/10 bg-[#F3E7BE]/35 px-3 py-3 text-sm font-medium text-slate-700">
-                <Check className="h-4 w-4 shrink-0 text-[#013E37]" aria-hidden="true" />
+              <p key={signal} className="flex items-center gap-2 rounded-2xl border border-[#D4A373]/10 bg-[#FAEDCD]/35 px-3 py-3 text-sm font-medium text-slate-700">
+                <Check className="h-4 w-4 shrink-0 text-[#8A5A2B]" aria-hidden="true" />
                 {signal}
               </p>
             ))}
@@ -89,17 +89,17 @@ export function DesktopShell() {
 
         <IndustriesSection compact />
 
-        <section className="rounded-[2rem] border border-[#013E37]/10 bg-white/90 p-6 shadow-xl shadow-[#013E37]/10 backdrop-blur-xl md:p-8">
+        <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-6 shadow-xl shadow-[#D4A373]/10 backdrop-blur-xl md:p-8">
           <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
             <div>
-              <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#013E37]">Featured case study</p>
+              <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8A5A2B]">Featured case study</p>
               <h2 className="font-heading mt-3 text-3xl font-semibold text-[#111827]">Upbeater</h2>
-              <p className="mt-2 text-lg text-[#013E37]">AI-native SaaS platform built from scratch</p>
+              <p className="mt-2 text-lg text-[#8A5A2B]">AI-native SaaS platform built from scratch</p>
               <div className="mt-4 space-y-2 text-base leading-7 text-slate-600">
                 <p><span className="font-semibold text-[#111827]">Role:</span> Founding Engineer</p>
                 <p><span className="font-semibold text-[#111827]">Stack:</span> React · .NET · AI Integrations · Workflow Automation</p>
               </div>
-              <a href="https://www.upbeater.com/" target="_blank" rel="noreferrer" className="mt-5 inline-flex rounded-full border border-[#013E37]/20 bg-white px-4 py-2 text-sm font-medium text-[#111827] transition hover:bg-[#F3E7BE]/45">Visit Upbeater ↗</a>
+              <a href="https://www.upbeater.com/" target="_blank" rel="noreferrer" className="mt-5 inline-flex rounded-full border border-[#D4A373]/20 bg-[#FEFAE0] px-4 py-2 text-sm font-medium text-[#111827] transition hover:bg-[#FAEDCD]/45">Visit Upbeater ↗</a>
             </div>
             <div className="space-y-5">
               <div className="grid gap-3 sm:grid-cols-2">
@@ -113,8 +113,8 @@ export function DesktopShell() {
               </p>
               <div className="grid gap-2 sm:grid-cols-2">
                 {upbeaterContributions.map((item) => (
-                  <p key={item} className="flex items-center gap-2 rounded-2xl bg-[#FAFAF7] px-3 py-2 text-[15px] leading-6 text-slate-700">
-                    <Check className="h-4 w-4 text-[#013E37]" aria-hidden="true" />
+                  <p key={item} className="flex items-center gap-2 rounded-2xl bg-[#FEFAE0] px-3 py-2 text-[15px] leading-6 text-slate-700">
+                    <Check className="h-4 w-4 text-[#8A5A2B]" aria-hidden="true" />
                     {item}
                   </p>
                 ))}
@@ -123,24 +123,24 @@ export function DesktopShell() {
           </div>
         </section>
 
-        <section className="rounded-[2rem] border border-[#013E37]/10 bg-white/85 p-6 shadow-lg shadow-[#013E37]/10 backdrop-blur-xl">
-          <p className="text-sm font-medium text-[#013E37]">Why Founders Work With Me</p>
+        <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/75 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl">
+          <p className="text-sm font-medium text-[#8A5A2B]">Why Founders Work With Me</p>
           <h2 className="font-heading mt-2 text-2xl font-semibold text-[#111827]">Enterprise engineering experience. Startup execution. AI-powered product development.</h2>
           <p className="mt-3 max-w-3xl text-base leading-7 text-slate-600">I help founders and product teams move from ideas and requirements to production-ready systems without unnecessary complexity. My focus is shipping practical solutions that create business value.</p>
         </section>
 
-        <section className="rounded-[2rem] border border-[#013E37]/10 bg-white/85 p-6 shadow-lg shadow-[#013E37]/10 backdrop-blur-xl">
+        <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/75 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl">
           <div className="mb-5 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="text-sm font-medium text-[#013E37]">Products I've Helped Build</p>
+              <p className="text-sm font-medium text-[#8A5A2B]">Products I've Helped Build</p>
               <h2 className="font-heading text-2xl font-semibold text-[#111827]">Startup, enterprise, and business platforms.</h2>
             </div>
             <a href={RESUME_URL} target="_blank" rel="noreferrer" className="text-sm font-medium text-slate-600 hover:text-[#111827]">Download Resume ↗</a>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {productGroups.map((group) => (
-              <article key={group.category} className="rounded-2xl border border-[#013E37]/10 bg-white p-5 shadow-sm">
-                <p className="text-sm font-semibold text-[#013E37]">{group.category}</p>
+              <article key={group.category} className="rounded-2xl border border-[#D4A373]/10 bg-[#FAEDCD]/70 p-5 shadow-sm">
+                <p className="text-sm font-semibold text-[#8A5A2B]">{group.category}</p>
                 <div className="mt-4 space-y-4">
                   {group.products.map(([name, detail]) => (
                     <div key={name}>
@@ -154,10 +154,10 @@ export function DesktopShell() {
           </div>
         </section>
 
-        <section className="rounded-[2rem] border border-[#013E37]/10 bg-white/85 p-6 shadow-lg shadow-[#013E37]/10 backdrop-blur-xl">
+        <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/75 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl">
           <div className="mb-5 flex items-end justify-between gap-4">
             <div>
-              <p className="text-sm font-medium text-[#013E37]">Product-building proof</p>
+              <p className="text-sm font-medium text-[#8A5A2B]">Product-building proof</p>
               <h2 className="font-heading text-2xl font-semibold text-[#111827]">Selected wins from shipping real systems</h2>
             </div>
             <Link href="/experience" className="hidden text-sm font-medium text-slate-600 hover:text-[#111827] md:block">See experience →</Link>
@@ -165,19 +165,19 @@ export function DesktopShell() {
           <AchievementsWindow />
         </section>
 
-        <section className="rounded-[2rem] border border-[#013E37]/10 bg-white/85 p-6 shadow-lg shadow-[#013E37]/10 backdrop-blur-xl">
+        <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/75 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
-              <p className="text-sm font-medium text-[#013E37]">Founder-focused delivery</p>
+              <p className="text-sm font-medium text-[#8A5A2B]">Founder-focused delivery</p>
               <h2 className="font-heading text-2xl font-semibold text-[#111827]">From idea to launch, with product and architecture working together.</h2>
             </div>
             <CalendlyButton label="Let's Talk Product" variant="secondary" />
           </div>
         </section>
 
-        <section className="rounded-[2rem] border border-[#013E37]/10 bg-white/85 p-6 shadow-lg shadow-[#013E37]/10 backdrop-blur-xl">
+        <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/75 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl">
           <div className="mb-5">
-            <p className="text-sm font-medium text-[#013E37]">Capability map</p>
+            <p className="text-sm font-medium text-[#8A5A2B]">Capability map</p>
             <h2 className="font-heading text-2xl font-semibold text-[#111827]">Capabilities for building and scaling products</h2>
           </div>
           <SkillsWindow />
@@ -189,8 +189,8 @@ export function DesktopShell() {
 
 function ImpactMetric({ value, label }: { value: string; label: string }) {
   return (
-    <article className="rounded-2xl border border-[#013E37]/10 bg-[#FAFAF7] p-4 shadow-sm">
-      <p className="font-display text-3xl font-black text-[#013E37]">{value}</p>
+    <article className="rounded-2xl border border-[#D4A373]/10 bg-[#FEFAE0] p-4 shadow-sm">
+      <p className="font-display text-3xl font-black text-[#8A5A2B]">{value}</p>
       <p className="mt-2 text-base leading-7 text-slate-600">{label}</p>
     </article>
   );
@@ -198,7 +198,7 @@ function ImpactMetric({ value, label }: { value: string; label: string }) {
 
 function Metric({ value, label }: { value: string; label: string }) {
   return (
-    <article className="min-h-40 rounded-3xl border border-[#013E37]/10 bg-white/90 p-6 shadow-lg shadow-[#013E37]/10 backdrop-blur-xl transition hover:-translate-y-0.5 hover:shadow-xl">
+    <article className="min-h-40 rounded-3xl border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition hover:-translate-y-0.5 hover:shadow-xl">
       <p className="font-display text-5xl font-black text-[#111827]">{value}</p>
       <p className="mt-4 max-w-[15rem] text-base leading-7 text-slate-600">{label}</p>
     </article>
