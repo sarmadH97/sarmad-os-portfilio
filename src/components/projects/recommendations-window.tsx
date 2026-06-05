@@ -10,9 +10,9 @@ export function RecommendationsWindow() {
   return (
     <div className="grid gap-3 md:grid-cols-2">
       {recommendations.map((recommendation) => (
-        <article key={recommendation.name} className="rounded-2xl border border-[#013E37]/10 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+        <article key={recommendation.name} className="rounded-2xl border border-[#D4A373]/10 bg-[#FAEDCD]/70 p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
           <div className="mb-3 flex items-center gap-3">
-            <div className="h-10 w-10 rounded-full bg-gradient-to-br from-[#F3E7BE] to-[#013E37]/25" />
+            <div className="h-10 w-10 rounded-full bg-gradient-to-br from-[#FAEDCD] to-[#D4A373]/25" />
             <div>
               <p className="text-sm font-semibold text-[#111827]">{recommendation.name}</p>
               <p className="text-sm text-slate-500">{recommendation.role}</p>
@@ -20,7 +20,7 @@ export function RecommendationsWindow() {
             </div>
           </div>
           <p className="text-base leading-7 text-slate-600">“{recommendation.excerpt}”</p>
-          <p className="mt-3 text-xs text-[#013E37]">{recommendation.theme}</p>
+          <p className="mt-3 text-xs text-[#8A5A2B]">{recommendation.theme}</p>
           <a href={recommendation.link} target="_blank" rel="noreferrer" className="mt-4 inline-block text-xs font-medium text-[#111827] hover:underline">View on LinkedIn ↗</a>
         </article>
       ))}

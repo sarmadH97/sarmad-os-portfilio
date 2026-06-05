@@ -95,23 +95,23 @@ const experience: ExperienceItem[] = [
 
 function DomainSectionCard({ section }: { section: DomainSection }) {
   return (
-    <section className="mt-4 rounded-2xl border border-[#013E37]/10 bg-[#F3E7BE]/25 p-4">
+    <section className="mt-4 rounded-2xl border border-[#D4A373]/10 bg-[#FAEDCD]/25 p-4">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <p className="text-sm font-semibold text-[#111827]">{section.title}</p>
-          {section.subtitle ? <p className="mt-1 text-xs font-medium uppercase tracking-[0.14em] text-[#013E37]">{section.subtitle}</p> : null}
+          {section.subtitle ? <p className="mt-1 text-xs font-medium uppercase tracking-[0.14em] text-[#8A5A2B]">{section.subtitle}</p> : null}
         </div>
-        {section.website ? <a href={section.website} target="_blank" rel="noreferrer" className="text-xs font-medium text-[#013E37] hover:underline">Website ↗</a> : null}
+        {section.website ? <a href={section.website} target="_blank" rel="noreferrer" className="text-xs font-medium text-[#8A5A2B] hover:underline">Website ↗</a> : null}
       </div>
       <p className="mt-2 text-base leading-7 text-slate-600">{section.summary}</p>
       {section.stack ? <p className="mt-3 text-sm text-slate-500"><span className="font-semibold text-[#111827]">Stack:</span> {section.stack.join(" · ")}</p> : null}
       <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
         {section.focus.map((focus) => (
-          <p key={focus} className="rounded-full bg-white px-3 py-2 text-xs font-medium text-[#013E37]">✓ {focus}</p>
+          <p key={focus} className="rounded-full bg-[#FEFAE0] px-3 py-2 text-xs font-medium text-[#8A5A2B]">✓ {focus}</p>
         ))}
       </div>
       {section.note ? <p className="mt-3 text-base leading-7 text-slate-600">{section.note}</p> : null}
-      {section.achievement ? <p className="mt-3 inline-flex rounded-full bg-white px-3 py-2 text-xs font-semibold text-[#013E37]">{section.achievement}</p> : null}
+      {section.achievement ? <p className="mt-3 inline-flex rounded-full bg-[#FEFAE0] px-3 py-2 text-xs font-semibold text-[#8A5A2B]">{section.achievement}</p> : null}
     </section>
   );
 }
@@ -127,19 +127,19 @@ function DomainSectionGrid({ sections }: { sections: DomainSection[] }) {
 export function ExperienceWindow() {
   return (
     <div className="space-y-4">
-      <section className="rounded-2xl border border-[#013E37]/10 bg-white p-5 shadow-sm">
-        <p className="text-sm font-medium text-[#013E37]">Startup Experience</p>
+      <section className="rounded-2xl border border-[#D4A373]/10 bg-[#FAEDCD]/70 p-5 shadow-sm">
+        <p className="text-sm font-medium text-[#8A5A2B]">Startup Experience</p>
         <h2 className="font-heading mt-2 text-2xl font-semibold text-[#111827]">Early-stage product execution backed by enterprise discipline.</h2>
         <DomainSectionGrid sections={startupDomains} />
       </section>
 
       {experience.map((item) => (
-        <article key={item.company} className="rounded-2xl border border-[#013E37]/10 bg-white p-5 shadow-sm transition hover:shadow-md">
+        <article key={item.company} className="rounded-2xl border border-[#D4A373]/10 bg-[#FAEDCD]/70 p-5 shadow-sm transition hover:shadow-md">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <p className="text-lg font-semibold text-[#111827]">{item.company}</p>
-            {item.website !== "#" ? <a href={item.website} target="_blank" rel="noreferrer" className="text-xs text-[#013E37] hover:underline">{item.website}</a> : null}
+            {item.website !== "#" ? <a href={item.website} target="_blank" rel="noreferrer" className="text-xs text-[#8A5A2B] hover:underline">{item.website}</a> : null}
           </div>
-          <p className="text-sm font-medium text-[#013E37]">{item.role}</p>
+          <p className="text-sm font-medium text-[#8A5A2B]">{item.role}</p>
           <p className="mt-2 text-base leading-7 text-slate-600">{item.story}</p>
           <ul className="mt-3 space-y-1 text-sm leading-6 text-slate-600">{item.impact.map((bullet) => <li key={bullet}>• {bullet}</li>)}</ul>
 

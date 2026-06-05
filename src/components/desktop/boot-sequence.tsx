@@ -46,7 +46,7 @@ export function BootSequence({ onComplete }: BootSequenceProps) {
       aria-live="polite"
       aria-label="System boot sequence"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.12),transparent_45%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,163,115,0.16),transparent_45%)]" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,transparent_35%,rgba(0,0,0,0.7)_100%)]" />
 
       <div className="relative flex w-full max-w-xl flex-col items-center px-6 text-center">
@@ -67,7 +67,7 @@ export function BootSequence({ onComplete }: BootSequenceProps) {
           {[0, 1, 2].map((dot) => (
             <motion.span
               key={dot}
-              className="h-1.5 w-1.5 rounded-full bg-[#F3E7BE]/80"
+              className="h-1.5 w-1.5 rounded-full bg-[#FAEDCD]/80"
               animate={{ opacity: [0.35, 1, 0.35], scale: [0.9, 1.08, 0.9] }}
               transition={{ duration: 0.7, repeat: Infinity, delay: dot * 0.12, ease: "easeInOut" }}
             />
