@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CalendlyButton } from "@/components/ui/calendly-button";
 import { AchievementsWindow } from "@/components/projects/achievements-window";
 import { SkillsWindow } from "@/components/projects/skills-window";
+import { IndustriesSection } from "@/components/projects/industries-section";
 import { SiteShell } from "./site-shell";
 import { RESUME_URL } from "@/lib/links";
 import { HeroProfile } from "./hero-profile";
@@ -19,19 +20,31 @@ const upbeaterContributions = [
 const productGroups = [
   {
     category: "Startup Products",
-    products: [["Upbeater", "AI-native platform for content, marketing, and sales workflows."]],
+    products: [["Upbeater", "AI-native startup SaaS product built from early-stage product direction to execution."]],
   },
   {
     category: "Enterprise Products",
     products: [
-      ["Atlas HXM", "Enterprise HR and workforce management platform."],
-      ["Global Payroll Platform", "Large-scale payroll and workforce operations systems."],
+      ["Global Net Banking Platform", "Customer-facing digital banking systems for a leading financial institution in Pakistan."],
+      ["Atlas HXM", "Enterprise payroll and workforce management platform serving complex HR operations."],
+      ["Procurement Sciences", "AI-powered government procurement workflows for contract discovery and automation."],
     ],
   },
   {
-    category: "Business Platforms",
-    products: [["ExpenseLinx", "Expense management and operational workflow platform."]],
+    category: "Financial & Business Platforms",
+    products: [
+      ["Al Fardan Exchange", "Financial services workflows supporting currency exchange operations across the Middle East."],
+      ["ExpenseLinx", "Expense management and operational workflow platform."],
+    ],
   },
+];
+
+const trustSignals = [
+  "Global Net Banking Platform",
+  "Atlas HXM Payroll Platform",
+  "Procurement Sciences AI Platform",
+  "Al Fardan Exchange",
+  "Upbeater Founding Engineer",
 ];
 
 export function DesktopShell() {
@@ -46,7 +59,7 @@ export function DesktopShell() {
                 Turning startup ideas into scalable SaaS products and AI-enabled workflows.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-                I partner with founders and product teams to shape MVPs, build polished user experiences, and create technical foundations ready for real users.
+                From global banking and payroll systems to startup MVPs and AI products, I help founders and teams build software that scales.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <CalendlyButton label="Book a Discovery Call" />
@@ -62,6 +75,20 @@ export function DesktopShell() {
           <Metric value="#1" label="Techlogix AI Hackathon Winner" />
           <Metric value="10+" label="Products Built From Start to Finish" />
         </section>
+
+        <section className="rounded-[2rem] border border-[#013E37]/10 bg-white/85 p-6 shadow-lg shadow-[#013E37]/10 backdrop-blur-xl">
+          <p className="font-heading text-2xl font-semibold text-[#111827]">Enterprise Experience. Startup Execution.</p>
+          <div className="mt-4 grid gap-2 md:grid-cols-5">
+            {trustSignals.map((signal) => (
+              <p key={signal} className="flex items-center gap-2 rounded-2xl border border-[#013E37]/10 bg-[#F3E7BE]/35 px-3 py-3 text-sm font-medium text-slate-700">
+                <Check className="h-4 w-4 shrink-0 text-[#013E37]" aria-hidden="true" />
+                {signal}
+              </p>
+            ))}
+          </div>
+        </section>
+
+        <IndustriesSection compact />
 
         <section className="rounded-[2rem] border border-[#013E37]/10 bg-white/90 p-6 shadow-xl shadow-[#013E37]/10 backdrop-blur-xl md:p-8">
           <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
@@ -89,8 +116,8 @@ export function DesktopShell() {
 
         <section className="rounded-[2rem] border border-[#013E37]/10 bg-white/85 p-6 shadow-lg shadow-[#013E37]/10 backdrop-blur-xl">
           <p className="text-sm font-medium text-[#013E37]">Why Founders Work With Me</p>
-          <h2 className="font-heading mt-2 text-2xl font-semibold text-[#111827]">I understand both product and engineering.</h2>
-          <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-600">I help founders move from ideas and requirements to production-ready systems without unnecessary complexity. My focus is shipping practical solutions that create business value.</p>
+          <h2 className="font-heading mt-2 text-2xl font-semibold text-[#111827]">Enterprise engineering experience. Startup execution. AI-powered product development.</h2>
+          <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-600">I help founders and product teams move from ideas and requirements to production-ready systems without unnecessary complexity. My focus is shipping practical solutions that create business value.</p>
         </section>
 
         <section className="rounded-[2rem] border border-[#013E37]/10 bg-white/85 p-6 shadow-lg shadow-[#013E37]/10 backdrop-blur-xl">

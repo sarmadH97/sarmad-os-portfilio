@@ -31,10 +31,12 @@ const journey = [
   ["Scale", "Stabilize systems and plan the next growth layer."],
 ];
 
+const enterpriseBackedExperience = ["Banking platforms", "Payroll systems", "AI-powered products", "Government procurement platforms", "Financial services software", "Startup SaaS products"];
+
 const caseStudies = [
-  ["Upbeater", "Startup-ready product experience with fast iteration, modern UX, and scalable frontend patterns."],
-  ["ExpenseLinx", "Multi-tenant expense platform delivery with deployment discipline and scalable system thinking."],
-  ["Terra AI Assistant", "AI Hackathon-winning LLM platform built through product thinking, rapid execution, and practical workflow automation."],
+  ["Upbeater", "Joined early as a founding engineer and helped translate founder direction into a production-ready SaaS foundation."],
+  ["Expertlinx", "Product engineering and consulting across client products, business applications, SaaS workflows, and operational systems."],
+  ["AI Hackathon Project", "Built Terra, a first-place LLM assistant focused on practical workflow automation and rapid product execution."],
 ];
 
 export default function WorkWithFoundersPage() {
@@ -44,7 +46,7 @@ export default function WorkWithFoundersPage() {
         <section className="rounded-[2rem] border border-[#013E37]/10 bg-white/90 p-8 shadow-xl shadow-[#013E37]/10 backdrop-blur-xl md:p-12">
           <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#013E37]">Work With Founders</p>
           <h1 className="font-display mt-4 max-w-4xl text-5xl font-black uppercase text-[#111827] md:text-7xl">Helping founders turn ideas into products.</h1>
-          <p className="mt-5 max-w-2xl text-lg text-slate-600">I help founders validate ideas, build MVPs, integrate AI, and launch products ready for real users and future growth.</p>
+          <p className="mt-5 max-w-2xl text-lg text-slate-600">My startup execution is backed by enterprise experience across banking, payroll, AI products, financial services, and SaaS systems.</p>
           <div className="mt-7 flex flex-wrap gap-3">
             <CalendlyButton label="Book a Discovery Call" />
             <CalendlyButton label="Discuss Your MVP" variant="secondary" />
@@ -56,6 +58,17 @@ export default function WorkWithFoundersPage() {
           <p className="text-sm font-medium text-[#013E37]">Why founders choose me</p>
           <h2 className="font-display mt-2 max-w-3xl text-4xl font-black uppercase text-[#111827] md:text-5xl">Many founders don’t need a CTO on day one.</h2>
           <p className="mt-4 max-w-3xl text-base text-slate-600">They need someone who can help shape the product, make technical decisions, build quickly, and create a foundation that can scale. That’s where I help.</p>
+        </section>
+
+        <section className="rounded-[2rem] border border-[#013E37]/10 bg-white/90 p-6 shadow-lg shadow-[#013E37]/10 backdrop-blur-xl">
+          <p className="text-sm font-medium text-[#013E37]">Enterprise-backed startup execution</p>
+          <h2 className="font-heading mt-2 text-2xl font-semibold text-[#111827]">My startup experience is backed by enterprise experience.</h2>
+          <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-600">This combination helps founders avoid common technical mistakes while still moving quickly toward launch.</p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {enterpriseBackedExperience.map((item) => (
+              <span key={item} className="rounded-full border border-[#013E37]/10 bg-[#F3E7BE]/35 px-3 py-2 text-sm text-slate-700">✓ {item}</span>
+            ))}
+          </div>
         </section>
 
         <Section title="Why founders work with me" eyebrow="Technical partner, not task taker">
