@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 const welcomeLines = [
   "Welcome to SarmadOS Terminal",
-  "Founder-engineer mode · optional playful layer",
+  "Product-engineer command center · optional playful layer",
   "",
   "Available commands:",
   "- whoami - skills - projects - experience - founder",
@@ -55,8 +55,8 @@ const commands: Record<string, string> = {
     "• AI-powered product development",
     "",
     "Role:",
-    "• Senior Product Engineer",
-    "• Founder Engineer",
+    "• Senior Software Engineer",
+    "• Product Engineer",
     "",
     "Experience Highlights:",
     "• Global Net Banking Platform",

@@ -9,11 +9,10 @@ import { RESUME_URL } from "@/lib/links";
 import { HeroProfile } from "./hero-profile";
 
 const upbeaterContributions = [
-  "Founding Engineer",
   "Product Architecture",
   "Frontend Engineering",
+  "Backend Integration",
   "AI Workflow Planning",
-  "Technical Roadmapping",
   "Founder Collaboration",
 ];
 
@@ -51,17 +50,17 @@ export function DesktopShell() {
   return (
     <SiteShell>
       <div className="mx-auto max-w-7xl space-y-8 px-4 pb-20 pt-28">
-        <section className="relative overflow-visible rounded-[2rem] border border-[#013E37]/10 bg-white/90 p-8 shadow-xl shadow-[#013E37]/10 backdrop-blur-2xl md:p-12">
-          <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1.9fr)_minmax(20rem,0.8fr)]">
+        <section className="relative overflow-visible rounded-[2rem] border border-[#013E37]/10 bg-white/90 p-6 shadow-xl shadow-[#013E37]/10 backdrop-blur-2xl md:p-9">
+          <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(18rem,0.75fr)]">
             <div className="relative z-10 lg:pr-8">
-              <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#013E37]">Sarmad Hussain · Founder Engineer</p>
-              <h1 className="font-display mt-4 max-w-6xl text-5xl font-black uppercase text-[#111827] sm:text-6xl md:text-7xl">
-                Turning startup ideas into scalable SaaS products and AI-enabled workflows.
+              <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#013E37]">Sarmad Hussain · Senior Software Engineer | Product Engineer</p>
+              <h1 className="font-display mt-4 max-w-5xl text-4xl font-black uppercase leading-[0.98] text-[#111827] sm:text-5xl md:text-6xl">
+                Turning product ideas into scalable software and AI-enabled workflows.
               </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
                 From global banking and payroll systems to startup MVPs and AI products, I help founders and teams build software that scales.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-7 flex flex-wrap gap-3">
                 <CalendlyButton label="Book a Discovery Call" />
                 <Link href="/projects" className="rounded-full border border-[#013E37]/20 bg-white px-5 py-3 text-sm font-medium text-[#111827] transition hover:bg-[#F3E7BE]/45">View Projects</Link>
               </div>
@@ -91,17 +90,27 @@ export function DesktopShell() {
         <IndustriesSection compact />
 
         <section className="rounded-[2rem] border border-[#013E37]/10 bg-white/90 p-6 shadow-xl shadow-[#013E37]/10 backdrop-blur-xl md:p-8">
-          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+          <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
             <div>
               <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#013E37]">Featured case study</p>
               <h2 className="font-heading mt-3 text-3xl font-semibold text-[#111827]">Upbeater</h2>
-              <p className="mt-2 text-lg text-[#013E37]">Helping build an AI-native platform from idea to execution</p>
+              <p className="mt-2 text-lg text-[#013E37]">AI-native SaaS platform built from scratch</p>
+              <div className="mt-4 space-y-2 text-sm text-slate-600">
+                <p><span className="font-semibold text-[#111827]">Role:</span> Founding Engineer</p>
+                <p><span className="font-semibold text-[#111827]">Stack:</span> React · .NET · AI Integrations · Workflow Automation</p>
+              </div>
               <a href="https://www.upbeater.com/" target="_blank" rel="noreferrer" className="mt-5 inline-flex rounded-full border border-[#013E37]/20 bg-white px-4 py-2 text-sm font-medium text-[#111827] transition hover:bg-[#F3E7BE]/45">Visit Upbeater ↗</a>
             </div>
-            <div className="space-y-5 text-sm leading-6 text-slate-600">
-              <p><span className="font-semibold text-[#111827]">Challenge:</span> Upbeater set out to create an AI-native platform that helps businesses automate content creation, marketing workflows, and customer engagement. The challenge was building a product foundation that could move quickly while remaining flexible enough for future AI capabilities.</p>
-              <p><span className="font-semibold text-[#111827]">Approach:</span> As a Founding Engineer, I worked closely with the founders to translate product ideas into scalable technical solutions, from architecture discussions and frontend system design to onboarding experiences, AI workflow planning, and product execution strategy.</p>
-              <p><span className="font-semibold text-[#111827]">Outcome:</span> Delivered a production-ready foundation that accelerated feature delivery, improved onboarding experiences, and established a scalable architecture for future growth.</p>
+            <div className="space-y-5">
+              <div className="grid gap-3 sm:grid-cols-2">
+                <ImpactMetric value="10+" label="Product modules and workflows shaped" />
+                <ImpactMetric value="AI" label="Workflow integration and automation planning" />
+                <ImpactMetric value="MVP" label="Built from scratch with scalable foundations" />
+                <ImpactMetric value="Founder-led" label="Product architecture and roadmap collaboration" />
+              </div>
+              <p className="text-sm leading-6 text-slate-600">
+                Worked closely with Upbeater's founders to turn early product ideas into a scalable technical foundation, covering frontend architecture, backend integration, AI workflow planning, and production-ready product execution.
+              </p>
               <div className="grid gap-2 sm:grid-cols-2">
                 {upbeaterContributions.map((item) => (
                   <p key={item} className="flex items-center gap-2 rounded-2xl bg-[#FAFAF7] px-3 py-2 text-sm text-slate-700">
@@ -175,6 +184,15 @@ export function DesktopShell() {
         </section>
       </div>
     </SiteShell>
+  );
+}
+
+function ImpactMetric({ value, label }: { value: string; label: string }) {
+  return (
+    <article className="rounded-2xl border border-[#013E37]/10 bg-[#FAFAF7] p-4 shadow-sm">
+      <p className="font-display text-3xl font-black text-[#013E37]">{value}</p>
+      <p className="mt-2 text-sm leading-5 text-slate-600">{label}</p>
+    </article>
   );
 }
 

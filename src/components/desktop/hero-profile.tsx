@@ -48,7 +48,7 @@ export function HeroProfile() {
           <div className="flex items-start justify-between gap-4">
             <div>
               <p className="font-heading text-xl font-semibold text-[#111827]">Sarmad Hussain</p>
-              <p className="mt-1 text-sm font-medium text-[#013E37]">Founder Engineer</p>
+              <p className="mt-1 text-sm font-medium text-[#013E37]">Senior Software Engineer | Product Engineer</p>
             </div>
             <span className="rounded-full bg-[#F3E7BE] px-3 py-1 text-xs font-semibold text-[#013E37]">Available</span>
           </div>
