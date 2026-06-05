@@ -14,7 +14,7 @@ export function AchievementsWindow() {
         <article key={item.title} className="rounded-2xl border border-[#013E37]/10 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:bg-[#F3E7BE]/30 hover:shadow-md">
           <p className="font-display text-4xl font-black text-[#013E37]">{item.metric}</p>
           <p className="mt-1 text-sm font-semibold text-[#111827]">{item.title}</p>
-          <p className="mt-2 text-xs leading-5 text-slate-600">{item.detail}</p>
+          <p className="mt-2 text-base leading-7 text-slate-600">{item.detail}</p>
         </article>
       ))}
     </div>

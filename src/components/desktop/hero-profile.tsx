@@ -26,25 +26,25 @@ export function HeroProfile() {
   }, []);
 
   return (
-    <aside className="relative mx-auto mt-6 w-full max-w-sm md:mt-0 lg:-mr-12 lg:-mb-12" aria-label="Sarmad Hussain profile summary">
-      <div className="absolute -inset-6 rounded-[2.5rem] bg-[#F3E7BE]/55 blur-3xl" aria-hidden="true" />
-      <div className="relative overflow-visible rounded-[2rem] border border-[#013E37]/10 bg-[#FAFAF7]/80 p-4 shadow-2xl shadow-[#013E37]/15 backdrop-blur-2xl">
-        <div className="relative min-h-[22rem] overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-[#F3E7BE]/80 via-white to-[#013E37]/10 md:min-h-[28rem]">
+    <aside className="relative mx-auto mt-6 w-full max-w-xs md:mt-0 lg:-mr-4" aria-label="Sarmad Hussain profile summary">
+      <div className="absolute -inset-5 rounded-[2.5rem] bg-[#F3E7BE]/55 blur-3xl" aria-hidden="true" />
+      <div className="relative overflow-visible rounded-[1.75rem] border border-[#013E37]/10 bg-[#FAFAF7]/80 p-3 shadow-2xl shadow-[#013E37]/15 backdrop-blur-2xl">
+        <div className="relative min-h-[16rem] overflow-hidden rounded-[1.35rem] bg-gradient-to-br from-[#F3E7BE]/80 via-white to-[#013E37]/10 md:min-h-[20rem]">
           <div className="absolute inset-x-6 bottom-0 h-2/3 rounded-t-full bg-[#013E37]/10 blur-2xl" aria-hidden="true" />
           {photoReady ? (
             <img
               src={photoSrc}
               alt="Sarmad Hussain"
-              className="absolute bottom-0 left-1/2 z-10 h-[22rem] w-auto max-w-none -translate-x-1/2 object-contain mix-blend-multiply drop-shadow-[0_32px_44px_rgba(1,62,55,0.24)] md:h-[27rem]"
+              className="absolute bottom-0 left-1/2 z-10 h-[17rem] w-auto max-w-none -translate-x-1/2 object-contain mix-blend-multiply drop-shadow-[0_32px_44px_rgba(1,62,55,0.24)] md:h-[20.5rem]"
             />
           ) : (
-            <div className="absolute inset-x-10 bottom-0 z-10 flex h-[19rem] items-center justify-center rounded-t-[8rem] bg-gradient-to-b from-[#013E37]/20 to-[#013E37]/35 text-6xl font-black text-[#013E37]/40 md:h-[23rem]">
+            <div className="absolute inset-x-10 bottom-0 z-10 flex h-[15rem] items-center justify-center rounded-t-[8rem] bg-gradient-to-b from-[#013E37]/20 to-[#013E37]/35 text-6xl font-black text-[#013E37]/40 md:h-[18rem]">
               SH
             </div>
           )}
         </div>
 
-        <div className="relative z-20 -mt-16 rounded-[1.5rem] border border-white/80 bg-white/90 p-5 shadow-xl shadow-[#013E37]/10 backdrop-blur-xl md:-mt-20">
+        <div className="relative z-20 -mt-12 rounded-[1.35rem] border border-white/80 bg-white/90 p-4 shadow-xl shadow-[#013E37]/10 backdrop-blur-xl md:-mt-14">
           <div className="flex items-start justify-between gap-4">
             <div>
               <p className="font-heading text-xl font-semibold text-[#111827]">Sarmad Hussain</p>
@@ -74,13 +74,13 @@ export function HeroProfile() {
             ))}
           </div>
 
-          <p className="mt-4 rounded-2xl bg-[#F3E7BE]/35 px-3 py-3 text-sm leading-5 text-slate-700">Built products across fintech, payroll, SaaS, AI, and enterprise systems.</p>
+          <p className="mt-4 rounded-2xl bg-[#F3E7BE]/35 px-3 py-3 text-[15px] leading-6 text-slate-700">Built products across fintech, payroll, SaaS, AI, and enterprise systems.</p>
 
           <div className="mt-5 border-t border-[#013E37]/10 pt-4">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">Available For</p>
             <div className="mt-3 space-y-2">
               {availability.map((item) => (
-                <p key={item} className="flex items-center gap-2 text-sm text-slate-700">
+                <p key={item} className="flex items-center gap-2 text-[15px] leading-6 text-slate-700">
                   <Check className="h-4 w-4 text-[#013E37]" aria-hidden="true" />
                   {item}
                 </p>

@@ -49,18 +49,18 @@ const trustSignals = [
 export function DesktopShell() {
   return (
     <SiteShell>
-      <div className="mx-auto max-w-7xl space-y-8 px-4 pb-20 pt-28">
-        <section className="relative overflow-visible rounded-[2rem] border border-[#013E37]/10 bg-white/90 p-6 shadow-xl shadow-[#013E37]/10 backdrop-blur-2xl md:p-9">
-          <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(18rem,0.75fr)]">
+      <div className="mx-auto max-w-7xl space-y-8 px-4 pb-20 pt-24">
+        <section className="relative overflow-visible rounded-[2rem] border border-[#013E37]/10 bg-white/90 p-5 shadow-xl shadow-[#013E37]/10 backdrop-blur-2xl md:p-7">
+          <div className="grid items-center gap-7 lg:grid-cols-[minmax(0,2.15fr)_minmax(16rem,0.7fr)]">
             <div className="relative z-10 lg:pr-8">
               <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#013E37]">Sarmad Hussain · Senior Software Engineer | Product Engineer</p>
-              <h1 className="font-display mt-4 max-w-5xl text-4xl font-black uppercase leading-[0.98] text-[#111827] sm:text-5xl md:text-6xl">
+              <h1 className="font-display mt-3 max-w-4xl text-4xl font-black uppercase leading-[1] text-[#111827] sm:text-[2.8rem] md:text-5xl lg:text-[3.25rem]">
                 Turning product ideas into scalable software and AI-enabled workflows.
               </h1>
-              <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
+              <p className="mt-4 max-w-3xl text-[19px] leading-8 text-slate-600">
                 From global banking and payroll systems to startup MVPs and AI products, I help founders and teams build software that scales.
               </p>
-              <div className="mt-7 flex flex-wrap gap-3">
+              <div className="mt-6 flex flex-wrap gap-3">
                 <CalendlyButton label="Book a Discovery Call" />
                 <Link href="/projects" className="rounded-full border border-[#013E37]/20 bg-white px-5 py-3 text-sm font-medium text-[#111827] transition hover:bg-[#F3E7BE]/45">View Projects</Link>
               </div>
@@ -95,7 +95,7 @@ export function DesktopShell() {
               <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#013E37]">Featured case study</p>
               <h2 className="font-heading mt-3 text-3xl font-semibold text-[#111827]">Upbeater</h2>
               <p className="mt-2 text-lg text-[#013E37]">AI-native SaaS platform built from scratch</p>
-              <div className="mt-4 space-y-2 text-sm text-slate-600">
+              <div className="mt-4 space-y-2 text-base leading-7 text-slate-600">
                 <p><span className="font-semibold text-[#111827]">Role:</span> Founding Engineer</p>
                 <p><span className="font-semibold text-[#111827]">Stack:</span> React · .NET · AI Integrations · Workflow Automation</p>
               </div>
@@ -108,12 +108,12 @@ export function DesktopShell() {
                 <ImpactMetric value="MVP" label="Built from scratch with scalable foundations" />
                 <ImpactMetric value="Founder-led" label="Product architecture and roadmap collaboration" />
               </div>
-              <p className="text-sm leading-6 text-slate-600">
+              <p className="text-base leading-7 text-slate-600">
                 Worked closely with Upbeater's founders to turn early product ideas into a scalable technical foundation, covering frontend architecture, backend integration, AI workflow planning, and production-ready product execution.
               </p>
               <div className="grid gap-2 sm:grid-cols-2">
                 {upbeaterContributions.map((item) => (
-                  <p key={item} className="flex items-center gap-2 rounded-2xl bg-[#FAFAF7] px-3 py-2 text-sm text-slate-700">
+                  <p key={item} className="flex items-center gap-2 rounded-2xl bg-[#FAFAF7] px-3 py-2 text-[15px] leading-6 text-slate-700">
                     <Check className="h-4 w-4 text-[#013E37]" aria-hidden="true" />
                     {item}
                   </p>
@@ -126,7 +126,7 @@ export function DesktopShell() {
         <section className="rounded-[2rem] border border-[#013E37]/10 bg-white/85 p-6 shadow-lg shadow-[#013E37]/10 backdrop-blur-xl">
           <p className="text-sm font-medium text-[#013E37]">Why Founders Work With Me</p>
           <h2 className="font-heading mt-2 text-2xl font-semibold text-[#111827]">Enterprise engineering experience. Startup execution. AI-powered product development.</h2>
-          <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-600">I help founders and product teams move from ideas and requirements to production-ready systems without unnecessary complexity. My focus is shipping practical solutions that create business value.</p>
+          <p className="mt-3 max-w-3xl text-base leading-7 text-slate-600">I help founders and product teams move from ideas and requirements to production-ready systems without unnecessary complexity. My focus is shipping practical solutions that create business value.</p>
         </section>
 
         <section className="rounded-[2rem] border border-[#013E37]/10 bg-white/85 p-6 shadow-lg shadow-[#013E37]/10 backdrop-blur-xl">
@@ -145,7 +145,7 @@ export function DesktopShell() {
                   {group.products.map(([name, detail]) => (
                     <div key={name}>
                       <p className="font-semibold text-[#111827]">{name}</p>
-                      <p className="mt-1 text-sm leading-5 text-slate-600">{detail}</p>
+                      <p className="mt-1 text-base leading-7 text-slate-600">{detail}</p>
                     </div>
                   ))}
                 </div>
@@ -191,7 +191,7 @@ function ImpactMetric({ value, label }: { value: string; label: string }) {
   return (
     <article className="rounded-2xl border border-[#013E37]/10 bg-[#FAFAF7] p-4 shadow-sm">
       <p className="font-display text-3xl font-black text-[#013E37]">{value}</p>
-      <p className="mt-2 text-sm leading-5 text-slate-600">{label}</p>
+      <p className="mt-2 text-base leading-7 text-slate-600">{label}</p>
     </article>
   );
 }
@@ -200,7 +200,7 @@ function Metric({ value, label }: { value: string; label: string }) {
   return (
     <article className="min-h-40 rounded-3xl border border-[#013E37]/10 bg-white/90 p-6 shadow-lg shadow-[#013E37]/10 backdrop-blur-xl transition hover:-translate-y-0.5 hover:shadow-xl">
       <p className="font-display text-5xl font-black text-[#111827]">{value}</p>
-      <p className="mt-4 max-w-[15rem] text-sm leading-6 text-slate-600">{label}</p>
+      <p className="mt-4 max-w-[15rem] text-base leading-7 text-slate-600">{label}</p>
     </article>
   );
 }

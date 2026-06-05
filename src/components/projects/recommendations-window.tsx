@@ -15,11 +15,11 @@ export function RecommendationsWindow() {
             <div className="h-10 w-10 rounded-full bg-gradient-to-br from-[#F3E7BE] to-[#013E37]/25" />
             <div>
               <p className="text-sm font-semibold text-[#111827]">{recommendation.name}</p>
-              <p className="text-xs text-slate-500">{recommendation.role}</p>
+              <p className="text-sm text-slate-500">{recommendation.role}</p>
               <p className="text-[11px] text-slate-400">{recommendation.context}</p>
             </div>
           </div>
-          <p className="text-sm text-slate-600">“{recommendation.excerpt}”</p>
+          <p className="text-base leading-7 text-slate-600">“{recommendation.excerpt}”</p>
           <p className="mt-3 text-xs text-[#013E37]">{recommendation.theme}</p>
           <a href={recommendation.link} target="_blank" rel="noreferrer" className="mt-4 inline-block text-xs font-medium text-[#111827] hover:underline">View on LinkedIn ↗</a>
         </article>

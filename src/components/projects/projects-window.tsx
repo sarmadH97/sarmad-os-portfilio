@@ -14,7 +14,7 @@ export function ProjectsWindow() {
         <article key={project.name} className="rounded-2xl border border-[#013E37]/10 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
           <p className="text-lg font-semibold text-[#111827]">{project.name}</p>
           <a className="text-xs text-[#013E37] hover:underline" href={project.website} target="_blank" rel="noreferrer">{project.website}</a>
-          <div className="mt-4 space-y-2 text-sm text-slate-600">
+          <div className="mt-4 space-y-2 text-base leading-7 text-slate-600">
             <p><span className="font-medium text-[#111827]">Challenge:</span> {project.challenge}</p>
             <p><span className="font-medium text-[#111827]">Approach:</span> {project.approach}</p>
             <p><span className="font-medium text-[#111827]">Outcome:</span> {project.outcome}</p>

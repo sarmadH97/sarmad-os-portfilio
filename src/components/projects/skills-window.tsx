@@ -13,7 +13,7 @@ export function SkillsWindow() {
       {categories.map((category) => (
         <section key={category.name} className="rounded-2xl border border-[#013E37]/10 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
           <h3 className="font-semibold text-[#111827]">{category.name}</h3>
-          <p className="mt-1 text-sm text-slate-600">{category.capability}</p>
+          <p className="mt-1 text-base leading-7 text-slate-600">{category.capability}</p>
           <p className="mt-3 text-xs text-[#013E37]">{category.skills.join(" · ")}</p>
         </section>
       ))}

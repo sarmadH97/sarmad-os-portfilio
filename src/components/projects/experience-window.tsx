@@ -103,14 +103,14 @@ function DomainSectionCard({ section }: { section: DomainSection }) {
         </div>
         {section.website ? <a href={section.website} target="_blank" rel="noreferrer" className="text-xs font-medium text-[#013E37] hover:underline">Website ↗</a> : null}
       </div>
-      <p className="mt-2 text-sm leading-6 text-slate-600">{section.summary}</p>
-      {section.stack ? <p className="mt-3 text-xs text-slate-500"><span className="font-semibold text-[#111827]">Stack:</span> {section.stack.join(" · ")}</p> : null}
+      <p className="mt-2 text-base leading-7 text-slate-600">{section.summary}</p>
+      {section.stack ? <p className="mt-3 text-sm text-slate-500"><span className="font-semibold text-[#111827]">Stack:</span> {section.stack.join(" · ")}</p> : null}
       <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
         {section.focus.map((focus) => (
           <p key={focus} className="rounded-full bg-white px-3 py-2 text-xs font-medium text-[#013E37]">✓ {focus}</p>
         ))}
       </div>
-      {section.note ? <p className="mt-3 text-sm leading-6 text-slate-600">{section.note}</p> : null}
+      {section.note ? <p className="mt-3 text-base leading-7 text-slate-600">{section.note}</p> : null}
       {section.achievement ? <p className="mt-3 inline-flex rounded-full bg-white px-3 py-2 text-xs font-semibold text-[#013E37]">{section.achievement}</p> : null}
     </section>
   );
@@ -140,12 +140,12 @@ export function ExperienceWindow() {
             {item.website !== "#" ? <a href={item.website} target="_blank" rel="noreferrer" className="text-xs text-[#013E37] hover:underline">{item.website}</a> : null}
           </div>
           <p className="text-sm font-medium text-[#013E37]">{item.role}</p>
-          <p className="mt-2 text-sm text-slate-600">{item.story}</p>
-          <ul className="mt-3 space-y-1 text-xs text-slate-600">{item.impact.map((bullet) => <li key={bullet}>• {bullet}</li>)}</ul>
+          <p className="mt-2 text-base leading-7 text-slate-600">{item.story}</p>
+          <ul className="mt-3 space-y-1 text-sm leading-6 text-slate-600">{item.impact.map((bullet) => <li key={bullet}>• {bullet}</li>)}</ul>
 
           {item.domainSections ? <DomainSectionGrid sections={item.domainSections} /> : null}
 
-          <p className="mt-3 text-xs text-slate-500">{item.stack}</p>
+          <p className="mt-3 text-sm text-slate-500">{item.stack}</p>
         </article>
       ))}
     </div>

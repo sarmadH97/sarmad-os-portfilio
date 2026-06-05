@@ -56,7 +56,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
             <p className="text-sm font-medium text-[#013E37]">Open To</p>
             <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
               {openTo.map((item) => (
-                <p key={item} className="flex items-center gap-2 rounded-2xl bg-[#FAFAF7] px-3 py-2 text-sm text-slate-700">
+                <p key={item} className="flex items-center gap-2 rounded-2xl bg-[#FAFAF7] px-3 py-2 text-[15px] leading-6 text-slate-700">
                   <Check className="h-4 w-4 text-[#013E37]" aria-hidden="true" />
                   {item}
                 </p>
