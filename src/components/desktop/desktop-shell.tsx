@@ -51,10 +51,10 @@ export function DesktopShell() {
     <SiteShell>
       <div className="mx-auto max-w-7xl space-y-8 px-4 pb-20 pt-[4.5rem]">
         <section className="relative overflow-visible rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 px-4 py-4 shadow-xl shadow-[#D4A373]/10 backdrop-blur-2xl md:px-5 md:py-4">
-          <div className="grid items-center gap-4 lg:grid-cols-[minmax(0,2.15fr)_minmax(16rem,0.7fr)]">
+          <div className="grid items-center gap-4 lg:grid-cols-[minmax(0,1fr)_15rem]">
             <div className="relative z-10 lg:pr-8">
               <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8A5A2B]">Sarmad Hussain · Senior Software Engineer | Product Engineer</p>
-              <h1 className="font-display mt-1.5 max-w-4xl text-4xl font-black uppercase leading-[1] text-[#111827] sm:text-[2.8rem] md:text-5xl lg:text-[3.25rem]">
+              <h1 className="font-display mt-1.5 max-w-none text-4xl font-black uppercase leading-[1] text-[#111827] sm:text-[2.8rem] md:text-5xl lg:text-[3.25rem]">
                 Turning product ideas into scalable software and AI-enabled workflows.
               </h1>
               <p className="mt-2.5 max-w-3xl text-[19px] leading-8 text-slate-600">
@@ -99,7 +99,7 @@ export function DesktopShell() {
                 <p><span className="font-semibold text-[#111827]">Role:</span> Founding Engineer</p>
                 <p><span className="font-semibold text-[#111827]">Stack:</span> React · .NET · AI Integrations · Workflow Automation</p>
               </div>
-              <a href="https://www.upbeater.com/" target="_blank" rel="noreferrer" className="mt-5 inline-flex rounded-full border border-[#D4A373]/20 bg-[#FEFAE0] px-4 py-2 text-sm font-medium text-[#111827] transition hover:bg-[#FAEDCD]/45">Visit Upbeater ↗</a>
+              <a href="https://upbeater.com/" target="_blank" rel="noreferrer" className="mt-5 inline-flex rounded-full border border-[#D4A373]/20 bg-[#FEFAE0] px-4 py-2 text-sm font-medium text-[#111827] transition hover:bg-[#FAEDCD]/45">Visit Upbeater ↗</a>
             </div>
             <div className="space-y-5">
               <div className="grid gap-3 sm:grid-cols-2">

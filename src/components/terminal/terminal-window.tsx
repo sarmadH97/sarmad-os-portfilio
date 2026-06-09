@@ -223,10 +223,10 @@ export function TerminalWindow() {
 
   return (
     <div>
-      <pre ref={ref} className="mb-3 h-60 overflow-auto rounded-xl border border-[#D4A373]/25 bg-[#120B07]/92 p-3 font-terminal text-xs leading-6 text-[#FAEDCD]">{lines}</pre>
+      <pre ref={ref} className="mb-3 h-60 overflow-auto rounded-xl border border-[#D4A373]/20 bg-[#020101]/95 p-3 font-terminal text-xs leading-6 text-[#F9EBD2]">{lines}</pre>
 
       {gameOn ? (
-        <div className="mb-3 rounded-xl border border-[#D4A373]/25 bg-black/40 p-3 font-terminal text-xs text-[#FEFAE0]">
+        <div className="mb-3 rounded-xl border border-[#D4A373]/20 bg-black/80 p-3 font-terminal text-xs text-[#F9EBD2]">
           <p className="mb-2">Snake-lite mini game · score: {score} · move with arrow keys · type `play` again to exit.</p>
           <pre>{grid}</pre>
         </div>
@@ -242,9 +242,9 @@ export function TerminalWindow() {
           requestAnimationFrame(() => ref.current?.scrollTo({ top: ref.current.scrollHeight, behavior: "smooth" }));
         }}
       >
-        <label className="flex items-center gap-2 rounded-lg border border-white/10 bg-black/30 px-3 py-2 font-terminal text-sm text-slate-200">
+        <label className="flex items-center gap-2 rounded-lg border border-[#D4A373]/20 bg-black/85 px-3 py-2 font-terminal text-sm text-slate-200">
           <span className="text-[#D4A373]">$</span>
-          <input value={input} onChange={(e) => setInput(e.target.value)} aria-label="Terminal command" className="w-full bg-transparent text-slate-100 outline-none" placeholder={quizIndex === null ? "type command" : "answer quiz question"} />
+          <input value={input} onChange={(e) => setInput(e.target.value)} aria-label="Terminal command" className="w-full bg-transparent text-[#FEFAE0] outline-none" placeholder={quizIndex === null ? "type command" : "answer quiz question"} />
           <span className={blink ? "text-[#D4A373]" : "text-transparent"}>▍</span>
         </label>
       </form>

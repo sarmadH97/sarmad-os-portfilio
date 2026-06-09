@@ -68,7 +68,7 @@ const startupDomains: DomainSection[] = [
     stack: ["React", ".NET", "AI Integrations", "Workflow Automation"],
     focus: ["Product Architecture", "Frontend Development", "Backend Development", "AI Integrations", "Founder Collaboration"],
     note: "Worked directly with founders to define product direction, establish technical foundations, and build production-ready systems.",
-    website: "https://www.upbeater.com/",
+    website: "https://upbeater.com/",
   },
   {
     title: "Expertlinx",
@@ -90,7 +90,7 @@ const experience: ExperienceItem[] = [
     domainSections: techlogixDomains,
   },
   { company: "Technexia", website: "https://technexia.com/", role: "Executive Software Developer", story: "Built enterprise systems while growing backend, database, and cloud delivery depth.", impact: ["Designed 20+ web APIs", "Optimized SQL Server procedures and integration layers", "Implemented Azure DevOps database architecture for a US client"], stack: "ASP.NET MVC · SQL Server · JavaScript · Azure" },
-  { company: "Pixcile Technologies", website: "#", role: "Software Engineer", story: "Built early production foundations across Microsoft technologies and JavaScript applications.", impact: ["Built practical frontend modules", "Created a Leaflet.js tracking module", "Strengthened full stack delivery fundamentals"], stack: "C# · ASP.NET · SQL · JavaScript · Leaflet.js" },
+  { company: "Pixcile Technologies", website: "http://www.pixcile.com/", role: "Software Engineer", story: "Built early production foundations across Microsoft technologies and JavaScript applications.", impact: ["Built practical frontend modules", "Created a Leaflet.js tracking module", "Strengthened full stack delivery fundamentals"], stack: "C# · ASP.NET · SQL · JavaScript · Leaflet.js" },
 ];
 
 function DomainSectionCard({ section }: { section: DomainSection }) {
