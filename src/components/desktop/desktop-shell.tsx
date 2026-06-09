@@ -71,8 +71,8 @@ export function DesktopShell() {
 
         <section className="grid gap-5 md:grid-cols-3">
           <Metric value="5x" label="Techlogix Achiever of the Month" />
-          <Metric value="#1" label="Techlogix AI Hackathon Winner" />
           <Metric value="10+" label="Products Built From Start to Finish" />
+          <Metric value="150+" label="Frontend Features Delivered" />
         </section>
 
         <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/75 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl">
