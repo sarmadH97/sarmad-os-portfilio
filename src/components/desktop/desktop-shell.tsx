@@ -51,8 +51,8 @@ export function DesktopShell() {
     <SiteShell>
       <div className="mx-auto max-w-7xl space-y-8 px-4 pb-20 pt-[4.5rem]">
         <section className="relative overflow-visible rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 px-4 py-4 shadow-xl shadow-[#D4A373]/10 backdrop-blur-2xl md:px-5 md:py-4">
-          <div className="grid items-center gap-4 lg:grid-cols-[minmax(0,1fr)_15rem]">
-            <div className="relative z-10 lg:pr-8">
+          <div className="grid items-center gap-4 lg:grid-cols-[minmax(0,1fr)_16.25rem]">
+            <div className="relative z-10 lg:pr-1">
               <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8A5A2B]">Sarmad Hussain · Senior Software Engineer | Product Engineer</p>
               <h1 className="font-display mt-1.5 max-w-none text-4xl font-black uppercase leading-[1] text-[#111827] sm:text-[2.8rem] md:text-5xl lg:text-[3.25rem]">
                 Turning product ideas into scalable software and AI-enabled workflows.
