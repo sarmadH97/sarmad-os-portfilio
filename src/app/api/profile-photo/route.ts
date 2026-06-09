@@ -3,7 +3,7 @@ import { join } from "node:path";
 
 export const runtime = "nodejs";
 
-const SOURCE_IMAGE_PATH = join(process.cwd(), "image", "246627.png");
+const SOURCE_IMAGE_PATH = join(process.cwd(), "src", "image", "246627.png");
 
 export async function GET() {
   try {

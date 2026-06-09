@@ -49,18 +49,18 @@ const trustSignals = [
 export function DesktopShell() {
   return (
     <SiteShell>
-      <div className="mx-auto max-w-7xl space-y-8 px-4 pb-20 pt-20">
-        <section className="relative overflow-visible rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-4 shadow-xl shadow-[#D4A373]/10 backdrop-blur-2xl md:p-5">
-          <div className="grid items-center gap-5 lg:grid-cols-[minmax(0,2.15fr)_minmax(16rem,0.7fr)]">
+      <div className="mx-auto max-w-7xl space-y-8 px-4 pb-20 pt-[4.5rem]">
+        <section className="relative overflow-visible rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 px-4 py-4 shadow-xl shadow-[#D4A373]/10 backdrop-blur-2xl md:px-5 md:py-4">
+          <div className="grid items-center gap-4 lg:grid-cols-[minmax(0,2.15fr)_minmax(16rem,0.7fr)]">
             <div className="relative z-10 lg:pr-8">
               <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8A5A2B]">Sarmad Hussain · Senior Software Engineer | Product Engineer</p>
-              <h1 className="font-display mt-2 max-w-4xl text-4xl font-black uppercase leading-[1] text-[#111827] sm:text-[2.8rem] md:text-5xl lg:text-[3.25rem]">
+              <h1 className="font-display mt-1.5 max-w-4xl text-4xl font-black uppercase leading-[1] text-[#111827] sm:text-[2.8rem] md:text-5xl lg:text-[3.25rem]">
                 Turning product ideas into scalable software and AI-enabled workflows.
               </h1>
-              <p className="mt-3 max-w-3xl text-[19px] leading-8 text-slate-600">
+              <p className="mt-2.5 max-w-3xl text-[19px] leading-8 text-slate-600">
                 From global banking and payroll systems to startup MVPs and AI products, I help founders and teams build software that scales.
               </p>
-              <div className="mt-5 flex flex-wrap gap-3">
+              <div className="mt-4 flex flex-wrap gap-3">
                 <CalendlyButton label="Book a Discovery Call" />
                 <Link href="/projects" className="rounded-full border border-[#D4A373]/20 bg-[#FEFAE0] px-5 py-3 text-sm font-medium text-[#111827] transition hover:bg-[#FAEDCD]/45">View Projects</Link>
               </div>
@@ -126,7 +126,7 @@ export function DesktopShell() {
         <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/75 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl">
           <p className="text-sm font-medium text-[#8A5A2B]">Why Founders Work With Me</p>
           <h2 className="font-heading mt-2 text-2xl font-semibold text-[#111827]">Enterprise engineering experience. Startup execution. AI-powered product development.</h2>
-          <p className="mt-3 max-w-3xl text-base leading-7 text-slate-600">I help founders and product teams move from ideas and requirements to production-ready systems without unnecessary complexity. My focus is shipping practical solutions that create business value.</p>
+          <p className="mt-2.5 max-w-3xl text-base leading-7 text-slate-600">I help founders and product teams move from ideas and requirements to production-ready systems without unnecessary complexity. My focus is shipping practical solutions that create business value.</p>
         </section>
 
         <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/75 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl">

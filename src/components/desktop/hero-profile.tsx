@@ -26,25 +26,25 @@ export function HeroProfile() {
   }, []);
 
   return (
-    <aside className="relative mx-auto mt-6 w-full max-w-[17rem] md:mt-0 lg:-mr-2" aria-label="Sarmad Hussain profile summary">
+    <aside className="relative mx-auto mt-6 w-full max-w-[17.25rem] md:mt-0 lg:-mr-2" aria-label="Sarmad Hussain profile summary">
       <div className="absolute -inset-4 rounded-[2.5rem] bg-[#FAEDCD]/55 blur-3xl" aria-hidden="true" />
       <div className="relative overflow-visible rounded-[1.5rem] border border-[#D4A373]/10 bg-[#FEFAE0]/80 p-2.5 shadow-2xl shadow-[#D4A373]/15 backdrop-blur-2xl">
-        <div className="relative min-h-[13rem] overflow-hidden rounded-[1.25rem] bg-gradient-to-br from-[#FAEDCD]/80 via-[#FEFAE0] to-[#D4A373]/10 md:min-h-[15.5rem]">
+        <div className="relative min-h-[13.25rem] overflow-hidden rounded-[1.25rem] bg-gradient-to-br from-[#FAEDCD]/80 via-[#FEFAE0] to-[#D4A373]/10 md:min-h-[15.75rem]">
           <div className="absolute inset-x-6 bottom-0 h-2/3 rounded-t-full bg-[#D4A373]/10 blur-2xl" aria-hidden="true" />
           {photoReady ? (
             <img
               src={photoSrc}
               alt="Sarmad Hussain"
-              className="absolute bottom-0 left-1/2 z-10 h-[14.25rem] w-auto max-w-none -translate-x-1/2 object-contain mix-blend-multiply drop-shadow-[0_32px_44px_rgba(1,62,55,0.24)] md:h-[16.5rem]"
+              className="absolute left-1/2 top-2 z-10 h-[12.25rem] w-auto max-w-none -translate-x-1/2 object-contain object-top mix-blend-multiply drop-shadow-[0_32px_44px_rgba(1,62,55,0.24)] md:top-2.5 md:h-[14.75rem]"
             />
           ) : (
-            <div className="absolute inset-x-10 bottom-0 z-10 flex h-[12rem] items-center justify-center rounded-t-[8rem] bg-gradient-to-b from-[#D4A373]/20 to-[#D4A373]/35 text-6xl font-black text-[#8A5A2B]/40 md:h-[14rem]">
+            <div className="absolute inset-x-10 bottom-0 z-10 flex h-[12.25rem] items-center justify-center rounded-t-[8rem] bg-gradient-to-b from-[#D4A373]/20 to-[#D4A373]/35 text-6xl font-black text-[#8A5A2B]/40 md:h-[14.75rem]">
               SH
             </div>
           )}
         </div>
 
-        <div className="relative z-20 -mt-9 rounded-[1.25rem] border border-white/80 bg-[#FAEDCD]/80 p-3 shadow-xl shadow-[#D4A373]/10 backdrop-blur-xl md:-mt-10">
+        <div className="relative z-20 -mt-7 rounded-[1.25rem] border border-white/80 bg-[#FAEDCD]/80 p-3 shadow-xl shadow-[#D4A373]/10 backdrop-blur-xl md:-mt-8">
           <div className="flex items-start justify-between gap-4">
             <div>
               <p className="font-heading text-lg font-semibold text-[#111827]">Sarmad Hussain</p>
