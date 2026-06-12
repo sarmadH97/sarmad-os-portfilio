@@ -1,5 +1,6 @@
 "use client";
 
+import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 const welcomeLines = [
@@ -124,6 +125,7 @@ export function TerminalWindow() {
   const [quizIndex, setQuizIndex] = useState<number | null>(null);
   const [quizScore, setQuizScore] = useState(0);
   const ref = useRef<HTMLPreElement>(null);
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
     const timer = setInterval(() => setBlink((b) => !b), 500);
@@ -222,14 +224,27 @@ export function TerminalWindow() {
   };
 
   return (
-    <div>
-      <pre ref={ref} className="mb-3 h-60 overflow-auto rounded-xl border border-[#D4A373]/20 bg-[#020101]/95 p-3 font-terminal text-xs leading-6 text-[#F9EBD2]">{lines}</pre>
+    <motion.div
+      initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 8, scale: 0.99 }}
+      animate={reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.22, ease: "easeOut" }}
+    >
+      <motion.pre
+        key={history.length}
+        ref={ref}
+        initial={{ opacity: 0.72 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: reduceMotion ? 0 : 0.16, ease: "easeOut" }}
+        className="mb-3 h-60 overflow-auto rounded-xl border border-[#D4A373]/20 bg-[#020101]/95 p-3 font-terminal text-xs leading-6 text-[#F9EBD2]"
+      >
+        {lines}
+      </motion.pre>
 
       {gameOn ? (
-        <div className="mb-3 rounded-xl border border-[#D4A373]/20 bg-black/80 p-3 font-terminal text-xs text-[#F9EBD2]">
+        <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: reduceMotion ? 0 : 0.18 }} className="mb-3 rounded-xl border border-[#D4A373]/20 bg-black/80 p-3 font-terminal text-xs text-[#F9EBD2]">
           <p className="mb-2">Snake-lite mini game · score: {score} · move with arrow keys · type `play` again to exit.</p>
           <pre>{grid}</pre>
-        </div>
+        </motion.div>
       ) : null}
 
       <form
@@ -242,12 +257,12 @@ export function TerminalWindow() {
           requestAnimationFrame(() => ref.current?.scrollTo({ top: ref.current.scrollHeight, behavior: "smooth" }));
         }}
       >
-        <label className="flex items-center gap-2 rounded-lg border border-[#D4A373]/20 bg-black/85 px-3 py-2 font-terminal text-sm text-slate-200">
+        <label className="flex items-center gap-2 rounded-lg border border-[#D4A373]/20 bg-black/85 px-3 py-2 font-terminal text-sm text-slate-200 transition-all duration-200 focus-within:border-[#D4A373]/50 focus-within:shadow-lg focus-within:shadow-[#D4A373]/10">
           <span className="text-[#D4A373]">$</span>
           <input value={input} onChange={(e) => setInput(e.target.value)} aria-label="Terminal command" className="w-full bg-transparent text-[#FEFAE0] outline-none" placeholder={quizIndex === null ? "type command" : "answer quiz question"} />
           <span className={blink ? "text-[#D4A373]" : "text-transparent"}>▍</span>
         </label>
       </form>
-    </div>
+    </motion.div>
   );
 }

@@ -1,5 +1,7 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { CalendlyButton } from "@/components/ui/calendly-button";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/motion";
 import { SiteShell } from "@/components/desktop/site-shell";
 
 const reasons = [
@@ -43,33 +45,39 @@ export default function WorkWithFoundersPage() {
   return (
     <SiteShell>
       <div className="mx-auto max-w-7xl space-y-10 px-4 pb-20 pt-28">
-        <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-8 shadow-xl shadow-[#D4A373]/10 backdrop-blur-xl md:p-12">
+        <Reveal>
+          <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-8 shadow-xl shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:border-[#D4A373]/20 hover:shadow-2xl md:p-12">
           <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8A5A2B]">Work With Founders</p>
           <h1 className="font-display mt-4 max-w-4xl text-5xl font-black uppercase text-[#111827] md:text-7xl">Helping founders turn ideas into products.</h1>
           <p className="mt-5 max-w-2xl text-lg text-slate-600">My startup execution is backed by enterprise experience across banking, payroll, AI products, financial services, and SaaS systems.</p>
           <div className="mt-7 flex flex-wrap gap-3">
             <CalendlyButton label="Book a Discovery Call" />
             <CalendlyButton label="Discuss Your MVP" variant="secondary" />
-            <Link href="/projects" className="rounded-full border border-[#D4A373]/20 bg-[#FEFAE0] px-5 py-3 text-sm font-medium text-[#111827]">View Projects</Link>
+            <Link href="/projects" className="rounded-full border border-[#D4A373]/20 bg-[#FEFAE0] px-5 py-3 text-sm font-medium text-[#111827] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#FAEDCD]/45 hover:shadow-lg active:translate-y-0 active:scale-[0.98] motion-reduce:transform-none">View Projects</Link>
           </div>
-        </section>
+          </section>
+        </Reveal>
 
-        <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl">
+        <Reveal>
+          <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none">
           <p className="text-sm font-medium text-[#8A5A2B]">Why founders choose me</p>
           <h2 className="font-display mt-2 max-w-3xl text-4xl font-black uppercase text-[#111827] md:text-5xl">Many founders don’t need a CTO on day one.</h2>
           <p className="mt-4 max-w-3xl text-base text-slate-600">They need someone who can help shape the product, make technical decisions, build quickly, and create a foundation that can scale. That’s where I help.</p>
-        </section>
+          </section>
+        </Reveal>
 
-        <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl">
+        <Reveal>
+          <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none">
           <p className="text-sm font-medium text-[#8A5A2B]">Enterprise-backed startup execution</p>
           <h2 className="font-heading mt-2 text-2xl font-semibold text-[#111827]">My startup experience is backed by enterprise experience.</h2>
           <p className="mt-3 max-w-3xl text-base leading-7 text-slate-600">This combination helps founders avoid common technical mistakes while still moving quickly toward launch.</p>
           <div className="mt-5 flex flex-wrap gap-2">
             {enterpriseBackedExperience.map((item) => (
-              <span key={item} className="rounded-full border border-[#D4A373]/10 bg-[#FAEDCD]/35 px-3 py-2 text-sm text-slate-700">✓ {item}</span>
+              <span key={item} className="rounded-full border border-[#D4A373]/10 bg-[#FAEDCD]/35 px-3 py-2 text-sm text-slate-700 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-[#D4A373]/20 hover:shadow-sm motion-reduce:transform-none">✓ {item}</span>
             ))}
           </div>
-        </section>
+          </section>
+        </Reveal>
 
         <Section title="Why founders work with me" eyebrow="Technical partner, not task taker">
           <CardGrid items={reasons} />
@@ -79,15 +87,16 @@ export default function WorkWithFoundersPage() {
           <CardGrid items={services} />
         </Section>
 
-        <section className="grid gap-4 lg:grid-cols-[0.85fr_1.15fr]">
-          <div className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl">
+        <Reveal>
+          <section className="grid gap-4 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none">
             <p className="text-sm font-medium text-[#8A5A2B]">Ideal founders</p>
             <h2 className="font-heading mt-2 text-2xl font-semibold text-[#111827]">I work best with</h2>
             <div className="mt-5 flex flex-wrap gap-2">
-              {idealFounders.map((item) => <span key={item} className="rounded-full border border-[#D4A373]/10 bg-[#FAEDCD]/35 px-3 py-1 text-sm text-slate-700">{item}</span>)}
+              {idealFounders.map((item) => <span key={item} className="rounded-full border border-[#D4A373]/10 bg-[#FAEDCD]/35 px-3 py-1 text-sm text-slate-700 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-[#D4A373]/20 hover:shadow-sm motion-reduce:transform-none">{item}</span>)}
             </div>
           </div>
-          <div className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl">
+          <div className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none">
             <p className="text-sm font-medium text-[#8A5A2B]">Founder Perspective</p>
             <div className="mt-5 rounded-[1.5rem] border border-[#D4A373]/10 bg-gradient-to-br from-[#FAEDCD]/55 via-[#FEFAE0] to-[#FEFAE0] p-6 shadow-inner shadow-[#D4A373]/5">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#8A5A2B]">Reserved trust signal</p>
@@ -99,28 +108,37 @@ export default function WorkWithFoundersPage() {
               <CalendlyButton label="Let's Talk Product" variant="subtle" />
             </div>
           </div>
-        </section>
+          </section>
+        </Reveal>
 
         <Section title="How I help from idea to scale" eyebrow="Startup journey">
-          <div className="grid gap-3 md:grid-cols-3">
-            {journey.map(([stage, detail]) => <article key={stage} className="rounded-2xl border border-[#D4A373]/10 bg-[#FAEDCD]/70 p-5 shadow-sm"><p className="font-semibold text-[#111827]">{stage}</p><p className="mt-2 text-base leading-7 text-slate-600">{detail}</p></article>)}
-          </div>
+          <StaggerGroup className="grid gap-3 md:grid-cols-3">
+            {journey.map(([stage, detail]) => (
+              <StaggerItem key={stage}>
+                <article className="rounded-2xl border border-[#D4A373]/10 bg-[#FAEDCD]/70 p-5 shadow-sm transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-md motion-reduce:transform-none"><p className="font-semibold text-[#111827]">{stage}</p><p className="mt-2 text-base leading-7 text-slate-600">{detail}</p></article>
+              </StaggerItem>
+            ))}
+          </StaggerGroup>
         </Section>
 
         <Section title="Founder-oriented case studies" eyebrow="Business challenge → product execution">
-          <div className="grid gap-4 md:grid-cols-3">
-            {caseStudies.map(([name, detail]) => <article key={name} className="rounded-2xl border border-[#D4A373]/10 bg-[#FAEDCD]/70 p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><p className="font-semibold text-[#111827]">{name}</p><p className="mt-2 text-base leading-7 text-slate-600">{detail}</p></article>)}
-          </div>
+          <StaggerGroup className="grid gap-4 md:grid-cols-3">
+            {caseStudies.map(([name, detail]) => (
+              <StaggerItem key={name}>
+                <article className="rounded-2xl border border-[#D4A373]/10 bg-[#FAEDCD]/70 p-5 shadow-sm transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-md motion-reduce:transform-none"><p className="font-semibold text-[#111827]">{name}</p><p className="mt-2 text-base leading-7 text-slate-600">{detail}</p></article>
+              </StaggerItem>
+            ))}
+          </StaggerGroup>
         </Section>
       </div>
     </SiteShell>
   );
 }
 
-function Section({ eyebrow, title, children }: { eyebrow: string; title: string; children: React.ReactNode }) {
-  return <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl"><p className="text-sm font-medium text-[#8A5A2B]">{eyebrow}</p><h2 className="font-heading mt-2 mb-5 text-2xl font-semibold text-[#111827]">{title}</h2>{children}</section>;
+function Section({ eyebrow, title, children }: { eyebrow: string; title: string; children: ReactNode }) {
+  return <Reveal><section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none"><p className="text-sm font-medium text-[#8A5A2B]">{eyebrow}</p><h2 className="font-heading mt-2 mb-5 text-2xl font-semibold text-[#111827]">{title}</h2>{children}</section></Reveal>;
 }
 
 function CardGrid({ items }: { items: string[][] }) {
-  return <div className="grid gap-3 md:grid-cols-3">{items.map(([title, detail]) => <article key={title} className="rounded-2xl border border-[#D4A373]/10 bg-[#FAEDCD]/70 p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><p className="font-semibold text-[#111827]">{title}</p><p className="mt-2 text-base leading-7 text-slate-600">{detail}</p></article>)}</div>;
+  return <StaggerGroup className="grid gap-3 md:grid-cols-3">{items.map(([title, detail]) => <StaggerItem key={title}><article className="rounded-2xl border border-[#D4A373]/10 bg-[#FAEDCD]/70 p-5 shadow-sm transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-md motion-reduce:transform-none"><p className="font-semibold text-[#111827]">{title}</p><p className="mt-2 text-base leading-7 text-slate-600">{detail}</p></article></StaggerItem>)}</StaggerGroup>;
 }

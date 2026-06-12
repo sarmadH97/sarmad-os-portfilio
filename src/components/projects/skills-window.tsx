@@ -1,3 +1,5 @@
+import { StaggerGroup, StaggerItem } from "@/components/ui/motion";
+
 const categories = [
   { name: "Frontend Engineering", capability: "Scalable product UI systems.", skills: ["React", "Next.js", "TypeScript", "Tailwind", "Redux", "Framer Motion"] },
   { name: "Backend & APIs", capability: "Reliable service contracts and data flows.", skills: [".NET", "Node.js", "REST APIs", "PostgreSQL", "SQL Server"] },
@@ -9,14 +11,16 @@ const categories = [
 
 export function SkillsWindow() {
   return (
-    <div className="grid gap-3 md:grid-cols-2">
+    <StaggerGroup className="grid gap-3 md:grid-cols-2">
       {categories.map((category) => (
-        <section key={category.name} className="rounded-2xl border border-[#D4A373]/10 bg-[#FAEDCD]/70 p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+        <StaggerItem key={category.name}>
+          <section className="rounded-2xl border border-[#D4A373]/10 bg-[#FAEDCD]/70 p-4 shadow-sm transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-md motion-reduce:transform-none">
           <h3 className="font-semibold text-[#111827]">{category.name}</h3>
           <p className="mt-1 text-base leading-7 text-slate-600">{category.capability}</p>
           <p className="mt-3 text-xs text-[#8A5A2B]">{category.skills.join(" · ")}</p>
-        </section>
+          </section>
+        </StaggerItem>
       ))}
-    </div>
+    </StaggerGroup>
   );
 }

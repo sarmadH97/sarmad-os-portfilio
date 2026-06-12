@@ -1,3 +1,5 @@
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/motion";
+
 interface DomainSection {
   title: string;
   subtitle?: string;
@@ -95,21 +97,23 @@ const experience: ExperienceItem[] = [
 
 function DomainSectionCard({ section }: { section: DomainSection }) {
   return (
-    <section className="mt-4 rounded-2xl border border-[#D4A373]/10 bg-[#FAEDCD]/25 p-4">
+    <section className="mt-4 rounded-2xl border border-[#D4A373]/10 bg-[#FAEDCD]/25 p-4 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-[#D4A373]/20 hover:shadow-sm motion-reduce:transform-none">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <p className="text-sm font-semibold text-[#111827]">{section.title}</p>
           {section.subtitle ? <p className="mt-1 text-xs font-medium uppercase tracking-[0.14em] text-[#8A5A2B]">{section.subtitle}</p> : null}
         </div>
-        {section.website ? <a href={section.website} target="_blank" rel="noreferrer" className="text-xs font-medium text-[#8A5A2B] hover:underline">Website ↗</a> : null}
+        {section.website ? <a href={section.website} target="_blank" rel="noreferrer" className="text-xs font-medium text-[#8A5A2B] transition hover:text-[#111827] hover:underline">Website ↗</a> : null}
       </div>
       <p className="mt-2 text-base leading-7 text-slate-600">{section.summary}</p>
       {section.stack ? <p className="mt-3 text-sm text-slate-500"><span className="font-semibold text-[#111827]">Stack:</span> {section.stack.join(" · ")}</p> : null}
-      <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+      <StaggerGroup className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
         {section.focus.map((focus) => (
-          <p key={focus} className="rounded-full bg-[#FEFAE0] px-3 py-2 text-xs font-medium text-[#8A5A2B]">✓ {focus}</p>
+          <StaggerItem key={focus}>
+            <p className="rounded-full bg-[#FEFAE0] px-3 py-2 text-xs font-medium text-[#8A5A2B] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-sm motion-reduce:transform-none">✓ {focus}</p>
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerGroup>
       {section.note ? <p className="mt-3 text-base leading-7 text-slate-600">{section.note}</p> : null}
       {section.achievement ? <p className="mt-3 inline-flex rounded-full bg-[#FEFAE0] px-3 py-2 text-xs font-semibold text-[#8A5A2B]">{section.achievement}</p> : null}
     </section>
@@ -118,26 +122,34 @@ function DomainSectionCard({ section }: { section: DomainSection }) {
 
 function DomainSectionGrid({ sections }: { sections: DomainSection[] }) {
   return (
-    <div>
-      {sections.map((section) => <DomainSectionCard key={section.title} section={section} />)}
-    </div>
+    <StaggerGroup>
+      {sections.map((section) => (
+        <StaggerItem key={section.title}>
+          <DomainSectionCard section={section} />
+        </StaggerItem>
+      ))}
+    </StaggerGroup>
   );
 }
 
 export function ExperienceWindow() {
   return (
     <div className="space-y-4">
-      <section className="rounded-2xl border border-[#D4A373]/10 bg-[#FAEDCD]/70 p-5 shadow-sm">
+      <Reveal>
+        <section className="rounded-2xl border border-[#D4A373]/10 bg-[#FAEDCD]/70 p-5 shadow-sm transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-md motion-reduce:transform-none">
         <p className="text-sm font-medium text-[#8A5A2B]">Startup Experience</p>
         <h2 className="font-heading mt-2 text-2xl font-semibold text-[#111827]">Early-stage product execution backed by enterprise discipline.</h2>
         <DomainSectionGrid sections={startupDomains} />
-      </section>
+        </section>
+      </Reveal>
 
-      {experience.map((item) => (
-        <article key={item.company} className="rounded-2xl border border-[#D4A373]/10 bg-[#FAEDCD]/70 p-5 shadow-sm transition hover:shadow-md">
+      <StaggerGroup className="space-y-4">
+        {experience.map((item) => (
+        <StaggerItem key={item.company}>
+          <article className="rounded-2xl border border-[#D4A373]/10 bg-[#FAEDCD]/70 p-5 shadow-sm transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-md motion-reduce:transform-none">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <p className="text-lg font-semibold text-[#111827]">{item.company}</p>
-            {item.website !== "#" ? <a href={item.website} target="_blank" rel="noreferrer" className="text-xs text-[#8A5A2B] hover:underline">{item.website}</a> : null}
+            {item.website !== "#" ? <a href={item.website} target="_blank" rel="noreferrer" className="text-xs text-[#8A5A2B] transition hover:text-[#111827] hover:underline">{item.website}</a> : null}
           </div>
           <p className="text-sm font-medium text-[#8A5A2B]">{item.role}</p>
           <p className="mt-2 text-base leading-7 text-slate-600">{item.story}</p>
@@ -146,8 +158,10 @@ export function ExperienceWindow() {
           {item.domainSections ? <DomainSectionGrid sections={item.domainSections} /> : null}
 
           <p className="mt-3 text-sm text-slate-500">{item.stack}</p>
-        </article>
+          </article>
+        </StaggerItem>
       ))}
+      </StaggerGroup>
     </div>
   );
 }

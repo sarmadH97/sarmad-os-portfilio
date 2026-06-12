@@ -1,3 +1,5 @@
+import { StaggerGroup, StaggerItem } from "@/components/ui/motion";
+
 const projects = [
   { name: "Upbeater", website: "https://upbeater.com/", challenge: "An early-stage startup needed to turn product direction into a credible SaaS experience quickly.", approach: "Worked as a founding engineer across product architecture, frontend delivery, backend collaboration, and AI workflow planning.", outcome: "Helped create a production-ready foundation for startup execution, onboarding, and future AI-enabled product growth." },
   { name: "Procurement Sciences", website: "https://www.procurementsciences.com/", challenge: "Government procurement teams needed smarter ways to identify contract opportunities and act on complex data.", approach: "Built AI-powered workflows with modern frontend systems, automation patterns, and OpenAI-assisted product experiences.", outcome: "Delivered practical AI product capabilities for US-based teams working in government contract intelligence." },
@@ -9,18 +11,20 @@ const projects = [
 
 export function ProjectsWindow() {
   return (
-    <div className="grid gap-4 md:grid-cols-2">
+    <StaggerGroup className="grid gap-4 md:grid-cols-2">
       {projects.map((project) => (
-        <article key={project.name} className="rounded-2xl border border-[#D4A373]/10 bg-[#FAEDCD]/70 p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+        <StaggerItem key={project.name}>
+          <article className="rounded-2xl border border-[#D4A373]/10 bg-[#FAEDCD]/70 p-5 shadow-sm transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-md motion-reduce:transform-none">
           <p className="text-lg font-semibold text-[#111827]">{project.name}</p>
-          <a className="text-xs text-[#8A5A2B] hover:underline" href={project.website} target="_blank" rel="noreferrer">{project.website}</a>
+          <a className="text-xs text-[#8A5A2B] transition hover:text-[#111827] hover:underline" href={project.website} target="_blank" rel="noreferrer">{project.website}</a>
           <div className="mt-4 space-y-2 text-base leading-7 text-slate-600">
             <p><span className="font-medium text-[#111827]">Challenge:</span> {project.challenge}</p>
             <p><span className="font-medium text-[#111827]">Approach:</span> {project.approach}</p>
             <p><span className="font-medium text-[#111827]">Outcome:</span> {project.outcome}</p>
           </div>
-        </article>
+          </article>
+        </StaggerItem>
       ))}
-    </div>
+    </StaggerGroup>
   );
 }

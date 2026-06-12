@@ -1,11 +1,13 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Check } from "lucide-react";
 import { ReactNode, useEffect, useState } from "react";
 import { TerminalWindow } from "@/components/terminal/terminal-window";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/motion";
 import { CalendlyButton } from "@/components/ui/calendly-button";
 import { RESUME_URL } from "@/lib/links";
+import { usePathname } from "next/navigation";
 import { BootSequence } from "./boot-sequence";
 import { TopBar } from "./topbar";
 import { WallpaperBackground } from "./wallpaper";
@@ -24,6 +26,8 @@ const openTo = [
 export function SiteShell({ children }: { children: ReactNode }) {
   const [showBoot, setShowBoot] = useState(true);
   const [terminalOpen, setTerminalOpen] = useState(false);
+  const pathname = usePathname();
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
     if (window.sessionStorage.getItem(BOOT_KEY) === "1") setShowBoot(false);
@@ -50,33 +54,42 @@ export function SiteShell({ children }: { children: ReactNode }) {
         className="relative z-10"
       >
         <TopBar onOpenTerminal={() => setTerminalOpen(true)} />
-        {children}
-        <section className="relative z-10 mx-auto max-w-7xl px-4 pb-8">
-          <div className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/75 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl">
-            <p className="text-sm font-medium text-[#8A5A2B]">Open To</p>
-            <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-              {openTo.map((item) => (
-                <p key={item} className="flex items-center gap-2 rounded-2xl bg-[#FEFAE0] px-3 py-2 text-[15px] leading-6 text-slate-700">
-                  <Check className="h-4 w-4 text-[#8A5A2B]" aria-hidden="true" />
-                  {item}
-                </p>
-              ))}
+        <motion.div
+          key={pathname}
+          initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 12 }}
+          animate={reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.35, ease: "easeOut" }}
+        >
+          {children}
+          <Reveal className="relative z-10 mx-auto max-w-7xl px-4 pb-8">
+            <div className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/75 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none">
+              <p className="text-sm font-medium text-[#8A5A2B]">Open To</p>
+              <StaggerGroup className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                {openTo.map((item) => (
+                  <StaggerItem key={item}>
+                    <p className="flex items-center gap-2 rounded-2xl bg-[#FEFAE0] px-3 py-2 text-[15px] leading-6 text-slate-700 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-sm motion-reduce:transform-none">
+                      <Check className="h-4 w-4 text-[#8A5A2B]" aria-hidden="true" />
+                      {item}
+                    </p>
+                  </StaggerItem>
+                ))}
+              </StaggerGroup>
             </div>
-          </div>
-        </section>
-        <section className="relative z-10 mx-auto max-w-7xl px-4 pb-20">
-          <div className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-8 shadow-xl shadow-[#D4A373]/10 backdrop-blur-xl md:p-10">
-            <p className="text-sm font-medium text-[#8A5A2B]">Ready to turn the idea into a real product?</p>
-            <div className="mt-3 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
-              <h2 className="font-heading max-w-2xl text-3xl font-semibold text-[#111827]">Let’s map the MVP, product risks, and fastest path to launch.</h2>
-              <div className="flex flex-wrap gap-3">
-                <CalendlyButton label="Book a Discovery Call" />
-                <a href={RESUME_URL} target="_blank" rel="noreferrer" className="rounded-full border border-[#D4A373]/20 bg-[#FEFAE0] px-5 py-3 text-sm font-medium text-[#111827] transition hover:bg-[#FAEDCD]/45">Download Resume</a>
-                <CalendlyButton label="Discuss Your MVP" variant="secondary" />
+          </Reveal>
+          <Reveal className="relative z-10 mx-auto max-w-7xl px-4 pb-20">
+            <div className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-8 shadow-xl shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-2xl motion-reduce:transform-none md:p-10">
+              <p className="text-sm font-medium text-[#8A5A2B]">Ready to turn the idea into a real product?</p>
+              <div className="mt-3 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+                <h2 className="font-heading max-w-2xl text-3xl font-semibold text-[#111827]">Let’s map the MVP, product risks, and fastest path to launch.</h2>
+                <div className="flex flex-wrap gap-3">
+                  <CalendlyButton label="Book a Discovery Call" />
+                  <a href={RESUME_URL} target="_blank" rel="noreferrer" className="rounded-full border border-[#D4A373]/20 bg-[#FEFAE0] px-5 py-3 text-sm font-medium text-[#111827] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#FAEDCD]/45 hover:shadow-lg active:translate-y-0 active:scale-[0.98] motion-reduce:transform-none">Download Resume</a>
+                  <CalendlyButton label="Discuss Your MVP" variant="secondary" />
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </Reveal>
+        </motion.div>
       </motion.div>
 
       <AnimatePresence>

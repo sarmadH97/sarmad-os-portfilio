@@ -20,7 +20,7 @@ export function CalendlyButton({ label = "Book a Discovery Call", variant = "pri
       href={CALENDLY_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className={cn("inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-medium transition", styles[variant], className)}
+      className={cn("inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-medium transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0 active:scale-[0.98] motion-reduce:transform-none", styles[variant], className)}
     >
       {label}
     </a>

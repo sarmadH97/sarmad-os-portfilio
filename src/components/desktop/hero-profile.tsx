@@ -1,5 +1,6 @@
 "use client";
 
+import { motion, useReducedMotion } from "framer-motion";
 import { Check, FileText, Github, Linkedin } from "lucide-react";
 import { useEffect, useState } from "react";
 import { GITHUB_URL, LINKEDIN_URL, PROFILE_PHOTO_URL, RESUME_URL } from "@/lib/links";
@@ -17,6 +18,7 @@ const socials = [
 
 export function HeroProfile() {
   const [photoReady, setPhotoReady] = useState(false);
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
     const image = new window.Image();
@@ -26,9 +28,16 @@ export function HeroProfile() {
   }, []);
 
   return (
-    <aside className="relative mx-auto mt-6 w-full max-w-[16rem] md:mt-0 lg:-ml-4 lg:-mr-2" aria-label="Sarmad Hussain profile summary">
+    <motion.aside
+      initial={reduceMotion ? { opacity: 0 } : { opacity: 0, x: 18, scale: 0.98 }}
+      animate={reduceMotion ? { opacity: 1 } : { opacity: 1, x: 0, scale: 1 }}
+      whileHover={reduceMotion ? undefined : { y: -3 }}
+      transition={{ duration: 0.35, ease: "easeOut" }}
+      className="relative mx-auto mt-6 w-full max-w-[16rem] md:mt-0 lg:-ml-4 lg:-mr-2"
+      aria-label="Sarmad Hussain profile summary"
+    >
       <div className="absolute -inset-3 rounded-[2.5rem] bg-[#FAEDCD]/55 blur-3xl" aria-hidden="true" />
-      <div className="relative overflow-visible rounded-[1.45rem] border border-[#D4A373]/10 bg-[#FEFAE0]/80 p-2.5 shadow-2xl shadow-[#D4A373]/15 backdrop-blur-2xl">
+      <div className="relative overflow-visible rounded-[1.45rem] border border-[#D4A373]/10 bg-[#FEFAE0]/80 p-2.5 shadow-2xl shadow-[#D4A373]/15 backdrop-blur-2xl transition-shadow duration-200 hover:shadow-[#D4A373]/25">
         <div className="relative min-h-[12rem] overflow-hidden rounded-[1.2rem] bg-gradient-to-br from-[#FAEDCD]/80 via-[#FEFAE0] to-[#D4A373]/10 md:min-h-[14rem]">
           <div className="absolute inset-x-6 bottom-0 h-2/3 rounded-t-full bg-[#D4A373]/10 blur-2xl" aria-hidden="true" />
           {photoReady ? (
@@ -66,7 +75,7 @@ export function HeroProfile() {
                 href={href}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center gap-1.5 rounded-full border border-[#D4A373]/10 bg-[#FEFAE0] px-2 py-2 transition hover:bg-[#FAEDCD]/45"
+                className="inline-flex items-center justify-center gap-1.5 rounded-full border border-[#D4A373]/10 bg-[#FEFAE0] px-2 py-2 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#FAEDCD]/45 hover:shadow-sm active:translate-y-0 active:scale-[0.98] motion-reduce:transform-none"
               >
                 <Icon className="h-3.5 w-3.5" aria-hidden="true" />
                 {label}
@@ -89,6 +98,6 @@ export function HeroProfile() {
           </div>
         </div>
       </div>
-    </aside>
+    </motion.aside>
   );
 }
