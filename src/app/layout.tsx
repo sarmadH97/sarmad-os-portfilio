@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Sarmad's Portfolio",
-  description: "Futuristic developer operating system portfolio",
+  description: "Software Engineer portfolio",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
