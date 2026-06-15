@@ -1,6 +1,6 @@
 "use client";
 
-import { Activity, FileText, Home, Wifi } from "lucide-react";
+import { Activity, FileText, Home, Menu, Wifi, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -21,6 +21,7 @@ const navItems = [
 
 export function TopBar({ onOpenTerminal }: TopBarProps) {
   const [time, setTime] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -31,12 +32,18 @@ export function TopBar({ onOpenTerminal }: TopBarProps) {
   }, []);
 
   const isActive = (href: string) => pathname.startsWith(href);
+  const closeMenu = () => setMenuOpen(false);
+  const openTerminal = () => {
+    closeMenu();
+    onOpenTerminal();
+  };
 
   return (
     <header className="fixed left-3 right-3 top-3 z-50 rounded-2xl border border-[#D4A373]/10 bg-[#FAEDCD]/75 px-3 py-2 shadow-sm backdrop-blur-2xl transition-[box-shadow,background-color,border-color] duration-300 md:px-4">
       <div className="flex items-center justify-between gap-3 text-xs text-slate-600">
         <Link
           href="/"
+          onClick={closeMenu}
           aria-label="Go to home page"
           className={cn(
             "group inline-flex items-center gap-2 rounded-full px-2 py-1 font-semibold text-[#111827] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#FAEDCD]/45 active:translate-y-0 motion-reduce:transform-none",
@@ -65,30 +72,47 @@ export function TopBar({ onOpenTerminal }: TopBarProps) {
           <CalendlyButton label="Book a Call" className="px-3 py-1 text-xs" />
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="hidden items-center gap-3 md:flex">
           <Activity className="hidden h-3.5 w-3.5 text-[#8A5A2B] md:block" />
           <Wifi className="h-4 w-4" />
           <span>{time}</span>
         </div>
+
+        <button
+          type="button"
+          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((open) => !open)}
+          className="inline-flex min-h-10 min-w-10 items-center justify-center rounded-full border border-[#D4A373]/15 bg-[#FEFAE0]/70 text-[#111827] transition hover:bg-[#FAEDCD]/70 md:hidden"
+        >
+          {menuOpen ? <X className="h-4 w-4" aria-hidden="true" /> : <Menu className="h-4 w-4" aria-hidden="true" />}
+        </button>
       </div>
 
-      <nav className="mt-2 flex gap-2 overflow-x-auto pb-1 text-xs text-slate-600 md:hidden" aria-label="Mobile navigation">
-        {navItems.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className={cn(
-              "relative shrink-0 rounded-full border border-[#D4A373]/10 px-3 py-1 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#FAEDCD]/35 hover:text-[#111827] active:translate-y-0 motion-reduce:transform-none",
-              isActive(item.href) && "border-[#D4A373]/20 bg-[#FAEDCD]/30 text-[#8A5A2B] after:absolute after:inset-x-3 after:-bottom-0.5 after:h-px after:bg-[#D4A373]/60",
-            )}
-          >
-            {item.label}
-          </Link>
-        ))}
-        <a href={RESUME_URL} target="_blank" rel="noreferrer" className="inline-flex shrink-0 items-center gap-1 rounded-full border border-[#D4A373]/20 px-3 py-1 text-[#111827] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#FAEDCD]/45 active:translate-y-0 motion-reduce:transform-none"><FileText className="h-3.5 w-3.5" aria-hidden="true" />Resume ↗</a>
-        <button onClick={onOpenTerminal} className="shrink-0 rounded-full border border-[#D4A373]/20 px-3 py-1 text-[#111827] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#FAEDCD]/45 active:translate-y-0 motion-reduce:transform-none">Terminal</button>
-        <CalendlyButton label="Book a Call" className="shrink-0 px-3 py-1 text-xs" />
-      </nav>
+      {menuOpen ? (
+        <nav className="mt-3 grid gap-2 border-t border-[#D4A373]/10 pt-3 text-sm text-slate-600 md:hidden" aria-label="Mobile navigation">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={closeMenu}
+              className={cn(
+                "relative rounded-2xl px-3 py-3 transition-all duration-200 hover:bg-[#FEFAE0]/65 hover:text-[#111827]",
+                isActive(item.href) && "bg-[#FEFAE0]/75 text-[#8A5A2B] after:absolute after:inset-y-3 after:left-0 after:w-0.5 after:rounded-full after:bg-[#D4A373]/70",
+              )}
+            >
+              {item.label}
+            </Link>
+          ))}
+          <a href={RESUME_URL} target="_blank" rel="noreferrer" onClick={closeMenu} className="inline-flex items-center gap-2 rounded-2xl px-3 py-3 text-[#111827] transition hover:bg-[#FEFAE0]/65"><FileText className="h-4 w-4" aria-hidden="true" />Resume ↗</a>
+          <button onClick={openTerminal} className="rounded-2xl px-3 py-3 text-left text-[#111827] transition hover:bg-[#FEFAE0]/65">Terminal</button>
+          <CalendlyButton label="Book a Call" className="w-full px-3 py-3 text-sm" />
+          <div className="flex items-center gap-3 px-3 py-2 text-xs text-slate-500">
+            <Wifi className="h-4 w-4" />
+            <span>{time}</span>
+          </div>
+        </nav>
+      ) : null}
     </header>
   );
 }

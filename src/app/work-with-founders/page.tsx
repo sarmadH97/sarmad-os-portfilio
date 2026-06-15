@@ -44,30 +44,30 @@ const caseStudies = [
 export default function WorkWithFoundersPage() {
   return (
     <SiteShell>
-      <div className="mx-auto max-w-7xl space-y-10 px-4 pb-20 pt-28">
+      <div className="mx-auto w-full max-w-7xl space-y-6 px-4 pb-16 pt-24 sm:px-5 md:space-y-10 md:pb-20 md:pt-28">
         <Reveal>
-          <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-8 shadow-xl shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:border-[#D4A373]/20 hover:shadow-2xl md:p-12">
+          <section className="rounded-[1.5rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-5 shadow-xl shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:border-[#D4A373]/20 hover:shadow-2xl md:rounded-[2rem] md:p-12">
           <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8A5A2B]">Work With Founders</p>
-          <h1 className="font-display mt-4 max-w-4xl text-5xl font-black uppercase text-[#111827] md:text-7xl">Helping founders turn ideas into products.</h1>
+          <h1 className="font-display mt-4 max-w-4xl text-[clamp(2.4rem,12vw,4.25rem)] font-black uppercase leading-[0.96] text-[#111827] md:text-7xl">Helping founders turn ideas into products.</h1>
           <p className="mt-5 max-w-2xl text-lg text-slate-600">My startup execution is backed by enterprise experience across banking, payroll, AI products, financial services, and SaaS systems.</p>
-          <div className="mt-7 flex flex-wrap gap-3">
-            <CalendlyButton label="Book a Discovery Call" />
-            <CalendlyButton label="Discuss Your MVP" variant="secondary" />
-            <Link href="/projects" className="rounded-full border border-[#D4A373]/20 bg-[#FEFAE0] px-5 py-3 text-sm font-medium text-[#111827] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#FAEDCD]/45 hover:shadow-lg active:translate-y-0 active:scale-[0.98] motion-reduce:transform-none">View Projects</Link>
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <CalendlyButton label="Book a Discovery Call" className="w-full sm:w-auto" />
+            <CalendlyButton label="Discuss Your MVP" variant="secondary" className="w-full sm:w-auto" />
+            <Link href="/projects" className="inline-flex min-h-11 w-full items-center justify-center rounded-full border border-[#D4A373]/20 bg-[#FEFAE0] px-5 py-3 text-sm font-medium text-[#111827] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#FAEDCD]/45 hover:shadow-lg active:translate-y-0 active:scale-[0.98] motion-reduce:transform-none sm:w-auto">View Projects</Link>
           </div>
           </section>
         </Reveal>
 
         <Reveal>
-          <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none">
+          <section className="rounded-[1.5rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-5 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none md:rounded-[2rem] md:p-6">
           <p className="text-sm font-medium text-[#8A5A2B]">Why founders choose me</p>
-          <h2 className="font-display mt-2 max-w-3xl text-4xl font-black uppercase text-[#111827] md:text-5xl">Many founders don’t need a CTO on day one.</h2>
+          <h2 className="font-display mt-2 max-w-3xl text-[clamp(2.2rem,10vw,3.5rem)] font-black uppercase leading-[0.96] text-[#111827] md:text-5xl">Many founders don’t need a CTO on day one.</h2>
           <p className="mt-4 max-w-3xl text-base text-slate-600">They need someone who can help shape the product, make technical decisions, build quickly, and create a foundation that can scale. That’s where I help.</p>
           </section>
         </Reveal>
 
         <Reveal>
-          <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none">
+          <section className="rounded-[1.5rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-5 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none md:rounded-[2rem] md:p-6">
           <p className="text-sm font-medium text-[#8A5A2B]">Enterprise-backed startup execution</p>
           <h2 className="font-heading mt-2 text-2xl font-semibold text-[#111827]">My startup experience is backed by enterprise experience.</h2>
           <p className="mt-3 max-w-3xl text-base leading-7 text-slate-600">This combination helps founders avoid common technical mistakes while still moving quickly toward launch.</p>
@@ -89,14 +89,14 @@ export default function WorkWithFoundersPage() {
 
         <Reveal>
           <section className="grid gap-4 lg:grid-cols-[0.85fr_1.15fr]">
-          <div className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none">
+          <div className="rounded-[1.5rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-5 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none md:rounded-[2rem] md:p-6">
             <p className="text-sm font-medium text-[#8A5A2B]">Ideal founders</p>
             <h2 className="font-heading mt-2 text-2xl font-semibold text-[#111827]">I work best with</h2>
             <div className="mt-5 flex flex-wrap gap-2">
               {idealFounders.map((item) => <span key={item} className="rounded-full border border-[#D4A373]/10 bg-[#FAEDCD]/35 px-3 py-1 text-sm text-slate-700 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-[#D4A373]/20 hover:shadow-sm motion-reduce:transform-none">{item}</span>)}
             </div>
           </div>
-          <div id="founder-perspective" className="scroll-mt-28 rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none">
+          <div id="founder-perspective" className="scroll-mt-28 rounded-[1.5rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-5 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none md:rounded-[2rem] md:p-6">
             <p className="text-sm font-medium text-[#8A5A2B]">Founder Perspective</p>
             <div className="mt-5 rounded-[1.5rem] border border-[#D4A373]/10 bg-gradient-to-br from-[#FAEDCD]/55 via-[#FEFAE0] to-[#FEFAE0] p-6 shadow-inner shadow-[#D4A373]/5">
               <div className="flex flex-col gap-3 border-b border-[#D4A373]/10 pb-4 sm:flex-row sm:items-start sm:justify-between">
@@ -120,9 +120,9 @@ export default function WorkWithFoundersPage() {
                 </p>
               </blockquote>
             </div>
-            <div className="mt-5 flex flex-wrap gap-3">
-              <CalendlyButton label="Book a Discovery Call" />
-              <CalendlyButton label="Let's Talk Product" variant="subtle" />
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <CalendlyButton label="Book a Discovery Call" className="w-full sm:w-auto" />
+              <CalendlyButton label="Let's Talk Product" variant="subtle" className="w-full sm:w-auto" />
             </div>
           </div>
           </section>
@@ -153,7 +153,7 @@ export default function WorkWithFoundersPage() {
 }
 
 function Section({ eyebrow, title, children }: { eyebrow: string; title: string; children: ReactNode }) {
-  return <Reveal><section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none"><p className="text-sm font-medium text-[#8A5A2B]">{eyebrow}</p><h2 className="font-heading mt-2 mb-5 text-2xl font-semibold text-[#111827]">{title}</h2>{children}</section></Reveal>;
+  return <Reveal><section className="rounded-[1.5rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-5 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none md:rounded-[2rem] md:p-6"><p className="text-sm font-medium text-[#8A5A2B]">{eyebrow}</p><h2 className="font-heading mt-2 mb-5 text-[clamp(1.5rem,6vw,1.75rem)] font-semibold leading-tight text-[#111827] md:text-2xl">{title}</h2>{children}</section></Reveal>;
 }
 
 function CardGrid({ items }: { items: string[][] }) {

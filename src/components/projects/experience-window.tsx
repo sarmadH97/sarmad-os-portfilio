@@ -1,4 +1,5 @@
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/motion";
+import { TechBadge } from "@/components/ui/tech-icon";
 
 interface DomainSection {
   title: string;
@@ -103,7 +104,11 @@ function DomainSectionCard({ section }: { section: DomainSection }) {
         {section.website ? <a href={section.website} target="_blank" rel="noreferrer" className="text-xs font-medium text-[#8A5A2B] transition hover:text-[#111827] hover:underline">Website ↗</a> : null}
       </div>
       <p className="mt-2 text-base leading-7 text-slate-600">{section.summary}</p>
-      {section.stack ? <p className="mt-3 text-sm text-slate-500"><span className="font-semibold text-[#111827]">Stack:</span> {section.stack.join(" · ")}</p> : null}
+      {section.stack ? (
+        <div className="mt-3 flex flex-wrap gap-2">
+          {section.stack.map((tech) => <TechBadge key={tech} label={tech} />)}
+        </div>
+      ) : null}
       <StaggerGroup className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
         {section.focus.map((focus) => (
           <StaggerItem key={focus}>
@@ -154,7 +159,7 @@ export function ExperienceWindow() {
 
           {item.domainSections ? <DomainSectionGrid sections={item.domainSections} /> : null}
 
-          <p className="mt-3 text-sm text-slate-500">{item.stack}</p>
+          <div className="mt-3 flex flex-wrap gap-2">{item.stack.split(" · ").map((tech) => <TechBadge key={tech} label={tech} />)}</div>
           </article>
         </StaggerItem>
       ))}

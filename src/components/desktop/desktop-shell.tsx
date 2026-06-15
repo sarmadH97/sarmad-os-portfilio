@@ -1,6 +1,7 @@
 import { Check } from "lucide-react";
 import Link from "next/link";
 import { CalendlyButton } from "@/components/ui/calendly-button";
+import { TechBadge } from "@/components/ui/tech-icon";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/motion";
 import { AchievementsWindow } from "@/components/projects/achievements-window";
 import { SkillsWindow } from "@/components/projects/skills-window";
@@ -8,6 +9,8 @@ import { IndustriesSection } from "@/components/projects/industries-section";
 import { SiteShell } from "./site-shell";
 import { RESUME_URL } from "@/lib/links";
 import { HeroProfile } from "./hero-profile";
+
+const upbeaterStack = ["React", ".NET", "OpenAI", "AI Workflows"];
 
 const upbeaterContributions = [
   "Product Architecture",
@@ -50,25 +53,25 @@ const trustSignals = [
 export function DesktopShell() {
   return (
     <SiteShell>
-      <div className="mx-auto max-w-7xl space-y-8 px-4 pb-20 pt-[4.5rem]">
+      <div className="mx-auto w-full max-w-7xl space-y-6 px-4 pb-16 pt-[4.5rem] sm:px-5 md:space-y-8 md:pb-20">
         <Reveal>
-          <section className="relative overflow-visible rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 px-4 py-4 shadow-xl shadow-[#D4A373]/10 backdrop-blur-2xl transition-all duration-200 ease-out hover:border-[#D4A373]/20 hover:shadow-2xl md:px-5 md:py-4">
-            <div className="grid items-center gap-4 lg:grid-cols-[minmax(0,1fr)_16.25rem]">
+          <section className="relative overflow-visible rounded-[1.5rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 px-4 py-5 shadow-xl shadow-[#D4A373]/10 backdrop-blur-2xl transition-all duration-200 ease-out hover:border-[#D4A373]/20 hover:shadow-2xl md:rounded-[2rem] md:px-5 md:py-4">
+            <div className="grid items-center gap-5 lg:grid-cols-[minmax(0,1fr)_16.25rem]">
               <div className="relative z-10 lg:pr-1">
                 <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8A5A2B]">
                   Sarmad Hussain · Senior Software Engineer | Product Engineer
                 </p>
-                <h1 className="font-display mt-1.5 max-w-none text-4xl font-black uppercase leading-[1] text-[#111827] sm:text-[2.8rem] md:text-5xl lg:text-[3.25rem]">
+                <h1 className="font-display mt-2 max-w-none text-[clamp(2.4rem,11vw,4rem)] font-black uppercase leading-[0.96] text-[#111827] md:text-5xl lg:text-[3.25rem]">
                   Turning product ideas into scalable software and AI-enabled workflows.
                 </h1>
                 <p className="mt-2.5 max-w-3xl text-[19px] leading-8 text-slate-600">
                   From global banking and payroll systems to startup MVPs and AI products, I help founders and teams build software that scales.
                 </p>
-                <div className="mt-4 flex flex-wrap gap-3">
-                  <CalendlyButton label="Book a Discovery Call" />
+                <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                  <CalendlyButton label="Book a Discovery Call" className="w-full sm:w-auto" />
                   <Link
                     href="/projects"
-                    className="rounded-full border border-[#D4A373]/20 bg-[#FEFAE0] px-5 py-3 text-sm font-medium text-[#111827] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#FAEDCD]/45 hover:shadow-lg active:translate-y-0 active:scale-[0.98] motion-reduce:transform-none"
+                    className="inline-flex min-h-11 w-full items-center justify-center rounded-full border border-[#D4A373]/20 bg-[#FEFAE0] px-5 py-3 text-sm font-medium text-[#111827] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#FAEDCD]/45 hover:shadow-lg active:translate-y-0 active:scale-[0.98] motion-reduce:transform-none sm:w-auto"
                   >
                     View Projects
                   </Link>
@@ -92,7 +95,7 @@ export function DesktopShell() {
         </StaggerGroup>
 
         <Reveal>
-          <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/75 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none">
+          <section className="rounded-[1.5rem] border border-[#D4A373]/10 bg-[#FAEDCD]/75 p-5 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none md:rounded-[2rem] md:p-6">
             <p className="font-heading text-2xl font-semibold text-[#111827]">Enterprise Experience. Startup Execution.</p>
             <StaggerGroup className="mt-4 grid gap-2 md:grid-cols-5">
               {trustSignals.map((signal) => (
@@ -110,7 +113,7 @@ export function DesktopShell() {
 
 
         <Reveal>
-          <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FEFAE0]/90 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none">
+          <section className="rounded-[1.5rem] border border-[#D4A373]/10 bg-[#FEFAE0]/90 p-5 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none md:rounded-[2rem] md:p-6">
             <div className="grid gap-5 md:grid-cols-[0.28fr_1fr_auto] md:items-center">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#8A5A2B]">Upbeater</p>
@@ -135,7 +138,7 @@ export function DesktopShell() {
         </Reveal>
 
         <Reveal>
-          <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-6 shadow-xl shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-2xl motion-reduce:transform-none md:p-8">
+          <section className="rounded-[1.5rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-5 shadow-xl shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-2xl motion-reduce:transform-none md:rounded-[2rem] md:p-8">
             <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
               <div>
                 <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8A5A2B]">Featured case study</p>
@@ -145,9 +148,12 @@ export function DesktopShell() {
                   <p>
                     <span className="font-semibold text-[#111827]">Role:</span> Founding Engineer
                   </p>
-                  <p>
-                    <span className="font-semibold text-[#111827]">Stack:</span> React · .NET · AI Integrations · Workflow Automation
-                  </p>
+                  <div>
+                    <span className="font-semibold text-[#111827]">Stack:</span>
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {upbeaterStack.map((tech) => <TechBadge key={tech} label={tech} />)}
+                    </div>
+                  </div>
                 </div>
                 <a
                   href="https://upbeater.com/"
@@ -192,7 +198,7 @@ export function DesktopShell() {
         </Reveal>
 
         <Reveal>
-          <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/75 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none">
+          <section className="rounded-[1.5rem] border border-[#D4A373]/10 bg-[#FAEDCD]/75 p-5 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none md:rounded-[2rem] md:p-6">
             <p className="text-sm font-medium text-[#8A5A2B]">Why Founders Work With Me</p>
             <h2 className="font-heading mt-2 text-2xl font-semibold text-[#111827]">
               Enterprise engineering experience. Startup execution. AI-powered product development.
@@ -204,7 +210,7 @@ export function DesktopShell() {
         </Reveal>
 
         <Reveal>
-          <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/75 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none">
+          <section className="rounded-[1.5rem] border border-[#D4A373]/10 bg-[#FAEDCD]/75 p-5 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none md:rounded-[2rem] md:p-6">
             <div className="mb-5 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
               <div>
                 <p className="text-sm font-medium text-[#8A5A2B]">Products I've Helped Build</p>
@@ -240,7 +246,7 @@ export function DesktopShell() {
         </Reveal>
 
         <Reveal>
-          <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/75 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none">
+          <section className="rounded-[1.5rem] border border-[#D4A373]/10 bg-[#FAEDCD]/75 p-5 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none md:rounded-[2rem] md:p-6">
             <div className="mb-5 flex items-end justify-between gap-4">
               <div>
                 <p className="text-sm font-medium text-[#8A5A2B]">Product-building proof</p>
@@ -258,7 +264,7 @@ export function DesktopShell() {
         </Reveal>
 
         <Reveal>
-          <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/75 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none">
+          <section className="rounded-[1.5rem] border border-[#D4A373]/10 bg-[#FAEDCD]/75 p-5 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none md:rounded-[2rem] md:p-6">
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
               <div>
                 <p className="text-sm font-medium text-[#8A5A2B]">Founder-focused delivery</p>
@@ -272,7 +278,7 @@ export function DesktopShell() {
         </Reveal>
 
         <Reveal>
-          <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/75 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none">
+          <section className="rounded-[1.5rem] border border-[#D4A373]/10 bg-[#FAEDCD]/75 p-5 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none md:rounded-[2rem] md:p-6">
             <div className="mb-5">
               <p className="text-sm font-medium text-[#8A5A2B]">Capability map</p>
               <h2 className="font-heading text-2xl font-semibold text-[#111827]">Capabilities for building and scaling products</h2>

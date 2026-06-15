@@ -235,7 +235,7 @@ export function TerminalWindow() {
         initial={{ opacity: 0.72 }}
         animate={{ opacity: 1 }}
         transition={{ duration: reduceMotion ? 0 : 0.16, ease: "easeOut" }}
-        className="mb-3 h-60 overflow-auto rounded-xl border border-[#D4A373]/20 bg-[#020101]/95 p-3 font-terminal text-xs leading-6 text-[#F9EBD2]"
+        className="mb-3 h-[48vh] overflow-auto rounded-xl border border-[#D4A373]/20 bg-[#020101]/95 p-3 font-terminal text-xs leading-6 text-[#F9EBD2] md:h-60"
       >
         {lines}
       </motion.pre>
