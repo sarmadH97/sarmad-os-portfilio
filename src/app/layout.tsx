@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Sarmad's Portfolio",
-  description: "Software Engineer portfolio",
+  title: "Sarmad OS Portfolio",
+  description: "Futuristic developer operating system portfolio",
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
