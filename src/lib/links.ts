@@ -8,7 +8,4 @@ export const COMPANY_URLS = {
   technexia: "https://technexia.com/",
   pixcile: "http://www.pixcile.com/",
   upbeater: "https://upbeater.com/",
-  procurementSciences: "https://www.procurementsciences.com/",
-  atlasHxm: "https://www.atlashxm.com/",
-  alFardan: "https://alfardanexchange.com/",
 } as const;

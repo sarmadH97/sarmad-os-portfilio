@@ -96,12 +96,29 @@ export default function WorkWithFoundersPage() {
               {idealFounders.map((item) => <span key={item} className="rounded-full border border-[#D4A373]/10 bg-[#FAEDCD]/35 px-3 py-1 text-sm text-slate-700 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-[#D4A373]/20 hover:shadow-sm motion-reduce:transform-none">{item}</span>)}
             </div>
           </div>
-          <div className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none">
+          <div id="founder-perspective" className="scroll-mt-28 rounded-[2rem] border border-[#D4A373]/10 bg-[#FAEDCD]/80 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none">
             <p className="text-sm font-medium text-[#8A5A2B]">Founder Perspective</p>
             <div className="mt-5 rounded-[1.5rem] border border-[#D4A373]/10 bg-gradient-to-br from-[#FAEDCD]/55 via-[#FEFAE0] to-[#FEFAE0] p-6 shadow-inner shadow-[#D4A373]/5">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#8A5A2B]">Reserved trust signal</p>
-              <h2 className="font-heading mt-3 text-2xl font-semibold text-[#111827]">A founder recommendation will appear here soon.</h2>
-              <p className="mt-3 text-base leading-7 text-slate-600">This section is reserved for a recommendation from the founder of Upbeater.</p>
+              <div className="flex flex-col gap-3 border-b border-[#D4A373]/10 pb-4 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#8A5A2B]">Upbeater founder recommendation</p>
+                  <h2 className="font-heading mt-3 text-2xl font-semibold text-[#111827]">Petra Sundell</h2>
+                  <p className="text-sm text-slate-600">CEO & Co-Founder, Upbeater.com</p>
+                </div>
+                <span className="rounded-full bg-[#FAEDCD] px-3 py-1 text-xs font-semibold text-[#8A5A2B]">Founder signal</span>
+              </div>
+
+              <blockquote className="mt-5 space-y-4 text-base leading-7 text-slate-700">
+                <p>
+                  “I worked with Sarmad during the early stages of building Upbeater, our Human-AI Workforce Platform. He was the <span className="rounded-full bg-[#FAEDCD] px-2 py-0.5 font-semibold text-[#8A5A2B]">first engineer to touch the product</span>, and his ability to <span className="rounded-full bg-[#FAEDCD] px-2 py-0.5 font-semibold text-[#8A5A2B]">take a vague brief and quickly turn it into something working</span> has been invaluable. Sarmad is not only able to code what’s needed, he also has a <span className="rounded-full bg-[#FAEDCD] px-2 py-0.5 font-semibold text-[#8A5A2B]">genuine product thinking</span> which is exactly what an early-stage startup needs.
+                </p>
+                <p>
+                  In addition, Sarmad brought a calm, collaborative energy to the team and cared about the product, not just his tasks. He asks good questions, pushes back thoughtfully, and has a real instinct for what matters at zero-to-one stage.
+                </p>
+                <p>
+                  Ultimately, he’s bringing more to a team than most contractors I've worked with, making him a <span className="rounded-full bg-[#FAEDCD] px-2 py-0.5 font-semibold text-[#8A5A2B]">great founding engineer</span>. I'd recommend him to any early-stage founder who needs someone who can <span className="rounded-full bg-[#FAEDCD] px-2 py-0.5 font-semibold text-[#8A5A2B]">go from idea to shipped feature</span> and actually cares about what they're building.”
+                </p>
+              </blockquote>
             </div>
             <div className="mt-5 flex flex-wrap gap-3">
               <CalendlyButton label="Book a Discovery Call" />

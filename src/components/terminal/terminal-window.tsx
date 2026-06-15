@@ -60,10 +60,10 @@ const commands: Record<string, string> = {
     "• Product Engineer",
     "",
     "Experience Highlights:",
-    "• Global Net Banking Platform",
-    "• Atlas HXM Payroll Platform",
-    "• Procurement Sciences",
-    "• Al Fardan Exchange",
+    "• Global Digital Banking Platform",
+    "• Global Payroll & Workforce Management Platform",
+    "• AI-Powered Government Procurement Platform",
+    "• Middle East Financial Services Platform",
     "• Upbeater",
     "",
     "Industries:",
@@ -83,9 +83,9 @@ const commands: Record<string, string> = {
   skills:
     "Capabilities:\n• Product-minded frontend engineering\n• MVP architecture\n• API integration\n• AI workflow design\n• Secure delivery\n• Azure/AWS deployment\n• Pragmatic technical leadership",
   projects:
-    "Projects:\n• Upbeater — AI-native startup platform\n• Procurement Sciences — government procurement AI workflows\n• Atlas HXM — enterprise payroll platform\n• Al Fardan Exchange — financial services workflows\n• Terra AI Assistant — hackathon-winning workflow assistant",
+    "Projects:\n• Upbeater — AI-native startup platform\n• AI-Powered Government Procurement Platform — government procurement AI workflows\n• Global Payroll & Workforce Management Platform — enterprise payroll platform\n• Middle East Financial Services Platform — financial services workflows\n• Terra AI Assistant — hackathon-winning workflow assistant",
   experience:
-    "Experience:\n• Global Net Banking Platform — banking, security, performance\n• Atlas HXM — payroll and workforce management\n• Procurement Sciences — government procurement AI\n• Al Fardan Exchange — currency exchange and financial services\n• Upbeater — founding engineer startup execution",
+    "Experience:\n• Global Digital Banking Platform — banking, security, performance\n• Global Payroll & Workforce Management Platform — payroll and workforce management\n• AI-Powered Government Procurement Platform — government procurement AI\n• Middle East Financial Services Platform — currency exchange and financial services\n• Upbeater — founding engineer startup execution",
   founder:
     "Founder support:\n• Validate product direction\n• Define MVP scope\n• Choose sensible architecture\n• Integrate AI where it creates leverage\n• Launch production-ready systems without overengineering",
   favorites: [

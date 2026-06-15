@@ -25,25 +25,25 @@ const productGroups = [
   {
     category: "Enterprise Products",
     products: [
-      ["Global Net Banking Platform", "Customer-facing digital banking systems for a leading financial institution in Pakistan."],
-      ["Atlas HXM", "Enterprise payroll and workforce management platform serving complex HR operations."],
-      ["Procurement Sciences", "AI-powered government procurement workflows for contract discovery and automation."],
+      ["Global Digital Banking Platform", "Enterprise banking systems focused on secure customer experiences, reliability, and large-scale financial operations."],
+      ["Global Payroll & Workforce Management Platform", "Enterprise payroll and workforce management systems serving complex HR operations across multiple regions."],
+      ["AI-Powered Government Procurement Platform", "AI-assisted procurement workflows for government contracting teams."],
     ],
   },
   {
     category: "Financial & Business Platforms",
     products: [
-      ["Al Fardan Exchange", "Financial services workflows supporting currency exchange operations across the Middle East."],
+      ["Middle East Financial Services Platform", "Customer-facing digital experiences for a large regional financial services and currency exchange organization."],
       ["ExpenseLinx", "Expense management and operational workflow platform."],
     ],
   },
 ];
 
 const trustSignals = [
-  "Global Net Banking Platform",
-  "Atlas HXM Payroll Platform",
-  "Procurement Sciences AI Platform",
-  "Al Fardan Exchange",
+  "Global Digital Banking Platform",
+  "Global Payroll & Workforce Platform",
+  "AI-Powered Government Procurement Platform",
+  "Middle East Financial Services Platform",
   "Upbeater Founding Engineer",
 ];
 
@@ -104,6 +104,29 @@ export function DesktopShell() {
                 </StaggerItem>
               ))}
             </StaggerGroup>
+          </section>
+        </Reveal>
+
+
+
+        <Reveal>
+          <section className="rounded-[2rem] border border-[#D4A373]/10 bg-[#FEFAE0]/90 p-6 shadow-lg shadow-[#D4A373]/10 backdrop-blur-xl transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A373]/20 hover:shadow-xl motion-reduce:transform-none">
+            <div className="grid gap-5 md:grid-cols-[0.28fr_1fr_auto] md:items-center">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#8A5A2B]">Upbeater</p>
+                <p className="mt-1 text-xs font-medium text-slate-500">Founder recommendation</p>
+              </div>
+              <blockquote className="text-lg leading-8 text-[#111827]">
+                “Sarmad was the first engineer to touch Upbeater, and his ability to take a vague brief and quickly turn it into something working has been invaluable.”
+              </blockquote>
+              <div className="md:text-right">
+                <p className="font-heading text-base font-semibold text-[#111827]">Petra Sundell</p>
+                <p className="text-sm text-slate-600">CEO & Co-Founder, Upbeater</p>
+                <Link href="/work-with-founders#founder-perspective" className="mt-3 inline-flex text-sm font-semibold text-[#8A5A2B] transition-all duration-200 hover:-translate-y-0.5 hover:text-[#111827] motion-reduce:transform-none">
+                  Read founder recommendation →
+                </Link>
+              </div>
+            </div>
           </section>
         </Reveal>
 
