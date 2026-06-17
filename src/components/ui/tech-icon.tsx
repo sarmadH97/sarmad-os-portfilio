@@ -28,16 +28,10 @@ const simpleIconSlugs: Record<string, string> = {
   Redux: "redux",
   "Framer Motion": "framer",
   ".NET": "dotnet",
-  "C#": "csharp",
   "Node.js": "nodedotjs",
   NestJS: "nestjs",
   PostgreSQL: "postgresql",
-  "SQL Server": "microsoftsqlserver",
-  OpenAI: "openai",
-  "OpenAI APIs": "openai",
-  Azure: "microsoftazure",
   "Azure DevOps": "azuredevops",
-  AWS: "amazonaws",
   "GitHub Actions": "githubactions",
   Vercel: "vercel",
   Docker: "docker",
@@ -48,6 +42,8 @@ const simpleIconSlugs: Record<string, string> = {
   OWASP: "owasp",
   JWT: "jsonwebtokens",
 };
+
+const customBrandIcons = new Set(["C#", "SQL Server", "OpenAI", "OpenAI APIs", "Azure", "AWS"]);
 
 const lucideIcons: Record<string, LucideIcon> = {
   "REST APIs": Network,
@@ -91,8 +87,57 @@ function simpleIconUrl(slug: string, color?: string) {
   return color ? `https://cdn.simpleicons.org/${slug}/${color}` : `https://cdn.simpleicons.org/${slug}`;
 }
 
+function CustomBrandIcon({ label, className }: { label: string; className?: string }) {
+  if (label === "C#") {
+    return (
+      <svg viewBox="0 0 24 24" className={className} fill="none" role="img">
+        <path d="M12 2.4 20.2 7v10L12 21.6 3.8 17V7L12 2.4Z" stroke="currentColor" strokeWidth="1.8" />
+        <path d="M11 8.7a3.4 3.4 0 1 0 0 6.6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+        <path d="M15.4 8.8v6.4M18.1 8.8v6.4M14.4 11h4.7M14.4 13h4.7" stroke="currentColor" strokeWidth="1.35" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  if (label === "SQL Server") {
+    return (
+      <svg viewBox="0 0 24 24" className={className} fill="none" role="img">
+        <ellipse cx="12" cy="5.5" rx="6.8" ry="3" stroke="currentColor" strokeWidth="1.8" />
+        <path d="M5.2 5.5v6.3c0 1.7 3 3 6.8 3s6.8-1.3 6.8-3V5.5" stroke="currentColor" strokeWidth="1.8" />
+        <path d="M5.2 11.7v6.1c0 1.7 3 3 6.8 3s6.8-1.3 6.8-3v-6.1" stroke="currentColor" strokeWidth="1.8" />
+      </svg>
+    );
+  }
+
+  if (label === "OpenAI" || label === "OpenAI APIs") {
+    return (
+      <svg viewBox="0 0 24 24" className={className} fill="none" role="img">
+        <path d="M12 4.2c2.1-1.2 4.8.3 4.8 2.8 2.5.1 4 2.8 2.7 4.9 1.3 2.1-.2 4.8-2.7 4.9 0 2.5-2.7 4-4.8 2.8-2.1 1.2-4.8-.3-4.8-2.8-2.5-.1-4-2.8-2.7-4.9C3.2 9.8 4.7 7.1 7.2 7c0-2.5 2.7-4 4.8-2.8Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
+        <path d="M8.4 8.9 12 6.8l3.6 2.1v4.2L12 15.2l-3.6-2.1V8.9Z" stroke="currentColor" strokeWidth="1.45" strokeLinejoin="round" />
+      </svg>
+    );
+  }
+
+  if (label === "Azure") {
+    return (
+      <svg viewBox="0 0 24 24" className={className} fill="none" role="img">
+        <path d="M13.8 3.8 5.4 18.2h7.5l5.7-10.1-4.8-4.3Z" fill="currentColor" opacity="0.55" />
+        <path d="M14.4 4.2 9.8 16.4l4.5-4.5 4.3 6.3H8.1" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" role="img">
+      <path d="M5.4 14.2c2.5 2.1 5.1 3.1 8 3.1 2.1 0 4.2-.5 6.3-1.6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      <path d="M17.6 15.5 20 15l-.6 2.3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <text x="4" y="11.2" fill="currentColor" fontSize="6.3" fontWeight="800" fontFamily="Arial, sans-serif">AWS</text>
+    </svg>
+  );
+}
+
 export function TechIcon({ label, size = "md", className }: TechIconProps) {
   const slug = simpleIconSlugs[label];
+  const hasCustomBrandIcon = customBrandIcons.has(label);
   const LucideFallback = lucideIcons[label] ?? Code2;
 
   return (
@@ -104,7 +149,9 @@ export function TechIcon({ label, size = "md", className }: TechIconProps) {
         className,
       )}
     >
-      {slug ? (
+      {hasCustomBrandIcon ? (
+        <CustomBrandIcon label={label} className={cn("text-[#8A5A2B] transition-colors duration-200 group-hover:text-[#111827] group-hover/icon:text-[#111827]", innerIconSizes[size])} />
+      ) : slug ? (
         <span className={cn("relative block", innerIconSizes[size])}>
           <img
             src={simpleIconUrl(slug, "8A5A2B")}
