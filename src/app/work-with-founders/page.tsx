@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Hire a Founding Engineer for Your Startup | Sarmad Hussain",
+  description: "Non-technical or early-stage founder? I help turn product ideas into MVPs with enterprise-grade architecture, AI integration, and fast execution.",
+};
+
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { CalendlyButton } from "@/components/ui/calendly-button";

@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Recommendations & Testimonials | Sarmad Hussain",
+  description: "Read what founders, product managers, and engineering peers say about working with Sarmad Hussain — trusted for delivery, ownership, and product thinking.",
+};
+
 import { SiteShell } from "@/components/desktop/site-shell";
 import { RecommendationsWindow } from "@/components/projects/recommendations-window";
 import { Reveal } from "@/components/ui/motion";
