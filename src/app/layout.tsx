@@ -4,6 +4,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Sarmad's Portfolio",
   description: "Software Engineer Portfolio",
+  verification: {
+    google: "KlqjpSReRn-SiaToYVPEJi6iEMi5z-zQzEp7qZhNGGU",
+  },
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
   },

@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projects | Fintech, SaaS & AI Case Studies — Sarmad Hussain",
+  description: "Explore case studies from Upbeater, government procurement AI, global payroll platforms, and fintech systems built by engineer Sarmad Hussain.",
+};
+
 import { SiteShell } from "@/components/desktop/site-shell";
 import { ProjectsWindow } from "@/components/projects/projects-window";
 import { Reveal } from "@/components/ui/motion";

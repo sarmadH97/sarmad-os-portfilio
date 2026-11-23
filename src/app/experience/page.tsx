@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Experience | Enterprise & AI Product Engineering — Sarmad Hussain",
+  description: "6+ years of software engineering experience across banking, payroll, government procurement AI, and fintech, from Techlogix to founding engineer roles.",
+};
+
 import { SiteShell } from "@/components/desktop/site-shell";
 import { AchievementsWindow } from "@/components/projects/achievements-window";
 import { ExperienceWindow } from "@/components/projects/experience-window";
